@@ -2,7 +2,7 @@ gocryptfs Releases
 ==================
 
 Releases done by adding an signed git tag to a commit. All releases
-are available via github at https://github.com/rfjakob/gocryptfs/releases .
+are [available at github](https://github.com/rfjakob/gocryptfs/releases).
 
 All releases from v0.4 onward are signed using the *gocryptfs signing key*,
 
