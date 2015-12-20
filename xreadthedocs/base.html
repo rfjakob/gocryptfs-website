@@ -12,7 +12,6 @@
   {% else %}<link rel="shortcut icon" href="{{ base_url }}/img/favicon.ico">{% endif %}
 
   {# CSS #}
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="{{ base_url }}/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="{{ base_url }}/css/theme_extra.css" type="text/css" />
@@ -38,17 +37,6 @@
   <script src="{{ path }}"></script>
   {%- endfor %}
 
-  {% if google_analytics %}
-  <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', '{{ google_analytics[0] }}', '{{ google_analytics[1] }}');
-      ga('send', 'pageview');
-  </script>
-  {% endif %}
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -58,8 +46,9 @@
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="{{ homepage_url }}" class="icon icon-home"> {{ site_name }}</a>
-        {% include "searchbox.html" %}
+        <a class="site-title" href="{{ homepage_url }}">
+	        <span class="base0b">go</span><span class="base0c">crypt</span><span class="base0d">fs</span>
+        </a>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -67,6 +56,8 @@
           {% for nav_item in nav %}
             <li>{% include "toc.html" %}<li>
           {% endfor %}
+			<li><a href="https://github.com/rfjakob/gocryptfs#changelog">Changelog ➚</a></li>
+			<li><a href="https://github.com/rfjakob/gocryptfs/blob/master/Documentation/MANPAGE.md">Man Page ➚</a></li>
         </ul>
       </div>
       &nbsp;
@@ -77,13 +68,14 @@
       {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="{{ homepage_url }}">{{ site_name }}</a>
+        <a class="site-title" href="{{ homepage_url }}">
+	        <span class="base0b">go</span><span class="base0c">crypt</span><span class="base0d">fs</span>
+        </a>
       </nav>
 
       {# PAGE CONTENT #}
       <div class="wy-nav-content">
         <div class="rst-content">
-          {% include "breadcrumbs.html" %}
           <div role="main">
             <div class="section">
               {% block content %}

@@ -1,0 +1,7 @@
+site_name: gocryptfs
+theme: readthedocs
+theme_dir: xreadthedocs
+pages:
+- Home: index.md
+- Quickstart: quickstart.md
+- Security: security.md
