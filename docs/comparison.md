@@ -15,14 +15,16 @@ If you spot an error or want to see a project added, please
 Overview
 --------
 
-|                |        gocryptfs        |                encfs                 |           ecryptfs          |     cryptomator     |
-| -------------- | ----------------------- | ------------------------------------ | --------------------------- | ------------------- |
-| First release  | 2015 [1]                | 2003 [2]                             | 2006 [3]                    | 2014 [4]            |
-| Language       | Go                      | C++                                  | C                           | Java                |
-| License        | MIT                     | LGPL/GPL [5]                         | GPL                         | Apache/BSD/MIT [6]  |
-| File interface | FUSE                    | FUSE                                 | in-kernel filesystem        | WebDAV              |
-| Platforms      | Linux (OSX planned [7]) | Linux, OSX; third-party Windows port | Linux only                  | Linux, OSX, Windows |
-| User interface | Command line only       | Command line; third-party graphical  | Integrated in login process | Graphical only      |
+|                     |        gocryptfs        |                encfs                 |           ecryptfs          |     cryptomator     |
+| ------------------- | ----------------------- | ------------------------------------ | --------------------------- | ------------------- |
+| First release       | 2015 [1]                | 2003 [2]                             | 2006 [3]                    | 2014 [4]            |
+| Language            | Go                      | C++                                  | C                           | Java                |
+| License             | MIT                     | LGPL/GPL [5]                         | GPL                         | Apache/BSD/MIT [6]  |
+| Development hotspot | Austria                 | USA                                  | UK (Canonical Ltd)          | Germany             |
+| File interface      | FUSE                    | FUSE                                 | in-kernel filesystem        | WebDAV              |
+| Platforms           | Linux (OSX planned [7]) | Linux, OSX; third-party Windows port | Linux only                  | Linux, OSX, Windows |
+| User interface      | Command line only       | Command line; third-party graphical  | Integrated in login process | Graphical only      |
+
 
 References:
 [[1]](https://github.com/rfjakob/gocryptfs/releases/tag/v0.1)
