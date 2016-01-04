@@ -55,10 +55,11 @@ it seems to describe the used crypto.
 File Contents
 -------------
 
-|            | gocryptfs |        encfs default        |        encfs paranoia       | ecryptfs |    cryptomator     |
-| ---------- | --------- | --------------------------- | --------------------------- | -------- | ------------------ |
-| Encryption | GCM       | CBC; CFB for last block [1] | CBC; CFB for last block [1] | CBC      | CTR with random IV |
-| Integrity  | GCM       | none                        | HMAC                        | none     | HMAC               |
+|                       | gocryptfs |        encfs default        |        encfs paranoia       |        ecryptfs       |     cryptomator      |
+| --------------------- | --------- | --------------------------- | --------------------------- | --------------------- | -------------------- |
+| Encryption            | GCM       | CBC; CFB for last block [1] | CBC; CFB for last block [1] | CBC                   | CTR with random IV   |
+| Integrity             | GCM       | none                        | HMAC                        | none                  | HMAC                 |
+| File size obfuscation | no        | no                          | no                          | yes (4 KB increments) | yes (random padding) |
 
 References:
 [[1]](https://github.com/vgough/encfs/issues/9)
@@ -77,17 +78,42 @@ References:
 [[2]](https://gist.github.com/rfjakob/61a17bf3c7eb9932d791)
 [[3]](https://github.com/cryptomator/cryptomator/issues/128)
 
+Performance
+-----------
+
+All tests are run on tmpfs rule out any influence of the hard disk.
+The CPU is an Intel Pentium G630 with 2 x 2.7GHz.
+
+|                          | gocryptfs | encfs default | encfs paranoia | ecryptfs |  cryptomator  |
+| ------------------------ | --------- | ------------- | -------------- | -------- | ------------- |
+| Streaming write          | 84 MB/s   | 104 MB/s      | 56 MB/s        | 130 MB/s | 55 MB/s       |
+| Extract linux-3.0.tar.gz | 48 s [4]  | 20 s          | 23 s           | 8.4 s    | 468 s [1] [2] |
+| ls -lR linux-3.0         | 1.9 s     | 2.8 s         | 2.8 s          | 0.5 s    | 127 s [3]     |
+| Delete linux-3.0         | 4.5 s     | 3.9 s         | 4.1 s          | 0.5 s    | 376 s [3]     |
+
+
+Notes:
+
+[1] All file acesses to cryptomator go through the WebDAV protocol, which is less performance-oriented than FUSE.
+However, an optimized WebDAV client may be able to significantly speed up small-file workloads.
+
+[2] Tested with the dave cli WebDAV client, which gave better speed than gvfs (Gnome built-in) and davfs2
+
+[3] Tested with gvfs in the `/run/user/.../gvfs/dav:...` mount
+
+[4] See [gocryptfs ticket#16](https://github.com/rfjakob/gocryptfs/issues/16)
+
+
 Disk Space Efficiency
 ---------------------
 
 (all file sizes in bytes)
 
-|                   | gocryptfs | encfs default | encfs paranoia | ecryptfs |    cryptomator     |
-| ----------------- | --------- | ------------- | -------------- | -------- | ------------------ |
-| Empty file        |         0 |             0 |              0 |     8192 | ~104 - 4231        |
-| 1 byte file       |        51 |             9 |             17 |    12288 | ~104 - 4231        |
-| 1000000 byte file |   1007858 |       1000008 |        1007888 |  1011712 | ~1001161 - 1100936 |
-|                   |           |               |                |          |                    |
+|                      | gocryptfs | encfs default | encfs paranoia | ecryptfs |    cryptomator    |
+| -------------------- | --------- | ------------- | -------------- | -------- | ----------------- |
+| Empty file           |         0 |             0 |              0 |     8192 | 104 - 4231        |
+| 1 byte file          |        51 |             9 |             17 |    12288 | 104 - 4231        |
+| 1,000,000 bytes file |   1007858 |       1000008 |        1007888 |  1011712 | 1001161 - 1100936 |
+|                      |           |               |                |          |                   |
 
-Note: cryptomator obfuscates the real file size by adding a random padding which
-is why the resulting size is non-deterministic.
+Note: cryptomator adds a random padding which is why the resulting size is non-deterministic.
