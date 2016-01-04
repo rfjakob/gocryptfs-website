@@ -68,16 +68,19 @@ Overview
 General Security
 ----------------
 
-|                         | gocryptfs |     encfs default     |     encfs paranoia    |               ecryptfs               |    cryptomator     |
-| ----------------------- | --------- | --------------------- | --------------------- | ------------------------------------ | ------------------ |
-| Documentation available | Yes [1]   | Yes [2]               | Yes [2]               | No                                   | Yes [3]            |
-| Password hashing        | scrypt    | PBKDF2                | PBKDF2                | (none, implemented in external tool) | scrypt             |
+|                         | gocryptfs | encfs default | encfs paranoia |               ecryptfs               | cryptomator |
+| ----------------------- | --------- | ------------- | -------------- | ------------------------------------ | ----------- |
+| Documentation available | Yes [1]   | Yes [2]       | Yes [2]        | No [4]                               | Yes [3]     |
+| Password hashing        | scrypt    | PBKDF2        | PBKDF2         | (none, implemented in external tool) | scrypt      |
 
 
 References:
 [[1]](security.md)
 [[2]](https://github.com/vgough/encfs/blob/master/DESIGN.md)
 [[3]](https://cryptomator.org/#security)
+[[4]](http://ecryptfs.org/documentation.html) actually, there is a lot of documentation, but none of
+it seems to describe the used crypto.
+
 
 
 File Contents
@@ -96,8 +99,10 @@ File Names
 | -------------------- | --------------------- | -------------------- | -------------------- | -------- | ----------- |
 | Encryption           | EME                   | CBC                  | CBC                  | CBC      | SIV         |
 | Prefix leak          | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (SIV)    |
-| Identical names leak | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | yes         |
+| Identical names leak | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | yes [3]     |
+|                      |                       |                      |                      |          |             |
 
 References:
 [[1]](https://gist.github.com/rfjakob/a04364c55b3ee231078d)
 [[2]](https://gist.github.com/rfjakob/61a17bf3c7eb9932d791)
+[[3]](https://github.com/cryptomator/cryptomator/issues/128)
