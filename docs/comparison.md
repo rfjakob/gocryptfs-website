@@ -86,11 +86,13 @@ it seems to describe the used crypto.
 File Contents
 -------------
 
-|            | gocryptfs |     encfs default     |     encfs paranoia    | ecryptfs |    cryptomator     |
-| ---------- | --------- | --------------------- | --------------------- | -------- | ------------------ |
-| Encryption | GCM       | CBC, CFB (last block) | CBC, CFB (last block) | CBC      | CTR with random IV |
-| Integrity  | GCM       | none                  | HMAC                  | none     | HMAC               |
+|            | gocryptfs |       encfs default       |       encfs paranoia      | ecryptfs |    cryptomator     |
+| ---------- | --------- | ------------------------- | ------------------------- | -------- | ------------------ |
+| Encryption | GCM       | CBC, CFB (last block [1]) | CBC, CFB (last block [1]) | CBC      | CTR with random IV |
+| Integrity  | GCM       | none                      | HMAC                      | none     | HMAC               |
 
+References:
+[[1]](https://github.com/vgough/encfs/issues/9)
 
 File Names
 ----------
