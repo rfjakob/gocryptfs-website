@@ -5,5 +5,5 @@ pages:
 - Home: index.md
 - Quickstart: quickstart.md
 - Security: security.md
-- Comparison with other projects: comparison.md
-- Releases: releases.md
+- Comparison with Other Projects: comparison.md
+- Signed Releases: releases.md
