@@ -1,8 +1,11 @@
 Other Projects
 ==============
 
-There are several open-source file encryption solutions available.
-This page tries to help to find the right one for your use case:
+There are several open-source file encryption solutions for Linux available. In contrast
+to disk-encryption software that operate on whole disks (TrueCrypt, dm-crypt etc), file
+encryption operates on individual files that can be backed up or synchronised easily.
+
+This page compares:
 
 * [gocryptfs](https://nuetzlich.net/gocryptfs/) (this project), aspiring successor of EncFS
 * [EncFS](https://github.com/vgough/encfs), mature with known security issues
@@ -15,15 +18,17 @@ If you spot an error or want to see a project added, please
 Overview
 --------
 
-|                     |        gocryptfs        |                encfs                 |           ecryptfs          |     cryptomator     |
-| ------------------- | ----------------------- | ------------------------------------ | --------------------------- | ------------------- |
-| First release       | 2015 [1]                | 2003 [2]                             | 2006 [3]                    | 2014 [4]            |
-| Language            | Go                      | C++                                  | C                           | Java                |
-| License             | MIT                     | LGPL/GPL [5]                         | GPL                         | Apache/BSD/MIT [6]  |
-| Development hotspot | Austria                 | USA                                  | UK (Canonical Ltd)          | Germany             |
-| File interface      | FUSE                    | FUSE                                 | in-kernel filesystem        | WebDAV              |
-| Platforms           | Linux (OSX planned [7]) | Linux, OSX; third-party Windows port | Linux only                  | Linux, OSX, Windows |
-| User interface      | Command line only       | Command line; third-party graphical  | Integrated in login process | Graphical only      |
+|                     |        gocryptfs        |                encfs                 |           ecryptfs          |               cryptomator                |
+| ------------------- | ----------------------- | ------------------------------------ | --------------------------- | ---------------------------------------- |
+| First release       | 2015 [1]                | 2003 [2]                             | 2006 [3]                    | 2014 [4]                                 |
+| Language            | Go                      | C++                                  | C                           | Java                                     |
+| License             | MIT                     | LGPL/GPL [5]                         | GPL                         | MIT                                      |
+| Development hotspot | Austria                 | USA                                  | UK (Canonical Ltd)          | Germany                                  |
+| Lifecycle           | Active development      | Maintainance                         | Active development [9]      | Active development                       |
+| File interface      | FUSE                    | FUSE                                 | in-kernel filesystem        | WebDAV                                   |
+| Platforms           | Linux (OSX planned [7]) | Linux, OSX; third-party Windows port | Linux only                  | Linux, OSX, Windows                      |
+| User interface      | Command line only       | Command line; third-party graphical  | Integrated in login process | Graphical only; Command line planned [8] |
+
 
 
 References:
@@ -34,6 +39,8 @@ References:
 [[5]](https://github.com/vgough/encfs/blob/master/COPYING)
 [[6]](https://github.com/cryptomator/cryptomator/tree/master/LICENSES)
 [[7]](https://github.com/rfjakob/gocryptfs/issues/15)
+[[8]](https://github.com/cryptomator/cryptomator/issues/43)
+[[9]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/fs/ecryptfs)
 
 
 General Security
@@ -57,14 +64,15 @@ it seems to describe the used crypto.
 File Contents
 -------------
 
-|                       | gocryptfs |        encfs default        |        encfs paranoia       |        ecryptfs       |     cryptomator      |
-| --------------------- | --------- | --------------------------- | --------------------------- | --------------------- | -------------------- |
-| Encryption            | GCM       | CBC; CFB for last block [1] | CBC; CFB for last block [1] | CBC                   | CTR with random IV   |
-| Integrity             | GCM       | none                        | HMAC                        | none                  | HMAC                 |
-| File size obfuscation | no        | no                          | no                          | yes (4 KB increments) | yes (random padding) |
+|                       | gocryptfs |        encfs default        |        encfs paranoia       |        ecryptfs       |      cryptomator       |
+| --------------------- | --------- | --------------------------- | --------------------------- | --------------------- | ---------------------- |
+| Encryption            | GCM       | CBC; CFB for last block [1] | CBC; CFB for last block [1] | CBC                   | CTR with random IV [2] |
+| Integrity             | GCM       | none                        | HMAC                        | none                  | HMAC                   |
+| File size obfuscation | no        | no                          | no                          | yes (4 KB increments) | yes (random padding)   |
 
 References:
 [[1]](https://github.com/vgough/encfs/issues/9)
+[[2]](https://github.com/cryptomator/cryptomator/issues/128#issuecomment-168942517)
 
 File Names
 ----------
