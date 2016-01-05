@@ -179,3 +179,23 @@ div.builtwith a {
 	bottom: -6px;
 	margin-right: 8px;
 }
+
+div.logo {
+	text-align: center;
+	padding: 10px;
+}
+
+div.logo img {
+	width: 236px;
+}
+
+nav.wy-nav-top img {
+	height: auto;
+	width: auto;
+	background-color: transparent;
+	border-radius: 0;
+}
+
+nav.wy-nav-top i {
+	font-size: 60px;
+}
