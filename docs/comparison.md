@@ -64,11 +64,11 @@ it seems to describe the used crypto.
 File Contents
 -------------
 
-|                       | gocryptfs |        encfs default        |        encfs paranoia       |        ecryptfs       |      cryptomator       |
-| --------------------- | --------- | --------------------------- | --------------------------- | --------------------- | ---------------------- |
-| Encryption            | GCM       | CBC; CFB for last block [1] | CBC; CFB for last block [1] | CBC                   | CTR with random IV [2] |
-| Integrity             | GCM       | none                        | HMAC                        | none                  | HMAC                   |
-| File size obfuscation | no        | no                          | no                          | yes (4 KB increments) | yes (random padding)   |
+|                       | gocryptfs |      encfs default      |      encfs paranoia     |        ecryptfs       |      cryptomator       |
+| --------------------- | --------- | ----------------------- | ----------------------- | --------------------- | ---------------------- |
+| Encryption            | GCM       | CBC; last block CFB [1] | CBC; last block CFB [1] | CBC                   | CTR with random IV [2] |
+| Integrity             | GCM       | none                    | HMAC                    | none                  | HMAC                   |
+| File size obfuscation | no        | no                      | no                      | yes (4 KB increments) | yes (random padding)   |
 
 References:
 [[1]](https://github.com/vgough/encfs/issues/9)
@@ -77,16 +77,19 @@ References:
 File Names
 ----------
 
-|                      |       gocryptfs       |    encfs default     |    encfs paranoia    | ecryptfs | cryptomator |
-| -------------------- | --------------------- | -------------------- | -------------------- | -------- | ----------- |
-| Encryption           | EME                   | CBC                  | CBC                  | CBC      | SIV         |
-| Prefix leak          | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (SIV)    |
-| Identical names leak | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | yes [3]     |
+|                         |       gocryptfs       |    encfs default     |    encfs paranoia    | ecryptfs | cryptomator |
+| ----------------------- | --------------------- | -------------------- | -------------------- | -------- | ----------- |
+| Encryption              | EME [4]               | CBC                  | CBC                  | CBC      | SIV         |
+| Prefix leak             | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (SIV)    |
+| Identical names leak    | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | yes [3]     |
+| Maximum name length [5] | 176                   | 176                  | 176                  | 144      | 1026        |
 
 References:
 [[1]](https://gist.github.com/rfjakob/a04364c55b3ee231078d)
 [[2]](https://gist.github.com/rfjakob/61a17bf3c7eb9932d791)
 [[3]](https://github.com/cryptomator/cryptomator/issues/128)
+[[4]](https://github.com/rfjakob/eme)
+[[5]](https://gist.github.com/rfjakob/c70344e2e7a1d765af1f)
 
 Performance
 -----------
@@ -119,11 +122,11 @@ Disk Space Efficiency
 
 (all file sizes in bytes)
 
-|                      | gocryptfs | encfs default | encfs paranoia | ecryptfs |    cryptomator    |
-| -------------------- | --------- | ------------- | -------------- | -------- | ----------------- |
-| Empty file           |         0 |             0 |              0 |     8192 | 104 - 4231        |
-| 1 byte file          |        51 |             9 |             17 |    12288 | 104 - 4231        |
-| 1,000,000 bytes file |   1007858 |       1000008 |        1007888 |  1011712 | 1001161 - 1100936 |
-|                      |           |               |                |          |                   |
+|                      | gocryptfs | encfs default | encfs paranoia |  ecryptfs |      cryptomator      |
+| -------------------- | --------- | ------------- | -------------- | --------- | --------------------- |
+| Empty file           | 0         | 0             | 0              | 8,192     | 104 - 4,231           |
+| 1 byte file          | 51        | 9             | 17             | 12,288    | 104 - 4,231           |
+| 1,000,000 bytes file | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,096 - 1,101,192 |
+|                      |           |               |                |           |                       |
 
 Note: cryptomator adds a random padding which is why the resulting size is non-deterministic.

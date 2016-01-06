@@ -1,5 +1,5 @@
-gocryptfs - An encrypted filesystem written in Go
-=================================================
+gocryptfs - simple. secure. fast.
+=================================
 
 gocryptfs uses file-based encryption that is implemented as a mountable
 FUSE filesystem.
@@ -17,16 +17,20 @@ by the available disk space.
 ![](img/folders-side-by-side.png)
 
 This project was inspired by EncFS and strives to fix its security
-issues while providing good performance.
-See the [Security](security) page for details on gocryptfs's cryptographic
-design.
+issues while providing good performance,
+see the [Comparison](comparison) page for benchmarks.
+The [Security](security) page details gocryptfs's cryptographic design.
+The highlights are: Scrypt password hashing, GCM encryption for all
+file contents, EME wide-block encryption for file names with a per-directory
+IV.
 
 gocryptfs is a young project. While bugs in any software can cause issues,
 bugs in encryption software can cause catastrophic data loss. Keep a backup
 of your gocryptfs filesystem *and* store a copy of your master key (printed
 on mount) in a safe place.
 
-Only Linux is supported at the moment. Help is wanted for a Mac OS X port.
-Please contact me by filing an issue on the
-[github project](https://github.com/rfjakob/gocryptfs).
+Only Linux is supported at the moment. Help is wanted for a Mac OS X port,
+please chime in in the ["Mac OS X support" ticket](https://github.com/rfjakob/gocryptfs/issues/15)
+if you are interested.
 
+gocryptfs is, and always will be, free software.
