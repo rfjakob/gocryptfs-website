@@ -199,3 +199,16 @@ nav.wy-nav-top img {
 nav.wy-nav-top i {
 	font-size: 60px;
 }
+
+/* Inline code */
+code {
+	color: #333;
+}
+
+/* Code block */
+pre code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  -webkit-text-size-adjust: none;
+}
