@@ -4,6 +4,7 @@ theme_dir: xreadthedocs
 pages:
 - Home: index.md
 - Quickstart: quickstart.md
+- Compile from Source: compile.md
 - Security: security.md
 - Comparison with Other Projects: comparison.md
 - Signed Releases: releases.md
