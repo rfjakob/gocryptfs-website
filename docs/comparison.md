@@ -119,7 +119,8 @@ Notes:
 However, an optimized WebDAV client may be able to significantly speed up small-file workloads.  
 {2} Tested with the dave cli WebDAV client, which gave better speed than gvfs (Gnome built-in) and davfs2  
 {3} Tested with gvfs in the `/run/user/.../gvfs/dav:...` mount  
-{4} See [gocryptfs ticket#16](https://github.com/rfjakob/gocryptfs/issues/16)
+{4} Known performance limitation in the go-fuse library. See [gocryptfs ticket#16](https://github.com/rfjakob/gocryptfs/issues/16)
+for progress on a fix.
 
 
 Disk Space Efficiency
