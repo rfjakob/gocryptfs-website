@@ -1,31 +1,25 @@
 gocryptfs Quickstart
 ====================
 
-You need to have the Go runtime and the OpenSSL headers installed to
-compile gocryptfs.
+Download or Compile gocryptfs
+-----------------------------
 
-On Fedora,
+If you are running Fedora or a Debian-based Linux distribution like Ubuntu,
+chances are that the precompiled binaries will work on your system.
+Download the corresponding binary for your system from the
+[github releases page](https://github.com/rfjakob/gocryptfs/releases) and
+extract the archive into `~/bin`.
 
-	$ sudo dnf install golang openssl-devel
+If you want or need to compile from source, see the [Compile](compile.md) page for
+instructions.
 
-On Debian and Ubuntu,
+Once you have gocrypts in `~/bin`, running
 
-	$ sudo apt-get install golang libssl-dev
+	$ ~/bin/gocryptfs -version
 
-Also, GOPATH must be set. Usually it is simply set to the home directory:
+should print a version string like this:
 
-	$ export GOPATH=$HOME
-
-Download
--------
-
-	$ go get -d github.com/rfjakob/gocryptfs
-
-Compile
--------
-
-	$ ~/src/github.com/rfjakob/gocryptfs/build.bash
-	$ mkdir -p ~/bin && cp ~/src/github.com/rfjakob/gocryptfs/gocryptfs ~/bin
+	gocryptfs v0.x; on-disk format 2
 
 Create and Mount Filesystem
 ---------------------------
@@ -35,7 +29,11 @@ Create and Mount Filesystem
 	  [...]
 	$ ~/bin/gocryptfs cipher plain
 	  [...]
-	$ echo test > plain/test.txt
+
+You should now have a working gocryptfs that is stored in `cipher` and mounted to `plain`.
+You can verify it by creating a test file in the `plain` directory. This file will show
+up encrypted in the `cipher` directory.
+
+	$ touch plain/test.txt
 	$ ls cipher
 	  gocryptfs.conf  gocryptfs.diriv  ZSuIZVzYDy5-TbhWKY-ciA==
-
