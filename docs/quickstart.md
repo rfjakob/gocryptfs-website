@@ -1,5 +1,5 @@
-gocryptfs Quickstart
-====================
+Quickstart
+==========
 
 Download or Compile gocryptfs
 -----------------------------
