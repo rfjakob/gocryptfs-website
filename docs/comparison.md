@@ -127,13 +127,15 @@ Disk Space Efficiency
 
 (all file sizes in bytes)
 
-|                      | gocryptfs | encfs default | encfs paranoia |  ecryptfs |        cryptomator        |  securefs |
-| -------------------- | --------- | ------------- | -------------- | --------- | ------------------------- | --------- |
-| Empty file           | 0         | 0             | 0              | 8,192     | 104 - 4,231               | 112       |
-| 1 byte file          | 51        | 9             | 17             | 12,288    | 104 - 4,231               | 161       |
-| 1,000,000 bytes file | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,096 - 1,101,192 [1] | 1,011,872 |
+|                      | gocryptfs | encfs default | encfs paranoia |  ecryptfs |      cryptomator {1}      | securefs {2} |
+| -------------------- | --------- | ------------- | -------------- | --------- | ------------------------- | ------------ |
+| Empty file           | 0         | 0             | 0              | 8,192     | 104 - 4,231               | 112          |
+| 1 byte file          | 51        | 9             | 17             | 12,288    | 104 - 4,231               | 161          |
+| 1,000,000 bytes file | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,096 - 1,101,192 [1] | 1,011,872    |
 
-Notes: cryptomator adds a random padding which is why the resulting size is non-deterministic.
+Notes:  
+{1} cryptomator adds a random padding which is why the resulting size is non-deterministic.  
+{2} securefs stores data and crypto metadata (nonces + GHASH) in separate files. The sum of both is shown here.
 
 References:
 [[1]](https://github.com/cryptomator/cryptomator/issues/128#issuecomment-169056079)
