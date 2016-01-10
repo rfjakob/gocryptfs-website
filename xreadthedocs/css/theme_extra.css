@@ -1,9 +1,12 @@
 /*
  * Tweak the overal size to better match RTD.
  */
+
+/* Not good
 body {
     font-size: 90%;
 }
+*/
 
 h3, h4, h5, h6 {
     color: #2980b9;
@@ -211,4 +214,13 @@ pre code {
   overflow-x: auto;
   padding: 0.5em;
   -webkit-text-size-adjust: none;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+thead {
+  white-space: normal !important;
+  vertical-align: top !important;
 }

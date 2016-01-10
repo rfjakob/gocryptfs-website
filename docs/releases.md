@@ -1,28 +1,42 @@
 gocryptfs Releases
 ==================
 
-Releases done by adding an signed git tag to a commit. All releases
-are [available at github](https://github.com/rfjakob/gocryptfs/releases).
+gocryptfs is released as
 
-All releases from v0.4 onward are signed using the *gocryptfs signing key*,
+* source code using signed git tags, please `git clone https://github.com/rfjakob/gocryptfs.git`
+* precompiled binaries with .asc gpg signatures, [download at github](https://github.com/rfjakob/gocryptfs/releases)
 
-	Primary key fingerprint: FFF3 E014 44FE D7C3 16A3  545A 895F 5BC1 23A0 2740
+Signing Key
+-----------
 
-The public key can be downloaded
-[here](https://nuetzlich.net/gocryptfs-signing-key.pub).
+Binary and source releases are signed using the *gocryptfs signing key*, key ID 23A02740.
 
-To verify the signed tags, you have to import the public key into your
-gpg keyring:
+The public key can be downloaded [here](https://nuetzlich.net/gocryptfs-signing-key.pub).
+To verify signatures, you have to import it into gpg:
 
 	$ wget https://nuetzlich.net/gocryptfs-signing-key.pub
 	$ gpg --import gocryptfs-signing-key.pub
 
-Then, you can verify tags using `git tag -v`:
+Verify Git Tags
+---------------
+
+Just call `git tag` with the `-v` flag, for example:
 
 	$ git tag -v v0.7
-	  [...]
-	  gocryptfs v0.7
-	  gpg: Signature made So 20 Dez 2015 20:29:19 CET using RSA key ID 23A02740
-	  gpg: Good signature [...]
+	[...]
+	gocryptfs v0.7
+	gpg: Signature made So 20 Dez 2015 20:29:19 CET using RSA key ID 23A02740
+	gpg: Good signature [...]
 
-Note that the `key ID` is simply the last eight digits of the key fingerprint, `23A0 2740`.
+Verify Binaries
+---------------
+
+Download both the `.tar.gz` and the `.asc` file, then run `gpg --verify gocryptfs_XYZ.asc`,
+for example:
+
+	$ gpg --verify gocryptfs_v0.7.1_debian8_amd64.tar.gz.asc
+	gpg: assuming signed data in `gocryptfs_v0.7.1_debian8_amd64.tar.gz'
+	gpg: Signature made Sa 09 Jan 2016 15:53:33 CET using RSA key ID 23A02740
+	gpg: Good signature [...]
+
+
