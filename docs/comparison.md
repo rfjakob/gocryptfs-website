@@ -29,7 +29,7 @@ Overview
 | File interface      | FUSE                    | FUSE                                 | in-kernel filesystem        | WebDAV                                   | FUSE               |
 | Platforms           | Linux (OSX planned [7]) | Linux, OSX; third-party Windows port | Linux only                  | Linux, OSX, Windows                      | Linux, OSX         |
 | User interface      | Command line only       | Command line; third-party graphical  | Integrated in login process | Graphical only; Command line planned [8] | Command line only  |
-| Lines of Code {1}   | 3,442                   | 9,320                                | 7,662 {2}                    | 9,921                                     | 21,353 {3}         |
+| Lines of Code {1}   | 3,442                   | 9,320                                | 7,662 {2}                   | 9,921                                    | 4,704 {3}          |
 
 References:
 [[1]](https://github.com/rfjakob/gocryptfs/releases/tag/v0.1)
@@ -46,7 +46,9 @@ References:
 Notes:  
 {1} All computed using `cloc`  
 {2} Counting only `fs/ecryptfs/`  
-{3} Counting `sources/`
+{3} The securefs `source/` directory contains embedded libraries. The count is produced using
+`cloc btree_dir.h commands.h exceptions.h file_table.h files.h logger.h operations.h streams.h utils.h xattr_compat.h btree_dir.cpp commands.cpp file_table.cpp files.cpp logger.cpp operations.cpp streams.cpp utils.cpp`
+and contains the files actually comprising securefs as [stated by the author](https://github.com/netheril96/securefs/issues/2#issuecomment-170349572).
 
 General Security
 ----------------
