@@ -111,7 +111,7 @@ The CPU is an Intel Pentium G630 with 2 x 2.7GHz.
 |                          | gocryptfs | encfs default | encfs paranoia |  ecryptfs |  cryptomator  | securefs |
 | ------------------------ | --------- | ------------- | -------------- | --------- | ------------- | -------- |
 | Streaming write          | 84 MiB/s  | 104 MiB/s     | 56 MiB/s       | 130 MiB/s | 55 MiB/s      | 60 MiB/s |
-| Extract linux-3.0.tar.gz | 48 s {4}  | 20 s          | 23 s           | 8.4 s     | 468 s {1} {2} | 25 s     |
+| Extract linux-3.0.tar.gz | 26 s      | 20 s          | 23 s           | 8.4 s     | 468 s {1} {2} | 25 s     |
 | ls -lR linux-3.0         | 1.9 s     | 2.8 s         | 2.8 s          | 0.5 s     | 127 s {3}     | 4.2 s    |
 | Delete linux-3.0         | 4.5 s     | 3.9 s         | 4.1 s          | 0.5 s     | 376 s {3}     | 5.3 s    |
 
@@ -120,9 +120,7 @@ Notes:
 {1} All file acesses to cryptomator go through the WebDAV protocol, which is less performance-oriented than FUSE.  
 However, an optimized WebDAV client may be able to significantly speed up small-file workloads.  
 {2} Tested with the dave cli WebDAV client, which gave better speed than gvfs (Gnome built-in) and davfs2  
-{3} Tested with gvfs in the `/run/user/.../gvfs/dav:...` mount  
-{4} Known performance limitation in the go-fuse library. See [gocryptfs ticket#16](https://github.com/rfjakob/gocryptfs/issues/16)
-for progress on a fix.
+{3} Tested with gvfs in the `/run/user/.../gvfs/dav:...` mount
 
 
 Disk Space Efficiency
