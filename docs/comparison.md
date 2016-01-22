@@ -120,7 +120,7 @@ because its complex file headers causes extra disk accesses {4}.
 
 |                          | gocryptfs | encfs paranoia |  ecryptfs |
 | ------------------------ | --------- | -------------- | --------- |
-| Streaming write          | 65 MiB/s  |                | 116 MiB/s |
+| Streaming write          | 65 MiB/s  | 50 MiB/s       | 116 MiB/s |
 | Extract linux-3.0.tar.gz | 26 s      | 24 s           | 8.7 s     |
 | ls -lR linux-3.0         | 2.5 s     | 3.2 s          | 8.6 s     |
 | Delete linux-3.0         | 5.3 s     | 4.7 s          | 8.8 s     |
