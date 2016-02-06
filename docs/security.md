@@ -10,9 +10,11 @@ Master Key Storage
 
 The master key is used to perform content and file name encryption.
 It is stored in `gocryptfs.conf`, encrypted with AES-256-GCM using the
-Key Encryption Key (KEK).
+Key Encryption Key (KEK). The KEK is generated from the user password
+using `scrypt`.
 
-The KEK is generated from the user password using `scrypt`.
+When mounting a filesystem, the user is prompted for the password and
+the master key is decrypted:
 
 ![](img/master-key.svg)
 
