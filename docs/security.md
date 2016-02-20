@@ -44,7 +44,7 @@ Every directory gets a 128-bit directory IV that is stored in each
 directory as `gocryptfs.diriv`.
 
 File names are encrypted using AES-256-EME (ECB-Mix-ECB wide-block encryption,
-see https://github.com/rfjakob/eme for details) with the directory IV
+see [github.com/rfjakob/eme](https://github.com/rfjakob/eme) for details) with the directory IV
 as initialization vector. EME fixes the prefix leak that occours with CBC
 encryption.
 
