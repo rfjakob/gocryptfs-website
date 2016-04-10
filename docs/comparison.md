@@ -89,7 +89,7 @@ File Names
 | Encryption               | EME [4]               | CBC                  | CBC                  | CBC      | SIV         | GCM (B+ dir DB) |
 | Prefix leak              | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (SIV)    | no (GCM)        |
 | Identical names leak     | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | yes [3]     | no (GCM)        |
-| Maximum name length [5]  | 176                   | 176                  | 176                  | 144      | 1026        | 255             |
+| Maximum name length [5]  | 255 {2}               | 176                  | 176                  | 144      | 1026        | 255             |
 | Directory flattening {1} | no                    | no                   | no                   | no       | yes         | yes             |
 
 References:
@@ -98,9 +98,11 @@ References:
 [[3]](https://github.com/cryptomator/cryptomator/issues/128)
 [[4]](https://github.com/rfjakob/eme)
 [[5]](https://gist.github.com/rfjakob/c70344e2e7a1d765af1f)
+[[6]]Since v0.9
 
 Notes:  
 {1} Is the directory tree flattened in the encrypted storage?
+{2} Since v0.9
 
 Performance
 -----------
