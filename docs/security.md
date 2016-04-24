@@ -51,3 +51,26 @@ encryption.
 ![](img/file-name-encryption.svg)
 
 The Base64 encoding limits the usable filename length to 176 characters.
+Filenames that are longer than that (longer than 255 characters in Base64-
+encoded form) use long file name handling (since gocrytfs v0.9).
+
+Long File Name Handling
+-----------------------
+
+If the Base64-encoded encrypted name is longer than 255 characters,
+it cannot be used as the file name on disk, as Linux filesystems
+do not allow names longer than that.
+
+Instead, the encrypted name is hashed, and the file content is stored in
+`gocryptfs.longname.[hash]`. The long file name is stored in a support
+file, `gocryptfs.longname.[hash].name`.
+
+![](img/longnames.svg)
+
+This method for storing long file names has zero performance impact
+for filenames that are <= 176 characters, incurs no extra disk accesses
+for opening a file with a long name, and just one extra file read for each
+long-name file on readdir(1).
+
+Because the hash is only taken from the encrypted file name, there is no
+security penalty for using long names.
