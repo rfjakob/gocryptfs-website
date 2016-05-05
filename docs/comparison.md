@@ -98,11 +98,10 @@ References:
 [[3]](https://github.com/cryptomator/cryptomator/issues/128)
 [[4]](https://github.com/rfjakob/eme)
 [[5]](https://gist.github.com/rfjakob/c70344e2e7a1d765af1f)
-[[6]]Since v0.9
 
 Notes:  
 {1} Is the directory tree flattened in the encrypted storage?
-{2} Since v0.9
+{2} Since gocryptfs v0.9
 
 Performance
 -----------
@@ -112,10 +111,10 @@ The CPU is an Intel Pentium G630 with 2 x 2.7GHz.
 
 |                          | gocryptfs | encfs default | encfs paranoia |  ecryptfs |  cryptomator  | securefs |
 | ------------------------ | --------- | ------------- | -------------- | --------- | ------------- | -------- |
-| Streaming write          | 90 MiB/s  | 104 MiB/s     | 56 MiB/s       | 130 MiB/s | 55 MiB/s      | 60 MiB/s |
-| Extract linux-3.0.tar.gz | 23 s      | 20 s          | 23 s           | 8.4 s     | 468 s {1} {2} | 25 s     |
+| Streaming write          | 103 MiB/s | 104 MiB/s     | 56 MiB/s       | 130 MiB/s | 55 MiB/s      | 60 MiB/s |
+| Extract linux-3.0.tar.gz | 22 s      | 20 s          | 23 s           | 8.4 s     | 468 s {1} {2} | 25 s     |
 | ls -lR linux-3.0         | 1.7 s     | 2.8 s         | 2.8 s          | 0.5 s     | 127 s {3}     | 4.2 s    |
-| Delete linux-3.0         | 4.2 s     | 3.9 s         | 4.1 s          | 0.5 s     | 376 s {3}     | 5.3 s    |
+| Delete linux-3.0         | 4.3 s     | 3.9 s         | 4.1 s          | 0.5 s     | 376 s {3}     | 5.3 s    |
 
 Repeating (a subset of) the tests on an Samsung 840 EVO SSD shows that ecryptfs falls behind in metadata reads
 because its complex file headers causes extra disk accesses {4}.
