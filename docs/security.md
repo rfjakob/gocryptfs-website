@@ -52,7 +52,7 @@ encryption.
 
 The Base64 encoding limits the usable filename length to 176 characters.
 Filenames that are longer than that (longer than 255 characters in Base64-
-encoded form) use long file name handling (since gocrytfs v0.9).
+encoded form) use long file name handling (since gocryptfs v0.9).
 
 Long File Name Handling
 -----------------------
