@@ -19,17 +19,17 @@ If you spot an error or want to see a project added, please
 Overview
 --------
 
-|                     |        gocryptfs        |                encfs                 |           ecryptfs          |               cryptomator                |      securefs      |
-| ------------------- | ----------------------- | ------------------------------------ | --------------------------- | ---------------------------------------- | ------------------ |
-| First release       | 2015 [1]                | 2003 [2]                             | 2006 [3]                    | 2014 [4]                                 | 2015 [10]          |
-| Language            | Go                      | C++                                  | C                           | Java                                     | C++                |
-| License             | MIT                     | LGPL/GPL [5]                         | GPL                         | MIT                                      | MIT                |
-| Development hotspot | Austria                 | USA                                  | UK (Canonical Ltd)          | Germany                                  | China              |
-| Lifecycle           | Active development      | Maintainance                         | Active development [9]      | Active development                       | Active development |
-| File interface      | FUSE                    | FUSE                                 | in-kernel filesystem        | WebDAV                                   | FUSE               |
-| Platforms           | Linux (OSX planned [7]) | Linux, OSX; third-party Windows port | Linux only                  | Linux, OSX, Windows                      | Linux, OSX         |
-| User interface      | Command line only       | Command line; third-party graphical  | Integrated in login process | Graphical only; Command line planned [8] | Command line only  |
-| Lines of Code {1}   | 3,442                   | 9,320                                | 7,662 {2}                   | 9,921                                    | 4,704 {3}          |
+|                     |                       gocryptfs                       |                encfs                 |           ecryptfs          |               cryptomator                |      securefs      |
+| ------------------- | ----------------------------------------------------- | ------------------------------------ | --------------------------- | ---------------------------------------- | ------------------ |
+| First release       | 2015 [1]                                              | 2003 [2]                             | 2006 [3]                    | 2014 [4]                                 | 2015 [10]          |
+| Language            | Go                                                    | C++                                  | C                           | Java                                     | C++                |
+| License             | MIT                                                   | LGPL/GPL [5]                         | GPL                         | MIT                                      | MIT                |
+| Development hotspot | Austria                                               | USA                                  | UK (Canonical Ltd)          | Germany                                  | China              |
+| Lifecycle           | Active development                                    | Maintainance                         | Active development [9]      | Active development                       | Active development |
+| File interface      | FUSE                                                  | FUSE                                 | in-kernel filesystem        | WebDAV                                   | FUSE               |
+| Platforms           | Linux, third-party Windows port [11], OSX planned [7] | Linux, OSX, third-party Windows port | Linux only                  | Linux, OSX, Windows                      | Linux, OSX         |
+| User interface      | Command line only                                     | Command line; third-party graphical  | Integrated in login process | Graphical only; Command line planned [8] | Command line only  |
+| Lines of Code {1}   | 3,442                                                 | 9,320                                | 7,662 {2}                   | 9,921                                    | 4,704 {3}          |
 
 References:
 [[1]](https://github.com/rfjakob/gocryptfs/releases/tag/v0.1)
@@ -42,6 +42,7 @@ References:
 [[8]](https://github.com/cryptomator/cryptomator/issues/43)
 [[9]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/fs/ecryptfs)
 [[10]](https://github.com/netheril96/securefs/releases/tag/v0.10)
+[[11]](https://github.com/bailey27/cppcryptfs)
 
 Notes:  
 {1} All computed using `cloc`  
@@ -100,14 +101,16 @@ References:
 [[5]](https://gist.github.com/rfjakob/c70344e2e7a1d765af1f)
 
 Notes:  
-{1} Is the directory tree flattened in the encrypted storage?
-{2} Since gocryptfs v0.9
+{1} Is the directory tree flattened in the encrypted storage? This
+    obfuscates the directory structure but can cause problems when
+    synchronising via Dropbox and similar.
+{2} 255 since gocryptfs v0.9, 176 in v0.8 and earlier
 
 Performance
 -----------
 
 All tests are run on tmpfs rule out any influence of the hard disk.
-The CPU is an Intel Pentium G630 with 2 x 2.7GHz.
+The CPU is an Intel Pentium G630 with 2 x 2.7GHz that does NOT have AES instructions.
 
 |                          | gocryptfs | encfs default | encfs paranoia |  ecryptfs |  cryptomator  | securefs |
 | ------------------------ | --------- | ------------- | -------------- | --------- | ------------- | -------- |
