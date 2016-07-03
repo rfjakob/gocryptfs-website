@@ -153,3 +153,18 @@ Notes:
 
 References:
 [[1]](https://github.com/cryptomator/cryptomator/issues/128#issuecomment-169056079)
+
+Filesystem Features
+-------------------
+
+Note: To keep the work of maintaining this table under control, I have only tested gocryptfs,
+encfs and ecryptfs. Please file a pull request if you can test the other projects!
+
+The backing filesystem is assumed to be ext4.
+
+|                      | ext4 | gocryptfs | encfs default | encfs paranoia | ecryptfs |
+| -------------------- | ---- | --------- | ------------- | -------------- | -------- |
+| hard links           | yes  | yes       | yes           | no             | yes      |
+| fallocate            | yes  | yes       | no            | no             | no       |
+| fallocate KEEP_SIZE  | yes  | yes       | no            | no             | no       |
+| fallocate PUNCH_HOLE | yes  | no        | no            | no             | no       |
