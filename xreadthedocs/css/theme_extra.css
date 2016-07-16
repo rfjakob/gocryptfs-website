@@ -224,3 +224,10 @@ thead {
   white-space: normal !important;
   vertical-align: top !important;
 }
+
+
+div.wy-nav-content {
+	/* The tables on the comparison page have gotten too big for the
+	   default of 800px */
+	max-width: 900px;
+}
