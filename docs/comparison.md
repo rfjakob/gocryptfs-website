@@ -32,6 +32,7 @@ Overview
 | Platforms           | Linux, 3rd-party Windows port [11], OSX in progress [7] | Linux, OSX, 3rd-party Windows port | Linux only                  | Linux, OSX, Windows       | Linux, OSX | Linux              |
 | User interface      | CLI                                                     | CLI; 3rd-party GUI                 | Integrated in login process | GUI only; CLI planned [8] | CLI        | CLI, 3rd-party GUI |
 | Lines of Code {1}   | 5,109                                                   | 9,320                              | 7,662 {2}                   | 9,921                     | 4,704 {3}  | 30,036 {4}         |
+| Reverse Mode        | no [12]                                                 | yes                                | no                          | no                        | no         | no                 |
 
 References:
 [[1]](https://github.com/rfjakob/gocryptfs/releases/tag/v0.1)
@@ -45,6 +46,7 @@ References:
 [[9]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/fs/ecryptfs)
 [[10]](https://github.com/netheril96/securefs/releases/tag/v0.10)
 [[11]](https://github.com/bailey27/cppcryptfs)
+[[12]](https://github.com/rfjakob/gocryptfs/issues/19)
 
 Notes:  
 {1} All computed using `cloc`  
