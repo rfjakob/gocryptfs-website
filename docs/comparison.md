@@ -55,7 +55,8 @@ Notes:
 "cloc btree_dir.h commands.h exceptions.h file_table.h files.h logger.h operations.h streams.h
 utils.h xattr_compat.h btree_dir.cpp commands.cpp file_table.cpp files.cpp logger.cpp
 operations.cpp streams.cpp utils.cpp"
-and contains the files actually comprising securefs as [stated by the author](https://github.com/netheril96/securefs/issues/2#issuecomment-170349572).  
+and contains the files actually comprising securefs as
+[stated by the author](https://github.com/netheril96/securefs/issues/2#issuecomment-170349572).  
 {4} `cloc . --exclude-dir=vendor`
 
 General Security
@@ -105,13 +106,13 @@ References:
 [[2]](https://gist.github.com/rfjakob/61a17bf3c7eb9932d791)
 [[3]](https://github.com/cryptomator/cryptomator/issues/128)
 [[4]](https://github.com/rfjakob/eme)
-[[5]](https://gist.github.com/rfjakob/c70344e2e7a1d765af1f)
+[[5]](https://github.com/rfjakob/gocryptfs/blob/master/tests/maxlen.bash)
 
 Notes:  
 {1} Is the directory tree flattened in the encrypted storage? This
     obfuscates the directory structure but can cause problems when
-    synchronising via Dropbox and similar.
-{2} 255 since gocryptfs v0.9, 176 in v0.8 and earlier
+    synchronising via Dropbox and similar.  
+{2} 256 since gocryptfs v0.9, 176 in v0.8 and earlier
 
 Performance
 -----------
@@ -140,7 +141,7 @@ Notes:
 {1} All file acesses to cryptomator go through the WebDAV protocol, which is less performance-oriented than FUSE.  
 However, an optimized WebDAV client may be able to significantly speed up small-file workloads.  
 {2} Tested with the dave cli WebDAV client, which gave better speed than gvfs (Gnome built-in) and davfs2  
-{3} Tested with gvfs in the `/run/user/.../gvfs/dav:...` mount
+{3} Tested with gvfs in the `/run/user/.../gvfs/dav:...` mount  
 {4} Caches are cleared between each test using `echo 3 > /proc/sys/vm/drop_caches`
 
 Disk Space Efficiency
@@ -157,7 +158,7 @@ Disk Space Efficiency
 
 Notes:  
 {1} cryptomator adds a random padding which is why the resulting size is non-deterministic.  
-{2} securefs stores data and crypto metadata (nonces + GHASH) in separate files. The sum of both is shown here.
+{2} securefs stores data and crypto metadata (nonces + GHASH) in separate files. The sum of both is shown here.  
 {3} Measured using "du -sm" on the encrypted directory. The backing filesystem is tmpfs.
 
 References:
