@@ -21,18 +21,18 @@ If you spot an error or want to see a project added, please
 Overview
 --------
 
-|                     |                        gocryptfs                        |               encfs                |           ecryptfs          |        cryptomator        |  securefs  |       CryFS        |
-| ------------------- | ------------------------------------------------------- | ---------------------------------- | --------------------------- | ------------------------- | ---------- | ------------------ |
-| First release       | 2015 [1]                                                | 2003 [2]                           | 2006 [3]                    | 2014 [4]                  | 2015 [10]  | 2015               |
-| Language            | Go                                                      | C++                                | C                           | Java                      | C++        | C++                |
-| License             | MIT                                                     | LGPL/GPL [5]                       | GPL                         | MIT                       | MIT        | LGPL               |
-| Development hotspot | Austria                                                 | USA                                | UK (Canonical Ltd)          | Germany                   | China      | Germany            |
-| Lifecycle           | Active                                                  | Maintainance                       | Active  [9]                 | Active                    | Active     | Active             |
-| File interface      | FUSE                                                    | FUSE                               | in-kernel filesystem        | WebDAV                    | FUSE       | FUSE               |
-| Platforms           | Linux, 3rd-party Windows port [11], OSX in progress [7] | Linux, OSX, 3rd-party Windows port | Linux only                  | Linux, OSX, Windows       | Linux, OSX | Linux              |
-| User interface      | CLI                                                     | CLI; 3rd-party GUI                 | Integrated in login process | GUI only; CLI planned [8] | CLI        | CLI, 3rd-party GUI |
-| Lines of Code {1}   | 5,109                                                   | 9,320                              | 7,662 {2}                   | 9,921                     | 4,704 {3}  | 30,036 {4}         |
-| Reverse Mode        | no [12]                                                 | yes                                | no                          | no                        | no         | no                 |
+|                     |                                 gocryptfs                                 |               encfs                |           ecryptfs          |        cryptomator        |  securefs  |       CryFS        |
+| ------------------- | ------------------------------------------------------------------------- | ---------------------------------- | --------------------------- | ------------------------- | ---------- | ------------------ |
+| First release       | 2015 [1]                                                                  | 2003 [2]                           | 2006 [3]                    | 2014 [4]                  | 2015 [10]  | 2015               |
+| Language            | Go                                                                        | C++                                | C                           | Java                      | C++        | C++                |
+| License             | MIT                                                                       | LGPL/GPL [5]                       | GPL                         | MIT                       | MIT        | LGPL               |
+| Development hotspot | Austria                                                                   | USA                                | UK (Canonical Ltd)          | Germany                   | China      | Germany            |
+| Lifecycle           | Active                                                                    | Maintainance                       | Active  [9]                 | Active                    | Active     | Active             |
+| File interface      | FUSE                                                                      | FUSE                               | in-kernel filesystem        | WebDAV                    | FUSE       | FUSE               |
+| Platforms           | Linux, 3rd-party Windows port [11], OSX in progress [7]                   | Linux, OSX, 3rd-party Windows port | Linux only                  | Linux, OSX, Windows       | Linux, OSX | Linux              |
+| User interface      | CLI; 3rd-party GUI: [cryfs-gui](http://mhogomchungu.github.io/cryfs-gui/) | CLI; 3rd-party GUI                 | Integrated in login process | GUI only; CLI planned [8] | CLI        | CLI, 3rd-party GUI |
+| Lines of Code {1}   | 5,109                                                                     | 9,320                              | 7,662 {2}                   | 9,921                     | 4,704 {3}  | 30,036 {4}         |
+| Reverse Mode        | no [12]                                                                   | yes                                | no                          | no                        | no         | no                 |
 
 References:
 [[1]](https://github.com/rfjakob/gocryptfs/releases/tag/v0.1)
