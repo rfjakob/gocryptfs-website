@@ -167,8 +167,9 @@ References:
 Filesystem Features
 -------------------
 
-Note: To keep the work of maintaining this table under control, I have only tested gocryptfs,
-encfs and ecryptfs. Please file a pull request if you can test the other projects!
+Note: To keep the work of maintaining this table under control, I have only
+tested selected projects with respect to filesystem features.
+Please file a pull request if you can test the other projects!
 
 The backing filesystem is assumed to be ext4.
 
