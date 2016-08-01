@@ -144,7 +144,7 @@ However, an optimized WebDAV client may be able to significantly speed up small-
 {3} Tested with gvfs in the `/run/user/.../gvfs/dav:...` mount  
 {4} Caches are cleared between each test using `echo 3 > /proc/sys/vm/drop_caches`  
 {5} Tested against securefs v0.5.2  
-{5} Tested against CryFS v0.9.5  
+{6} Tested against CryFS v0.9.5  
 
 Disk Space Efficiency
 ---------------------
