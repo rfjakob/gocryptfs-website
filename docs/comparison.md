@@ -98,7 +98,7 @@ File Names
 | Encryption               | EME [4]               | CBC                  | CBC                  | CBC      | SIV         | GCM (B+ dir DB) | GCM (dir DB) |
 | Prefix leak              | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (SIV)    | no (GCM)        | no (GCM)     |
 | Identical names leak     | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | yes [3]     | no (GCM)        | no (GCM)     |
-| Maximum name length [5]  | 256 {2}               | 176                  | 176                  | 144      | 1026        | 255             | 1025         |
+| Maximum name length [5]  | 256 {2}               | 176                  | 176                  | 144      | 1026        | 256             | 1025         |
 | Directory flattening {1} | no                    | no                   | no                   | no       | yes         | yes             | yes          |
 
 References:
