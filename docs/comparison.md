@@ -120,12 +120,12 @@ Performance
 All tests are run on tmpfs rule out any influence of the hard disk.
 The CPU is an Intel Pentium G630 with 2 x 2.7GHz that does NOT have AES instructions.
 
-|                          | gocryptfs | encfs default | encfs paranoia |  ecryptfs |  cryptomator  | securefs |  CryFS   |
-| ------------------------ | --------- | ------------- | -------------- | --------- | ------------- | -------- | -------- |
-| Streaming write          | 103 MiB/s | 104 MiB/s     | 56 MiB/s       | 130 MiB/s | 55 MiB/s      | 60 MiB/s | 78 MiB/s |
-| Extract linux-3.0.tar.gz | 22 s      | 20 s          | 23 s           | 8.4 s     | 468 s {1} {2} | 25 s     | 40 s     |
-| ls -lR linux-3.0         | 1.7 s     | 2.8 s         | 2.8 s          | 0.5 s     | 127 s {3}     | 4.2 s    | 16.8 s   |
-| Delete linux-3.0         | 4.3 s     | 3.9 s         | 4.1 s          | 0.5 s     | 376 s {3}     | 5.3 s    | 20.4 s   |
+|                          | gocryptfs | encfs default | encfs paranoia |  ecryptfs |  cryptomator  | securefs {5} |CryFS {6} |
+| ------------------------ | --------- | ------------- | -------------- | --------- | ------------- | ------------ | -------- |
+| Streaming write          | 103 MiB/s | 104 MiB/s     | 56 MiB/s       | 130 MiB/s | 55 MiB/s      | 96 MiB/s     | 78 MiB/s |
+| Extract linux-3.0.tar.gz | 22 s      | 20 s          | 23 s           | 8.4 s     | 468 s {1} {2} | 21 s         | 40 s     |
+| ls -lR linux-3.0         | 1.7 s     | 2.8 s         | 2.8 s          | 0.5 s     | 127 s {3}     | 5.3 s        | 16.8 s   |
+| Delete linux-3.0         | 4.3 s     | 3.9 s         | 4.1 s          | 0.5 s     | 376 s {3}     | 4.5 s        | 20.4 s   |
 
 Repeating (a subset of) the tests on an Samsung 840 EVO SSD shows that ecryptfs falls behind in metadata reads
 because its complex file headers causes extra disk accesses {4}.
@@ -142,7 +142,9 @@ Notes:
 However, an optimized WebDAV client may be able to significantly speed up small-file workloads.  
 {2} Tested with the dave cli WebDAV client, which gave better speed than gvfs (Gnome built-in) and davfs2  
 {3} Tested with gvfs in the `/run/user/.../gvfs/dav:...` mount  
-{4} Caches are cleared between each test using `echo 3 > /proc/sys/vm/drop_caches`
+{4} Caches are cleared between each test using `echo 3 > /proc/sys/vm/drop_caches`  
+{5} Tested against securefs v0.5.2  
+{5} Tested against CryFS v0.9.5  
 
 Disk Space Efficiency
 ---------------------
