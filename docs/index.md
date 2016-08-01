@@ -19,7 +19,7 @@ by the available disk space.
 
 This project was inspired by EncFS and strives to fix its security
 issues while providing good performance,
-see the [Comparison](comparison#performance) page for benchmarks.
+see the [Comparison](comparison) page for benchmarks.
 
 The [Security](security) page details gocryptfs's cryptographic design.
 The highlights are: Scrypt password hashing, GCM encryption for all
