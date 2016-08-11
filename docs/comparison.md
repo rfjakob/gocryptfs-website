@@ -30,7 +30,7 @@ Overview
 | Lifecycle           | Active                                                                    | Maintainance                       | Active  [9]                 | Active                    | Active     | Active             |
 | File interface      | FUSE                                                                      | FUSE                               | in-kernel filesystem        | WebDAV                    | FUSE       | FUSE               |
 | Platforms           | Linux, 3rd-party Windows port [11], OSX in progress [7]                   | Linux, OSX, 3rd-party Windows port | Linux only                  | Linux, OSX, Windows       | Linux, OSX | Linux              |
-| User interface      | CLI; 3rd-party GUI: [cryfs-gui](http://mhogomchungu.github.io/cryfs-gui/) | CLI; 3rd-party GUI                 | Integrated in login process | GUI only; CLI planned [8] | CLI        | CLI, 3rd-party GUI |
+| User interface      | CLI; 3rd-party GUI: [SiriKali](https://mhogomchungu.github.io/sirikali/)  | CLI; 3rd-party GUI                 | Integrated in login process | GUI only; CLI planned [8] | CLI        | CLI, 3rd-party GUI |
 | Lines of Code {1}   | 5,109                                                                     | 9,320                              | 7,662 {2}                   | 9,921                     | 4,704 {3}  | 30,036 {4}         |
 | Reverse Mode        | no [12]                                                                   | yes                                | no                          | no                        | no         | no                 |
 
