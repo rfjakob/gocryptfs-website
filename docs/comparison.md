@@ -98,7 +98,7 @@ File Names
 | Encryption               | EME [4]               | CBC                  | CBC                  | CBC      | SIV         | GCM (B+ dir DB) | GCM (dir DB) |
 | Prefix leak              | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (SIV)    | no (GCM)        | no (GCM)     |
 | Identical names leak     | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | yes [3]     | no (GCM)        | no (GCM)     |
-| Maximum name length [5]  | 256 {2}               | 176                  | 176                  | 144      | 1026        | 256             | 1025         |
+| Maximum name length [5]  | 255 {2}               | 175                  | 175                  | 143      | 1025        | 255             | 1025         |
 | Directory flattening {1} | no                    | no                   | no                   | no       | yes         | yes             | yes          |
 
 References:
@@ -112,7 +112,7 @@ Notes:
 {1} Is the directory tree flattened in the encrypted storage? This
     obfuscates the directory structure but can cause problems when
     synchronising via Dropbox and similar.  
-{2} 256 since gocryptfs v0.9, 176 in v0.8 and earlier
+{2} 255 since gocryptfs v0.9, 175 in v0.8 and earlier
 
 Performance
 -----------
