@@ -31,8 +31,8 @@ Overview
 | File interface      | FUSE                                                                      | FUSE                               | in-kernel filesystem        | WebDAV                    | FUSE       | FUSE               |
 | Platforms           | Linux, 3rd-party Windows port [11], OSX in progress [7]                   | Linux, OSX, 3rd-party Windows port | Linux only                  | Linux, OSX, Windows       | Linux, OSX | Linux              |
 | User interface      | CLI; 3rd-party GUI: [SiriKali](https://mhogomchungu.github.io/sirikali/)  | CLI; 3rd-party GUI                 | Integrated in login process | GUI only; CLI planned [8] | CLI        | CLI, 3rd-party GUI |
-| Lines of Code {1}   | 5,109                                                                     | 9,320                              | 7,662 {2}                   | 9,921                     | 4,704 {3}  | 30,036 {4}         |
-| Reverse Mode        | no [12]                                                                   | yes                                | no                          | no                        | no         | no                 |
+| Lines of Code {1}   | 6,343                                                                     | 9,320                              | 7,662 {2}                   | 9,921                     | 4,704 {3}  | 30,036 {4}         |
+| Reverse Mode        | yes (since v1.1)                                                          | yes                                | no                          | no                        | no         | no                 |
 
 References:
 [[1]](https://github.com/rfjakob/gocryptfs/releases/tag/v0.1)
@@ -98,7 +98,7 @@ File Names
 | Encryption               | EME [4]               | CBC                  | CBC                  | CBC      | SIV         | GCM (B+ dir DB) | GCM (dir DB) |
 | Prefix leak              | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (SIV)    | no (GCM)        | no (GCM)     |
 | Identical names leak     | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | yes [3]     | no (GCM)        | no (GCM)     |
-| Maximum name length [5]  | 255 {2}               | 175                  | 175                  | 143      | 1025        | 255             | 1025         |
+| Maximum name length [5]  | 255 (since v0.9) {2}  | 175                  | 175                  | 143      | 1025        | 255             | 1025         |
 | Directory flattening {1} | no                    | no                   | no                   | no       | yes         | yes             | yes          |
 
 References:
@@ -181,3 +181,4 @@ The backing filesystem is assumed to be ext4.
 | fallocate            | yes  | yes       | no            | no             | no       | no    |
 | fallocate KEEP_SIZE  | yes  | yes       | no            | no             | no       | no    |
 | fallocate PUNCH_HOLE | yes  | no        | no            | no             | no       | no    |
+
