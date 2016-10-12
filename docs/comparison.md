@@ -157,7 +157,7 @@ Disk Space Efficiency
 | Empty file                | 0         | 0             | 0              | 8,192     | 88                        | 112          | 32,768    |
 | 1 byte file               | 51        | 9             | 17             | 12,288    | 137                       | 161          | 32,768    |
 | 1,000,000 bytes file      | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,576                 | 1,011,872    | 1,048,576 |
-| linux-3.0 source tree {3} | 498 MiB   | 485 MiB       | 488 MiB        | 784 MiB   | (not tested)              | (not tested) | 1470 MiB  |
+| linux-3.0 source tree {3} | 498 MiB   | 485 MiB       | 488 MiB        | 784 MiB   | 498 MiB                   | (not tested) | 1470 MiB  |
 
 Notes:  
 {1} cryptomator dropped the use of a random padding in v1.2.0 due to performance concerns.  
