@@ -84,11 +84,12 @@ File Contents
 | --------------------- | --------- | ----------------------- | ----------------------- | --------------------- | ---------------------- | -------- | --------------------- |
 | Encryption            | GCM       | CBC; last block CFB [1] | CBC; last block CFB [1] | CBC                   | CTR with random IV [2] | GCM      | GCM                   |
 | Integrity             | GCM       | none                    | HMAC                    | none                  | HMAC                   | GCM      | GCM                   |
-| File size obfuscation | no        | no                      | no                      | yes (4 KB increments) | yes (random padding)   | no       | yes (chunked storage) |
+| File size obfuscation | no        | no                      | no                      | yes (4 KB increments) | no [3]                 | no       | yes (chunked storage) |
 
 References:
 [[1]](https://github.com/vgough/encfs/issues/9)
 [[2]](https://github.com/cryptomator/cryptomator/issues/128#issuecomment-168942517)
+[[3]](https://github.com/cryptomator/cryptomator/releases/tag/1.2.0)
 
 File Names
 ----------
@@ -153,13 +154,13 @@ Disk Space Efficiency
 
 |                           | gocryptfs | encfs default | encfs paranoia |  ecryptfs |      cryptomator {1}      | securefs {2} |   CryFS   |
 | ------------------------- | --------- | ------------- | -------------- | --------- | ------------------------- | ------------ | --------- |
-| Empty file                | 0         | 0             | 0              | 8,192     | 104 - 4,231               | 112          | 32,768    |
-| 1 byte file               | 51        | 9             | 17             | 12,288    | 104 - 4,231               | 161          | 32,768    |
-| 1,000,000 bytes file      | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,096 - 1,101,192 [1] | 1,011,872    | 1,048,576 |
+| Empty file                | 0         | 0             | 0              | 8,192     | 88                        | 112          | 32,768    |
+| 1 byte file               | 51        | 9             | 17             | 12,288    | 137                       | 161          | 32,768    |
+| 1,000,000 bytes file      | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,576                 | 1,011,872    | 1,048,576 |
 | linux-3.0 source tree {3} | 498 MiB   | 485 MiB       | 488 MiB        | 784 MiB   | (not tested)              | (not tested) | 1470 MiB  |
 
 Notes:  
-{1} cryptomator adds a random padding which is why the resulting size is non-deterministic.  
+{1} cryptomator dropped the use of a random padding in v1.2.0 due to performance concerns.  
 {2} securefs stores data and crypto metadata (nonces + GHASH) in separate files. The sum of both is shown here.  
 {3} Measured using "du -sm" on the encrypted directory. The backing filesystem is tmpfs.
 
