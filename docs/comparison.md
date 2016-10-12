@@ -98,14 +98,14 @@ File Names
 | ------------------------ | --------------------- | -------------------- | -------------------- | -------- | ----------- | --------------- | ------------ |
 | Encryption               | EME [4]               | CBC                  | CBC                  | CBC      | SIV         | GCM (B+ dir DB) | GCM (dir DB) |
 | Prefix leak              | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (SIV)    | no (GCM)        | no (GCM)     |
-| Identical names leak     | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | yes [3]     | no (GCM)        | no (GCM)     |
+| Identical names leak     | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | no [3]      | no (GCM)        | no (GCM)     |
 | Maximum name length [5]  | 255 (since v0.9) {2}  | 175                  | 175                  | 143      | 1025        | 255             | 1025         |
 | Directory flattening {1} | no                    | no                   | no                   | no       | yes         | yes             | yes          |
 
 References:
 [[1]](https://gist.github.com/rfjakob/a04364c55b3ee231078d)
 [[2]](https://gist.github.com/rfjakob/61a17bf3c7eb9932d791)
-[[3]](https://github.com/cryptomator/cryptomator/issues/128)
+[[3]](https://github.com/cryptomator/cryptomator/commit/3b178030c7a6001c1d070ee181aaae71f760d33f)
 [[4]](https://github.com/rfjakob/eme)
 [[5]](https://github.com/rfjakob/gocryptfs/blob/master/tests/maxlen.bash)
 
