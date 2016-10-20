@@ -8,7 +8,8 @@ The primary git repository is hosted on Github. Clone using:
 
     git clone https://github.com/rfjakob/gocryptfs.git
 
-The webinterface is at https://github.com/rfjakob/gocryptfs .
+The webinterface is at
+[https://github.com/rfjakob/gocryptfs](https://github.com/rfjakob/gocryptfs) .
 
 2) Private Mirror
 -----------------
@@ -18,4 +19,5 @@ It is updated every hour. Clone with:
 
     git clone git://nuetzlich.net/gocryptfs
 
-A cgit webinterface is available at https://nuetzlich.net/cgit/gocryptfs/ .
+A cgit webinterface is available at
+[https://nuetzlich.net/cgit/gocryptfs/](https://nuetzlich.net/cgit/gocryptfs/) .
