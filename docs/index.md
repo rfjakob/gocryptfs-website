@@ -27,8 +27,9 @@ file contents, EME wide-block encryption for file names with a per-directory
 IV.
 
 gocryptfs has reached version 1.0 on Jul 17, 2016. It has gone through
-hours and hours of stress (fsstress, extractloop.bash) and correctness
-testing (xfstests). It is now considered ready for general consumption.
+hours and hours of stress (fsstress, `tests/stress_tests`) and correctness
+testing (xfstests, integrated test suite).
+It is now considered ready for general consumption.
 
 The old principle still applies: Important data should have a backup.
 Also, keep a copy of your master key (printed on mount) in a safe place.
@@ -41,3 +42,12 @@ but seems to mostly work. please chime in in the
 if you are interested.
 
 gocryptfs is, and always will be, free software.
+
+News
+----
+
+2016-10-30  
+Added description of [Reverse Mode](reverse_mode) to the website
+
+2016-10-30  
+Bugfix release v1.1.1, [changelog](https://github.com/rfjakob/gocryptfs#changelog)
