@@ -52,8 +52,8 @@ this means that the directory IV in the root directory is always
 derivePathIV: Derive IVs from Encrypted Paths
 ----------------------------------------------
 
-derivePathIV concatenates that encrypted path with a null byte and a
-salt string, one of "DIRIV", "FILEID", "BLOCK0IV". The truncated
-SHA256-hashes of each are the outputs.
+derivePathIV concatenates the encrypted path with a null byte and a
+salt string (one of "DIRIV", "FILEID", "BLOCK0IV"). This is
+is hashed with SHA256 and truncated to 128 bits.
 
 ![](img/reverse-derivePathIV.svg)
