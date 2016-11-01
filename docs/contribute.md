@@ -12,7 +12,8 @@ Check out the open [feature requests](https://github.com/rfjakob/gocryptfs/issue
 assistance is available.
 
 There are no CLAs to sign or anything, just get going and send a pull
-request.
+request. You'll probably learn more than you ever wanted to know about
+low-level filesystem operations ;)
 
 Money
 -----
