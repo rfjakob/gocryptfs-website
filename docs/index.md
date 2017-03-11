@@ -46,6 +46,14 @@ gocryptfs is, and always will be, free software.
 News
 ----
 
+2017-03-10  
+Taylor Hornby of defuse.ca releases a cryptography design audit of gocryptfs:
+[announcement](https://twitter.com/DefuseSec/status/840239275740405761),
+[audit](https://defuse.ca/audits/gocryptfs.htm)
+
+2016-12-04  
+Release v1.2 [changelog](https://github.com/rfjakob/gocryptfs#changelog)
+
 2016-10-30  
 Added description of [Reverse Mode](reverse_mode) to the website
 
