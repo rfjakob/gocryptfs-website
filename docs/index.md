@@ -46,6 +46,12 @@ gocryptfs is, and always will be, free software.
 News
 ----
 
+2017-06-20  
+Release [v1.4](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2017-04-29  
+Release [v1.3](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
 2017-03-10  
 Taylor Hornby of defuse.ca releases a cryptography design audit of gocryptfs:
 [announcement](https://twitter.com/DefuseSec/status/840239275740405761),
