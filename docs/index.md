@@ -54,7 +54,7 @@ Release [v1.4](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https
 
 2017-06-17  
 Debian 9 "Stretch" is released, including gocryptfs v1.2:
-https://packages.debian.org/stretch/gocryptfs
+[https://packages.debian.org/stretch/gocryptfs](https://packages.debian.org/stretch/gocryptfs)
 
 2017-04-29  
 Release [v1.3](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
