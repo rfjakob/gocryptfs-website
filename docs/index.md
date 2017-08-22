@@ -36,10 +36,9 @@ Also, keep a copy of your master key (printed on mount) in a safe place.
 This allows you to access the data even if the gocryptfs.conf config
 file is damaged or you lose the password.
 
-Only Linux is fully supported at the moment. OSX support is experimental
-but seems to mostly work. please chime in in the
-["Mac OS X support" ticket](https://github.com/rfjakob/gocryptfs/issues/15)
-if you are interested.
+Linux is fully supported. Beta-quality MacOS support is available, which
+means things usually work fine, but you may hit the odd issue (please
+file a ticket if you do!).
 
 gocryptfs is, and always will be, free software.
 
