@@ -52,6 +52,10 @@ Release [v1.4.1](https://github.com/rfjakob/gocryptfs/releases) ([changelog](htt
 2017-06-20  
 Release [v1.4](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
+2017-06-17  
+Debian 9 "Stretch" is released, including gocryptfs v1.2:
+https://packages.debian.org/stretch/gocryptfs
+
 2017-04-29  
 Release [v1.3](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
@@ -61,7 +65,7 @@ Taylor Hornby of defuse.ca releases a cryptography design audit of gocryptfs:
 [audit](https://defuse.ca/audits/gocryptfs.htm)
 
 2016-12-04  
-Release v1.2 [changelog](https://github.com/rfjakob/gocryptfs#changelog)
+Release v1.2 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
 2016-10-30  
 Added description of [Reverse Mode](reverse_mode) to the website
