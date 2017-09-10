@@ -21,18 +21,114 @@ If you spot an error or want to see a project added, please
 Overview
 --------
 
-|                     |                                 gocryptfs                                 |               encfs                |           ecryptfs          |        cryptomator        |  securefs  |       CryFS        |
-| ------------------- | ------------------------------------------------------------------------- | ---------------------------------- | --------------------------- | ------------------------- | ---------- | ------------------ |
-| First release       | 2015 [1]                                                                  | 2003 [2]                           | 2006 [3]                    | 2014 [4]                  | 2015 [10]  | 2015               |
-| Language            | Go                                                                        | C++                                | C                           | Java                      | C++        | C++                |
-| License             | MIT                                                                       | LGPL/GPL [5]                       | GPL                         | MIT                       | MIT        | LGPL               |
-| Development hotspot | Austria                                                                   | USA                                | UK (Canonical Ltd)          | Germany                   | China      | Germany            |
-| Lifecycle           | Active                                                                    | Maintainance                       | Active  [9]                 | Active                    | Active     | Active             |
-| File interface      | FUSE                                                                      | FUSE                               | in-kernel filesystem        | WebDAV                    | FUSE       | FUSE               |
-| Platforms           | Linux, 3rd-party Windows port [11], OSX in progress [7]                   | Linux, OSX, 3rd-party Windows port | Linux only                  | Linux, OSX, Windows       | Linux, OSX | Linux              |
-| User interface      | CLI; 3rd-party GUI: [SiriKali](https://mhogomchungu.github.io/sirikali/)  | CLI; 3rd-party GUI                 | Integrated in login process | GUI only; CLI planned [8] | CLI        | CLI, 3rd-party GUI |
-| Lines of Code {1}   | 6,343                                                                     | 9,320                              | 7,662 {2}                   | 9,921                     | 4,704 {3}  | 30,036 {4}         |
-| Reverse Mode        | yes (since v1.1)                                                          | yes                                | no                          | no                        | no         | no                 |
+<!--
+The comparison table is too wide in markdown syntax to be edited sanely,
+which is why I converted it to html.
+Still, I recommend to edit it via a graphical editor like
+http://www.tablesgenerator.com/html_tables .
+-->
+
+<table>
+  <tr>
+    <th></th>
+    <th>gocryptfs</th>
+    <th>encfs</th>
+    <th>ecryptfs</th>
+    <th>cryptomator</th>
+    <th>securefs</th>
+    <th>CryFS</th>
+  </tr>
+  <tr>
+    <td>First release</td>
+    <td>2015 [1]</td>
+    <td>2003 [2]</td>
+    <td>2006 [3]</td>
+    <td>2014 [4]</td>
+    <td>2015 [10]</td>
+    <td>2015</td>
+  </tr>
+  <tr>
+    <td>Language</td>
+    <td>Go</td>
+    <td>C++</td>
+    <td>C</td>
+    <td>Java</td>
+    <td>C++</td>
+    <td>C++</td>
+  </tr>
+  <tr>
+    <td>License</td>
+    <td>MIT</td>
+    <td>LGPL/GPL [5]</td>
+    <td>GPL</td>
+    <td>MIT</td>
+    <td>MIT</td>
+    <td>LGPL</td>
+  </tr>
+  <tr>
+    <td>Development hotspot</td>
+    <td>Austria</td>
+    <td>USA</td>
+    <td>UK (Canonical Ltd)</td>
+    <td>Germany</td>
+    <td>China</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Lifecycle</td>
+    <td>Active</td>
+    <td>Maintainance</td>
+    <td>Active  [9]</td>
+    <td>Active</td>
+    <td>Active</td>
+    <td>Active</td>
+  </tr>
+  <tr>
+    <td>File interface</td>
+    <td>FUSE</td>
+    <td>FUSE</td>
+    <td>in-kernel filesystem</td>
+    <td>WebDAV</td>
+    <td>FUSE</td>
+    <td>FUSE</td>
+  </tr>
+  <tr>
+    <td>Platforms</td>
+    <td>Linux, 3rd-party Windows port [11], OSX in progress [7]</td>
+    <td>Linux, OSX, 3rd-party Windows port</td>
+    <td>Linux only</td>
+    <td>Linux, OSX, Windows</td>
+    <td>Linux, OSX</td>
+    <td>Linux</td>
+  </tr>
+  <tr>
+    <td>User interface</td>
+    <td>CLI; 3rd-party GUI: [SiriKali](https://mhogomchungu.github.io/sirikali/)</td>
+    <td>CLI; 3rd-party GUI</td>
+    <td>Integrated in login process</td>
+    <td>GUI only; CLI planned [8]</td>
+    <td>CLI</td>
+    <td>CLI, 3rd-party GUI</td>
+  </tr>
+  <tr>
+    <td>Lines of Code {1}</td>
+    <td>6,343</td>
+    <td>9,320</td>
+    <td>7,662 {2}</td>
+    <td>9,921</td>
+    <td>4,704 {3}</td>
+    <td>30,036 {4}</td>
+  </tr>
+  <tr>
+    <td>Reverse Mode</td>
+    <td>yes (since v1.1)</td>
+    <td>yes</td>
+    <td>no</td>
+    <td>no</td>
+    <td>no</td>
+    <td>no</td>
+  </tr>
+</table>
 
 References:
 [[1]](https://github.com/rfjakob/gocryptfs/releases/tag/v0.1)
