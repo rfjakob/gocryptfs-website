@@ -11,9 +11,9 @@ This page compares:
 * [EncFS](https://github.com/vgough/encfs), mature with known security issues
 * [eCryptFS](http://ecryptfs.org/), integrated into the Linux kernel
 * [Cryptomator](https://cryptomator.org/), strong cross-platform support through Java and WebDAV
-* [securefs](https://github.com/netheril96/securefs), a new C++ project that implementes directories as user-space B+ trees
+* [securefs](https://github.com/netheril96/securefs), a cross-platform project implemented in C++
 * [CryFS](https://www.cryfs.org/), result of a master thesis at the KIT University that uses
-  chunked storage. The tested version is `0.9.5-1-g5442662`.
+  chunked storage
 
 If you spot an error or want to see a project added, please
 [file a ticket](https://github.com/rfjakob/gocryptfs-website)!
@@ -31,21 +31,21 @@ http://www.tablesgenerator.com/html_tables .
 <table>
   <tr>
     <th></th>
-    <th>gocryptfs</th>
-    <th>encfs</th>
-    <th>ecryptfs</th>
-    <th>cryptomator</th>
-    <th>securefs</th>
-    <th>CryFS</th>
+    <th>gocryptfs <br> v1.4.1</th>
+    <th>encfs <br> v1.9.2</th>
+    <th>ecryptfs <br> v4.13</th>
+    <th>cryptomator <br> v1.3.1</th>
+    <th>securefs <br> v0.7.3</th>
+    <th>CryFS <br> v0.9.7</th>
   </tr>
   <tr>
     <td>First release</td>
-    <td>2015 [1]</td>
-    <td>2003 [2]</td>
-    <td>2006 [3]</td>
-    <td>2014 [4]</td>
-    <td>2015 [10]</td>
-    <td>2015</td>
+    <td>2015 (<a href="https://github.com/rfjakob/gocryptfs/releases/tag/v0.1">ref</a>) </td>
+    <td>2003 (<a href="https://github.com/vgough/encfs/blob/439c90e040cc04c036ee0791d830779a6d6bf10e/ChangeLog#L1501">ref</a>) </td>
+    <td>2006 (<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=237fead619984cc48818fe12ee0ceada3f55b012">ref</a>) </td>
+    <td>2014 (<a href="https://github.com/cryptomator/cryptomator/releases/tag/v0.1.0">ref</a>) </td>
+    <td>2015 (<a href="https://github.com/netheril96/securefs/releases/tag/v0.10">ref</a>) </td>
+    <td>2015 (<a href="https://github.com/cryfs/cryfs/releases/tag/0.8.0_cryfs">ref</a>) </td>
   </tr>
   <tr>
     <td>Language</td>
@@ -58,18 +58,18 @@ http://www.tablesgenerator.com/html_tables .
   </tr>
   <tr>
     <td>License</td>
-    <td>MIT</td>
-    <td>LGPL/GPL [5]</td>
-    <td>GPL</td>
-    <td>MIT</td>
-    <td>MIT</td>
-    <td>LGPL</td>
+    <td>MIT (<a href="https://github.com/rfjakob/gocryptfs/blob/830cbb7218d61467c011fd5e9d4751e1529677e4/LICENSE">ref</a>) </td>
+    <td>LGPLv3 / GPLv3 (<a href="https://github.com/vgough/encfs/blob/439c90e040cc04c036ee0791d830779a6d6bf10e/COPYING">ref</a>) </td>
+    <td>GPLv2</td>
+    <td>GPLv3 (<a href="https://github.com/cryptomator/cryptomator/blob/f84bb4710fb6aec54649de524f5f1be42632459d/LICENSE.txt">ref</a>) </td>
+    <td>MIT (<a href="https://github.com/netheril96/securefs/blob/2596467d63631aab264cf7a63de38fd69b2fda78/LICENSE.md">ref</a>) </td>
+    <td>LGPLv3 (<a href="https://github.com/cryfs/cryfs/blob/d96342463088490bc418c7e9df24eb5eef00d90b/LICENSE">ref</a>) </td>
   </tr>
   <tr>
     <td>Development hotspot</td>
     <td>Austria</td>
     <td>USA</td>
-    <td>UK (Canonical Ltd)</td>
+    <td>USA (RedHat)</td>
     <td>Germany</td>
     <td>China</td>
     <td>Germany</td>
@@ -78,7 +78,7 @@ http://www.tablesgenerator.com/html_tables .
     <td>Lifecycle</td>
     <td>Active</td>
     <td>Maintainance</td>
-    <td>Active  [9]</td>
+    <td>Active (<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/fs/ecryptfs">ref</a>) </td>
     <td>Active</td>
     <td>Active</td>
     <td>Active</td>
@@ -94,30 +94,21 @@ http://www.tablesgenerator.com/html_tables .
   </tr>
   <tr>
     <td>Platforms</td>
-    <td>Linux, 3rd-party Windows port [11], OSX in progress [7]</td>
-    <td>Linux, OSX, 3rd-party Windows port</td>
-    <td>Linux only</td>
-    <td>Linux, OSX, Windows</td>
-    <td>Linux, OSX</td>
+    <td>Linux, MacOS, 3rd-party Windows port <a href="https://github.com/bailey27/cppcryptfs">cppcryptfs</a></td>
+    <td>Linux, MacOS, 3rd-party Windows port</td>
+    <td>Linux</td>
+    <td>Linux, MacOS, Windows</td>
+    <td>Linux, MacOS, Windows</td>
     <td>Linux</td>
   </tr>
   <tr>
     <td>User interface</td>
-    <td>CLI; 3rd-party GUI: [SiriKali](https://mhogomchungu.github.io/sirikali/)</td>
-    <td>CLI; 3rd-party GUI</td>
-    <td>Integrated in login process</td>
-    <td>GUI only; CLI planned [8]</td>
-    <td>CLI</td>
+    <td>CLI, 3rd-party GUI <a href="https://mhogomchungu.github.io/sirikali/">SiriKali</a></td>
     <td>CLI, 3rd-party GUI</td>
-  </tr>
-  <tr>
-    <td>Lines of Code {1}</td>
-    <td>6,343</td>
-    <td>9,320</td>
-    <td>7,662 {2}</td>
-    <td>9,921</td>
-    <td>4,704 {3}</td>
-    <td>30,036 {4}</td>
+    <td>Integrated in login process</td>
+    <td>GUI, 3rd-party CLI (<a href="https://github.com/cryptomator/cli">ref</a>) </td>
+    <td>CLI, 3rd-party GUI</td>
+    <td>CLI, 3rd-party GUI</td>
   </tr>
   <tr>
     <td>Reverse Mode</td>
@@ -129,31 +120,6 @@ http://www.tablesgenerator.com/html_tables .
     <td>no</td>
   </tr>
 </table>
-
-References:
-[[1]](https://github.com/rfjakob/gocryptfs/releases/tag/v0.1)
-[[2]](https://github.com/vgough/encfs/blob/master/ChangeLog#L1442)
-[[3]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=237fead619984cc48818fe12ee0ceada3f55b012)
-[[4]](https://github.com/cryptomator/cryptomator/releases/tag/v0.1.0)
-[[5]](https://github.com/vgough/encfs/blob/master/COPYING)
-[[6]](https://github.com/cryptomator/cryptomator/tree/master/LICENSES)
-[[7]](https://github.com/rfjakob/gocryptfs/issues/15)
-[[8]](https://github.com/cryptomator/cryptomator/issues/43)
-[[9]](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/fs/ecryptfs)
-[[10]](https://github.com/netheril96/securefs/releases/tag/v0.10)
-[[11]](https://github.com/bailey27/cppcryptfs)
-[[12]](https://github.com/rfjakob/gocryptfs/issues/19)
-
-Notes:  
-{1} All computed using `cloc`  
-{2} Counting only `fs/ecryptfs/`  
-{3} The securefs `source/` directory contains embedded libraries. The count is produced using
-"cloc btree_dir.h commands.h exceptions.h file_table.h files.h logger.h operations.h streams.h
-utils.h xattr_compat.h btree_dir.cpp commands.cpp file_table.cpp files.cpp logger.cpp
-operations.cpp streams.cpp utils.cpp"
-and contains the files actually comprising securefs as
-[stated by the author](https://github.com/netheril96/securefs/issues/2#issuecomment-170349572).  
-{4} `cloc . --exclude-dir=vendor`
 
 General Security
 ----------------
