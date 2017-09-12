@@ -11,9 +11,14 @@ This page compares:
 * [EncFS](https://github.com/vgough/encfs), mature with known security issues
 * [eCryptFS](http://ecryptfs.org/), integrated into the Linux kernel
 * [Cryptomator](https://cryptomator.org/), strong cross-platform support through Java and WebDAV
-* [securefs](https://github.com/netheril96/securefs), a cross-platform project implemented in C++
+* [securefs](https://github.com/netheril96/securefs), a cross-platform project implemented in C++. 
+  Older versions stored directories in user-space B-trees
+  ([filesystem format 1,2,3](https://github.com/netheril96/securefs/blob/2596467d63631aab264cf7a63de38fd69b2fda78/docs/design.md#full-format-format-version-123)).
+  The new default since v0.7.0
+  ([filesystem format 4](https://github.com/netheril96/securefs/blob/2596467d63631aab264cf7a63de38fd69b2fda78/docs/design.md#lite-format-format-version-4))
+  uses normal directory entries.
 * [CryFS](https://www.cryfs.org/), result of a master thesis at the KIT University that uses
-  chunked storage
+  chunked storage to obfuscate file sizes.
 
 If you spot an error or want to see a project added, please
 [file a ticket](https://github.com/rfjakob/gocryptfs-website)!
@@ -24,8 +29,6 @@ Overview
 <!--
 The comparison table is too wide in markdown syntax to be edited sanely,
 which is why I converted it to html.
-Still, I recommend to edit it via a graphical editor like
-http://www.tablesgenerator.com/html_tables .
 -->
 
 <table>
@@ -39,85 +42,85 @@ http://www.tablesgenerator.com/html_tables .
     <th>CryFS <br> v0.9.7</th>
   </tr>
   <tr>
-    <td>First release</td>
-    <td>2015 (<a href="https://github.com/rfjakob/gocryptfs/releases/tag/v0.1">ref</a>) </td>
-    <td>2003 (<a href="https://github.com/vgough/encfs/blob/439c90e040cc04c036ee0791d830779a6d6bf10e/ChangeLog#L1501">ref</a>) </td>
-    <td>2006 (<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=237fead619984cc48818fe12ee0ceada3f55b012">ref</a>) </td>
-    <td>2014 (<a href="https://github.com/cryptomator/cryptomator/releases/tag/v0.1.0">ref</a>) </td>
-    <td>2015 (<a href="https://github.com/netheril96/securefs/releases/tag/v0.10">ref</a>) </td>
-    <td>2015 (<a href="https://github.com/cryfs/cryfs/releases/tag/0.8.0_cryfs">ref</a>) </td>
+	<td>First release</td>
+<!-- gocryptfs --><td>2015 (<a href="https://github.com/rfjakob/gocryptfs/releases/tag/v0.1">ref</a>) </td>
+<!-- encfs     --><td>2003 (<a href="https://github.com/vgough/encfs/blob/439c90e040cc04c036ee0791d830779a6d6bf10e/ChangeLog#L1501">ref</a>) </td>
+<!-- ecryptfs  --><td>2006 (<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=237fead619984cc48818fe12ee0ceada3f55b012">ref</a>) </td>
+<!-- cryptomtr --><td>2014 (<a href="https://github.com/cryptomator/cryptomator/releases/tag/v0.1.0">ref</a>) </td>
+<!-- securefs  --><td>2015 (<a href="https://github.com/netheril96/securefs/releases/tag/v0.10">ref</a>) </td>
+<!-- cryfs     --><td>2015 (<a href="https://github.com/cryfs/cryfs/releases/tag/0.8.0_cryfs">ref</a>) </td>
   </tr>
   <tr>
     <td>Language</td>
-    <td>Go</td>
-    <td>C++</td>
-    <td>C</td>
-    <td>Java</td>
-    <td>C++</td>
-    <td>C++</td>
+<!-- gocryptfs --><td>Go</td>
+<!-- encfs     --><td>C++</td>
+<!-- ecryptfs  --><td>C</td>
+<!-- cryptomtr --><td>Java</td>
+<!-- securefs  --><td>C++</td>
+<!-- cryfs     --><td>C++</td>
   </tr>
   <tr>
     <td>License</td>
-    <td>MIT (<a href="https://github.com/rfjakob/gocryptfs/blob/830cbb7218d61467c011fd5e9d4751e1529677e4/LICENSE">ref</a>) </td>
-    <td>LGPLv3 / GPLv3 (<a href="https://github.com/vgough/encfs/blob/439c90e040cc04c036ee0791d830779a6d6bf10e/COPYING">ref</a>) </td>
-    <td>GPLv2</td>
-    <td>GPLv3 (<a href="https://github.com/cryptomator/cryptomator/blob/f84bb4710fb6aec54649de524f5f1be42632459d/LICENSE.txt">ref</a>) </td>
-    <td>MIT (<a href="https://github.com/netheril96/securefs/blob/2596467d63631aab264cf7a63de38fd69b2fda78/LICENSE.md">ref</a>) </td>
-    <td>LGPLv3 (<a href="https://github.com/cryfs/cryfs/blob/d96342463088490bc418c7e9df24eb5eef00d90b/LICENSE">ref</a>) </td>
+<!-- gocryptfs --><td>MIT (<a href="https://github.com/rfjakob/gocryptfs/blob/830cbb7218d61467c011fd5e9d4751e1529677e4/LICENSE">ref</a>) </td>
+<!-- encfs     --><td>LGPLv3 / GPLv3 (<a href="https://github.com/vgough/encfs/blob/439c90e040cc04c036ee0791d830779a6d6bf10e/COPYING">ref</a>) </td>
+<!-- ecryptfs  --><td>GPLv2</td>
+<!-- cryptomtr --><td>GPLv3 (<a href="https://github.com/cryptomator/cryptomator/blob/f84bb4710fb6aec54649de524f5f1be42632459d/LICENSE.txt">ref</a>) </td>
+<!-- securefs  --><td>MIT (<a href="https://github.com/netheril96/securefs/blob/2596467d63631aab264cf7a63de38fd69b2fda78/LICENSE.md">ref</a>) </td>
+<!-- cryfs     --><td>LGPLv3 (<a href="https://github.com/cryfs/cryfs/blob/d96342463088490bc418c7e9df24eb5eef00d90b/LICENSE">ref</a>) </td>
   </tr>
   <tr>
     <td>Development hotspot</td>
-    <td>Austria</td>
-    <td>USA</td>
-    <td>USA (RedHat)</td>
-    <td>Germany</td>
-    <td>China</td>
-    <td>Germany</td>
+<!-- gocryptfs --><td>Austria</td>
+<!-- encfs     --><td>USA</td>
+<!-- ecryptfs  --><td>USA (RedHat)</td>
+<!-- cryptomtr --><td>Germany</td>
+<!-- securefs  --><td>China</td>
+<!-- cryfs     --><td>Germany</td>
   </tr>
   <tr>
     <td>Lifecycle</td>
-    <td>Active</td>
-    <td>Maintainance</td>
-    <td>Active (<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/fs/ecryptfs">ref</a>) </td>
-    <td>Active</td>
-    <td>Active</td>
-    <td>Active</td>
+<!-- gocryptfs --><td>Active</td>
+<!-- encfs     --><td>Maintainance</td>
+<!-- ecryptfs  --><td>Active (<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/fs/ecryptfs">ref</a>) </td>
+<!-- cryptomtr --><td>Active</td>
+<!-- securefs  --><td>Active</td>
+<!-- cryfs     --><td>Active</td>
   </tr>
   <tr>
     <td>File interface</td>
-    <td>FUSE</td>
-    <td>FUSE</td>
-    <td>in-kernel filesystem</td>
-    <td>WebDAV</td>
-    <td>FUSE</td>
-    <td>FUSE</td>
+<!-- gocryptfs --><td>FUSE</td>
+<!-- encfs     --><td>FUSE</td>
+<!-- ecryptfs  --><td>in-kernel filesystem</td>
+<!-- cryptomtr --><td>WebDAV</td>
+<!-- securefs  --><td>FUSE</td>
+<!-- cryfs     --><td>FUSE</td>
   </tr>
   <tr>
     <td>Platforms</td>
-    <td>Linux, MacOS, 3rd-party Windows port <a href="https://github.com/bailey27/cppcryptfs">cppcryptfs</a></td>
-    <td>Linux, MacOS, 3rd-party Windows port</td>
-    <td>Linux</td>
-    <td>Linux, MacOS, Windows</td>
-    <td>Linux, MacOS, Windows</td>
-    <td>Linux</td>
+<!-- gocryptfs --><td>Linux, MacOS, 3rd-party Windows port <a href="https://github.com/bailey27/cppcryptfs">cppcryptfs</a></td>
+<!-- encfs     --><td>Linux, MacOS, 3rd-party Windows port</td>
+<!-- ecryptfs  --><td>Linux</td>
+<!-- cryptomtr --><td>Linux, MacOS, Windows</td>
+<!-- securefs  --><td>Linux, MacOS, Windows</td>
+<!-- cryfs     --><td>Linux</td>
   </tr>
   <tr>
     <td>User interface</td>
-    <td>CLI, 3rd-party GUI <a href="https://mhogomchungu.github.io/sirikali/">SiriKali</a></td>
-    <td>CLI, 3rd-party GUI</td>
-    <td>Integrated in login process</td>
-    <td>GUI, 3rd-party CLI (<a href="https://github.com/cryptomator/cli">ref</a>) </td>
-    <td>CLI, 3rd-party GUI</td>
-    <td>CLI, 3rd-party GUI</td>
+<!-- gocryptfs --><td>CLI, 3rd-party GUI <a href="https://mhogomchungu.github.io/sirikali/">SiriKali</a></td>
+<!-- encfs     --><td>CLI, 3rd-party GUI</td>
+<!-- ecryptfs  --><td>Integrated in login process</td>
+<!-- cryptomtr --><td>GUI, 3rd-party CLI (<a href="https://github.com/cryptomator/cli">ref</a>) </td>
+<!-- securefs  --><td>CLI, 3rd-party GUI</td>
+<!-- cryfs     --><td>CLI, 3rd-party GUI</td>
   </tr>
   <tr>
     <td>Reverse Mode</td>
-    <td>yes (since v1.1)</td>
-    <td>yes</td>
-    <td>no</td>
-    <td>no</td>
-    <td>no</td>
-    <td>no</td>
+<!-- gocryptfs --><td>yes (since v1.1)</td>
+<!-- encfs     --><td>yes</td>
+<!-- ecryptfs  --><td>no</td>
+<!-- cryptomtr --><td>no</td>
+<!-- securefs  --><td>no</td>
+<!-- cryfs     --><td>no</td>
   </tr>
 </table>
 
@@ -132,9 +135,9 @@ General Security
 
 References:
 [[1]](security.md)
-[[2]](https://github.com/vgough/encfs/blob/master/DESIGN.md)
-[[3]](https://cryptomator.org/#security)
-[[5]](https://github.com/netheril96/securefs/blob/master/docs/design.md)
+[[2]](https://github.com/vgough/encfs/blob/439c90e040cc04c036ee0791d830779a6d6bf10e/DESIGN.md)
+[[3]](https://cryptomator.org/architecture/)
+[[5]](https://github.com/netheril96/securefs/blob/2596467d63631aab264cf7a63de38fd69b2fda78/docs/design.md#lite-format-format-version-4)
 [[6]](https://www.cryfs.org/howitworks)  
 [[4]](http://ecryptfs.org/documentation.html) actually, there is a lot of ecryptfs documentation, but none of
 it seems to describe the used crypto.
@@ -142,11 +145,13 @@ it seems to describe the used crypto.
 File Contents
 -------------
 
-|                       | gocryptfs |      encfs default      |      encfs paranoia     |        ecryptfs       |      cryptomator       | securefs |         CryFS         |
-| --------------------- | --------- | ----------------------- | ----------------------- | --------------------- | ---------------------- | -------- | --------------------- |
-| Encryption            | GCM       | CBC; last block CFB [1] | CBC; last block CFB [1] | CBC                   | CTR with random IV [2] | GCM      | GCM                   |
-| Integrity             | GCM       | none                    | HMAC                    | none                  | HMAC                   | GCM      | GCM                   |
-| File size obfuscation | no        | no                      | no                      | yes (4 KB increments) | no [3]                 | no       | yes (chunked storage) |
+|                       | gocryptfs |      encfs default      |      encfs paranoia     |        ecryptfs       |      cryptomator       |      securefs      |         CryFS         |
+| --------------------- | --------- | ----------------------- | ----------------------- | --------------------- | ---------------------- | ------------------ | --------------------- |
+| Tested version        | v1.4.1    | v1.9.2                  | v1.9.2                  | TDB                   | v1.3.1 RPM             | v0.7.3-30-g2596467 | TBD                   |
+|                       |           |                         |                         |                       |                        |                    |                       |
+| Encryption            | GCM       | CBC; last block CFB [1] | CBC; last block CFB [1] | CBC                   | CTR with random IV [2] | GCM                | GCM                   |
+| Integrity             | GCM       | none                    | HMAC                    | none                  | HMAC                   | GCM                | GCM                   |
+| File size obfuscation | no        | no                      | no                      | yes (4 KB increments) | no [3]                 | no                 | yes (chunked storage) |
 
 References:
 [[1]](https://github.com/vgough/encfs/issues/9)
@@ -156,13 +161,15 @@ References:
 File Names
 ----------
 
-|                          |       gocryptfs       |    encfs default     |    encfs paranoia    | ecryptfs | cryptomator |     securefs    |    CryFS     |
-| ------------------------ | --------------------- | -------------------- | -------------------- | -------- | ----------- | --------------- | ------------ |
-| Encryption               | EME [4]               | CBC                  | CBC                  | CBC      | SIV         | GCM (B+ dir DB) | GCM (dir DB) |
-| Prefix leak              | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (SIV)    | no (GCM)        | no (GCM)     |
-| Identical names leak     | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | no [3]      | no (GCM)        | no (GCM)     |
-| Maximum name length [5]  | 255 (since v0.9) {2}  | 175                  | 175                  | 143      | 1025        | 255             | 1025         |
-| Directory flattening {1} | no                    | no                   | no                   | no       | yes         | yes             | yes          |
+|                          |       gocryptfs       |    encfs default     |    encfs paranoia    | ecryptfs | cryptomator  |      securefs      |    CryFS     |
+| ------------------------ | --------------------- | -------------------- | -------------------- | -------- | ------------ | ------------------ | ------------ |
+| Tested version           | v1.4.1                | v1.9.2               | v1.9.2               | TBD      | v1.3.1 RPM   | v0.7.3-30-g2596467 | TBD          |
+|                          |                       |                      |                      |          |              |                    |              |
+| Encryption               | EME [4]               | CBC                  | CBC                  | CBC      | AES-SIV      | AES-SIV            | GCM (dir DB) |
+| Prefix leak              | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (AES-SIV) | no (AES-SIV)       | no (GCM)     |
+| Identical names leak     | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | no [3]       | yes [6]            | no (GCM)     |
+| Maximum name length [5]  | 255 (since v0.9) {2}  | 175                  | 175                  | 143      | 1025         | 143                | 1024         |
+| Directory flattening {1} | no                    | no                   | no                   | no       | yes          | yes                | yes          |
 
 References:
 [[1]](https://gist.github.com/rfjakob/a04364c55b3ee231078d)
@@ -170,6 +177,7 @@ References:
 [[3]](https://github.com/cryptomator/cryptomator/commit/3b178030c7a6001c1d070ee181aaae71f760d33f)
 [[4]](https://github.com/rfjakob/eme)
 [[5]](https://github.com/rfjakob/gocryptfs/blob/master/tests/maxlen.bash)
+[[6]](https://gist.github.com/rfjakob/5ff1591db263d85684ac03fc47009b35)
 
 Notes:  
 {1} Is the directory tree flattened in the encrypted storage? This
@@ -182,44 +190,39 @@ Performance
 
 All tests are run on tmpfs rule out any influence of the hard disk.
 The CPU is an Intel Pentium G630 with 2 x 2.7GHz that does NOT have AES instructions.
+The exact command lines for running the tests are defined in
+[canonical-benchmarks.bash](https://github.com/rfjakob/gocryptfs/blob/f0e29d9b90b63d5fbe4164161ecb0e1035bb4af4/tests/canonical-benchmarks.bash).
 
-|                          | gocryptfs | encfs default | encfs paranoia |  ecryptfs |  cryptomator  | securefs {5} |CryFS {6} |
-| ------------------------ | --------- | ------------- | -------------- | --------- | ------------- | ------------ | -------- |
-| Streaming write          | 103 MiB/s | 104 MiB/s     | 56 MiB/s       | 130 MiB/s | 55 MiB/s      | 96 MiB/s     | 78 MiB/s |
-| Extract linux-3.0.tar.gz | 22 s      | 20 s          | 23 s           | 8.4 s     | 468 s {1} {2} | 21 s         | 40 s     |
-| ls -lR linux-3.0         | 1.7 s     | 2.8 s         | 2.8 s          | 0.5 s     | 127 s {3}     | 5.3 s        | 16.8 s   |
-| Delete linux-3.0         | 4.3 s     | 3.9 s         | 4.1 s          | 0.5 s     | 376 s {3}     | 4.5 s        | 20.4 s   |
-
-Repeating (a subset of) the tests on an Samsung 840 EVO SSD shows that ecryptfs falls behind in metadata reads
-because its complex file headers causes extra disk accesses {4}.
-
-|                          | gocryptfs | encfs paranoia |  ecryptfs |
-| ------------------------ | --------- | -------------- | --------- |
-| Streaming write          | 65 MiB/s  | 50 MiB/s       | 116 MiB/s |
-| Extract linux-3.0.tar.gz | 26 s      | 24 s           | 8.7 s     |
-| ls -lR linux-3.0         | 2.5 s     | 3.2 s          | 8.6 s     |
-| Delete linux-3.0         | 5.3 s     | 4.7 s          | 8.8 s     |
+|                          | gocryptfs | encfs default | encfs paranoia |  ecryptfs |  cryptomator  |      securefs      |        CryFS        |
+| ------------------------ | --------- | ------------- | -------------- | --------- | ------------- | ------------------ | ------------------- |
+| Tested version           | v1.4.1    | v1.9.2        | v1.9.2         | v4.12.5   | v1.3.1 RPM    | v0.7.3-30-g2596467 | v0.9.7-12-gd9634246 |
+|                          |           |               |                |           |               |                    |                     |
+| Streaming write          | 258 MiB/s | 100 MiB/s     | 51 MiB/s       | 133 MiB/s | 15 MiB/s {3}  | 132 MiB/s          | 69 MiB/s            |
+| Streaming read           | 289 MiB/s | 185 MiB/s     | 105 MiB/s      | 165 MiB/s | 29 MiB/s {3}  | 155 MiB/s          | 99 MiB/s            |
+| Extract linux-3.0.tar.gz | 16 s      | 19 s          | 23 s           | 7.2 s     | 564 s {1} {2} | 14 s               | 41 s                |
+| md5sum linux-3.0         | 7.5 s     | 8.2 s         | 10 s           | 4.8 s     | 360 s {2}     | 7.7 s              | 42 s                |
+| ls -lR linux-3.0         | 1.3 s     | 2.9 s         | 2.9 s          | 0.8 s     | 27 s {2}      | 1.2 s              | 17 s                |
+| Delete linux-3.0         | 3.0 s     | 4.2 s         | 4.4 s          | 0.7 s     | 145 s {2}     | 2.2 s              | 21 s                |
 
 Notes:  
 {1} All file acesses to cryptomator go through the WebDAV protocol, which is less performance-oriented than FUSE.  
 However, an optimized WebDAV client may be able to significantly speed up small-file workloads.  
-{2} Tested with the dave cli WebDAV client, which gave better speed than gvfs (Gnome built-in) and davfs2  
-{3} Tested with gvfs in the `/run/user/.../gvfs/dav:...` mount  
-{4} Caches are cleared between each test using `echo 3 > /proc/sys/vm/drop_caches`  
-{5} Tested against securefs v0.5.2  
-{6} Tested against CryFS v0.9.5  
+{2} Tested using using wdfs, where I got the fastest results: <http://noedler.de/projekte/wdfs/>.
+davfs2 is very slow, fusedav does not compile on current Fedora.
+{3} Testing using the built-in WebDAV support in Gnome Files v3.24.2.1, as the write-back
+caching of wdfs makes exact measurements impractical.
 
 Disk Space Efficiency
 ---------------------
 
-(all file sizes in apparent bytes unless specified otherwise)
+|                           | gocryptfs | encfs default | encfs paranoia |  ecryptfs | cryptomator {1} | securefs {2} |   CryFS   |
+| ------------------------- | --------- | ------------- | -------------- | --------- | --------------- | ------------ | --------- |
+| Empty file                | 0         | 0             | 0              | 8,192     | 88              | 112          | 32,768    |
+| 1 byte file               | 51        | 9             | 17             | 12,288    | 137             | 161          | 32,768    |
+| 1,000,000 bytes file      | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,576       | 1,011,872    | 1,048,576 |
+| linux-3.0 source tree {3} | 498 MiB   | 485 MiB       | 488 MiB        | 784 MiB   | 498 MiB         | (not tested) | 1470 MiB  |
 
-|                           | gocryptfs | encfs default | encfs paranoia |  ecryptfs |      cryptomator {1}      | securefs {2} |   CryFS   |
-| ------------------------- | --------- | ------------- | -------------- | --------- | ------------------------- | ------------ | --------- |
-| Empty file                | 0         | 0             | 0              | 8,192     | 88                        | 112          | 32,768    |
-| 1 byte file               | 51        | 9             | 17             | 12,288    | 137                       | 161          | 32,768    |
-| 1,000,000 bytes file      | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,576                 | 1,011,872    | 1,048,576 |
-| linux-3.0 source tree {3} | 498 MiB   | 485 MiB       | 488 MiB        | 784 MiB   | 498 MiB                   | (not tested) | 1470 MiB  |
+
 
 Notes:  
 {1} cryptomator dropped the use of a random padding in v1.2.0 due to performance concerns.  
