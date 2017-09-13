@@ -147,7 +147,7 @@ File Contents
 
 |                       | gocryptfs |      encfs default      |      encfs paranoia     |        ecryptfs       |      cryptomator       |      securefs      |         CryFS         |
 | --------------------- | --------- | ----------------------- | ----------------------- | --------------------- | ---------------------- | ------------------ | --------------------- |
-| Tested version        | v1.4.1    | v1.9.2                  | v1.9.2                  | TDB                   | v1.3.1 RPM             | v0.7.3-30-g2596467 | TBD                   |
+| Tested version        | v1.4.1    | v1.9.2                  | v1.9.2                  | v4.12.5               | v1.3.1 RPM             | v0.7.3-30-g2596467 | 0.9.7-15-g3d52f6a8    |
 |                       |           |                         |                         |                       |                        |                    |                       |
 | Encryption            | GCM       | CBC; last block CFB [1] | CBC; last block CFB [1] | CBC                   | CTR with random IV [2] | GCM                | GCM                   |
 | Integrity             | GCM       | none                    | HMAC                    | none                  | HMAC                   | GCM                | GCM                   |
@@ -161,15 +161,15 @@ References:
 File Names
 ----------
 
-|                          |       gocryptfs       |    encfs default     |    encfs paranoia    | ecryptfs | cryptomator  |      securefs      |    CryFS     |
-| ------------------------ | --------------------- | -------------------- | -------------------- | -------- | ------------ | ------------------ | ------------ |
-| Tested version           | v1.4.1                | v1.9.2               | v1.9.2               | TBD      | v1.3.1 RPM   | v0.7.3-30-g2596467 | TBD          |
-|                          |                       |                      |                      |          |              |                    |              |
-| Encryption               | EME [4]               | CBC                  | CBC                  | CBC      | AES-SIV      | AES-SIV            | GCM (dir DB) |
-| Prefix leak              | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (AES-SIV) | no (AES-SIV)       | no (GCM)     |
-| Identical names leak     | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | no [3]       | yes [6]            | no (GCM)     |
-| Maximum name length [5]  | 255 (since v0.9) {2}  | 175                  | 175                  | 143      | 1025         | 143                | 1024         |
-| Directory flattening {1} | no                    | no                   | no                   | no       | yes          | yes                | yes          |
+|                          |       gocryptfs       |    encfs default     |    encfs paranoia    | ecryptfs | cryptomator  |      securefs      |       CryFS        |
+| ------------------------ | --------------------- | -------------------- | -------------------- | -------- | ------------ | ------------------ | ------------------ |
+| Tested version           | v1.4.1                | v1.9.2               | v1.9.2               | v4.12.5  | v1.3.1 RPM   | v0.7.3-30-g2596467 | 0.9.7-15-g3d52f6a8 |
+|                          |                       |                      |                      |          |              |                    |                    |
+| Encryption               | EME [4]               | CBC                  | CBC                  | CBC      | AES-SIV      | AES-SIV            | GCM (dir DB)       |
+| Prefix leak              | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (AES-SIV) | no (AES-SIV)       | no (GCM)           |
+| Identical names leak     | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | no [3] {3}   | yes [6]            | no (GCM)           |
+| Maximum name length [5]  | 255 (since v0.9) {2}  | 175                  | 175                  | 143      | 1025         | 143                | 1024               |
+| Directory flattening {1} | no                    | no                   | no                   | no       | yes          | yes                | yes                |
 
 References:
 [[1]](https://gist.github.com/rfjakob/a04364c55b3ee231078d)
@@ -183,7 +183,8 @@ Notes:
 {1} Is the directory tree flattened in the encrypted storage? This
     obfuscates the directory structure but can cause problems when
     synchronising via Dropbox and similar.  
-{2} 255 since gocryptfs v0.9, 175 in v0.8 and earlier
+{2} 255 since gocryptfs v0.9, 175 in v0.8 and earlier  
+{3} cryptomator dropped the use of a random padding in v1.2.0 due to performance concerns.  
 
 Performance
 -----------
@@ -206,31 +207,32 @@ The exact command lines for running the tests are defined in
 
 Notes:  
 {1} All file acesses to cryptomator go through the WebDAV protocol, which is less performance-oriented than FUSE.  
-However, an optimized WebDAV client may be able to significantly speed up small-file workloads.  
+However, an optimized WebDAV client may be able to significantly speed up small-file workloads.<br>
 {2} Tested using using wdfs, where I got the fastest results: <http://noedler.de/projekte/wdfs/>.
-davfs2 is very slow, fusedav does not compile on current Fedora.
+davfs2 is very slow, fusedav does not compile on current Fedora.<br>
 {3} Testing using the built-in WebDAV support in Gnome Files v3.24.2.1, as the write-back
 caching of wdfs makes exact measurements impractical.
 
 Disk Space Efficiency
 ---------------------
 
-|                           | gocryptfs | encfs default | encfs paranoia |  ecryptfs | cryptomator {1} | securefs {2} |   CryFS   |
-| ------------------------- | --------- | ------------- | -------------- | --------- | --------------- | ------------ | --------- |
-| Empty file                | 0         | 0             | 0              | 8,192     | 88              | 112          | 32,768    |
-| 1 byte file               | 51        | 9             | 17             | 12,288    | 137             | 161          | 32,768    |
-| 1,000,000 bytes file      | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,576       | 1,011,872    | 1,048,576 |
-| linux-3.0 source tree {3} | 498 MiB   | 485 MiB       | 488 MiB        | 784 MiB   | 498 MiB         | (not tested) | 1470 MiB  |
-
-
+|                           |    ext4   | gocryptfs | encfs default | encfs paranoia |  ecryptfs | cryptomator |      securefs     |       CryFS        |
+| ------------------------- | --------- | --------- | ------------- | -------------- | --------- | ----------- | ----------------- | ------------------ |
+| Tested version            | v4.12.5   | v1.4.1    | v1.9.2        | v1.9.2         | v4.12.5   | TBD         | 0.7.3-30-g2596467 | 0.9.7-15-g3d52f6a8 |
+|                           |           |           |               |                |           |             |                   |                    |
+| Empty file {1}            | 0         | 0         | 0             | 0              | 8,192     | 88          | 16                | 32,768             |
+| 1 byte file {1}           | 1         | 51        | 9             | 17             | 12,288    | 137         | 45                | 32,768             |
+| 1,000,000 bytes file {1}  | 1,000,000 | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,576   | 1,006,876         | 1,048,576 {4}      |
+| linux-3.0 source tree {5} |           |           |               |                |           |             |                   |                    |
+| ...disk usage {2}         | 494 MiB   | 512 MiB   | 495 MiB       | 498 MiB        | 784 MiB   | 498 MiB     | 498               | 1485 MiB           |
+| ...sum of file sizes {3}  | 411 MiB   | 416 MiB   | 412 MiB       | 415 MiB        | 784 MiB   | TBD         | 416               | 1485 MiB           |
 
 Notes:  
-{1} cryptomator dropped the use of a random padding in v1.2.0 due to performance concerns.  
-{2} securefs stores data and crypto metadata (nonces + GHASH) in separate files. The sum of both is shown here.  
-{3} Measured using "du -sm" on the encrypted directory. The backing filesystem is tmpfs.
-
-References:
-[[1]](https://github.com/cryptomator/cryptomator/issues/128#issuecomment-169056079)
+{1} `ls -l` on the encrypted file<br>
+{2} `du -sm` on the ciphertext dir, backing filesystem ext4.<br>
+{3} `du -sm --apparent-size`.<br>
+{4} Counting all 32 chunks ([ref](https://gist.github.com/rfjakob/bdd0ef2bd8f0e94b09ad14f85cd6daec))<br>
+{5} Extracted [linux-3.0.tar.gz](https://cdn.kernel.org/pub/linux/kernel/v3.0/linux-3.0.tar.gz)<br>
 
 Filesystem Features
 -------------------
