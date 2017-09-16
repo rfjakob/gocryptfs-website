@@ -12,7 +12,7 @@
    viewBox="0 0 687.79717 138.28399"
    height="39.026821mm"
    width="194.11165mm"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92+devel unknown"
    sodipodi:docname="longnames.svg">
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -27,13 +27,14 @@
      inkscape:window-height="1016"
      id="namedview58"
      showgrid="false"
-     inkscape:zoom="1.4475291"
-     inkscape:cx="346.56547"
-     inkscape:cy="67.856789"
+     inkscape:zoom="2.0471153"
+     inkscape:cx="408.26653"
+     inkscape:cy="156.56118"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="svg2"
+     inkscape:document-rotation="0" />
   <defs
      id="defs4">
     <marker
@@ -184,21 +185,19 @@
      x="417.30399"
      y="39.927364" />
   <text
-     sodipodi:linespacing="125%"
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:67.66544342px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="506.43866"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="585.07965"
      y="128.10651"
      id="text4155-7"
      transform="scale(1.0002283,0.99977176)"><tspan
        id="tspan4157-2"
-       x="506.43866"
+       x="543.93011"
        y="128.10651"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px">Directory X</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;text-anchor:middle">Directory X</tspan></text>
   <text
-     sodipodi:linespacing="125%"
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:67.66544342px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:67.66544342px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="421.01343"
      y="55.057564"
      id="text4155-88-3"
@@ -208,9 +207,8 @@
        y="55.057564"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px">gocryptfs.longname.[hash].name</tspan></text>
   <text
-     sodipodi:linespacing="125%"
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:67.66544342px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:67.66544342px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="114.51466"
      y="-3.5516858"
      id="text8326"
@@ -227,17 +225,16 @@
      y="12.682918"
      ry="10.629921" />
   <text
-     sodipodi:linespacing="125%"
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:start;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="182.57887"
-     y="28.779608"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="240.99684"
+     y="28.779612"
      id="text4155-6-5-7-9-1"
      transform="scale(1.0002283,0.99977176)"><tspan
        id="tspan4157-3-0-7-6-8"
-       x="211.46852"
-       y="28.779608"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;letter-spacing:0px;text-anchor:start">SHA256</tspan></text>
+       x="240.99684"
+       y="28.779612"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;text-anchor:middle">SHA256</tspan></text>
   <rect
      style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4267-1-0"
@@ -254,17 +251,16 @@
      y="12.682918"
      ry="10.629921" />
   <text
-     sodipodi:linespacing="125%"
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:start;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="297.06235"
-     y="28.779608"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="348.76529"
+     y="28.779612"
      id="text4155-6-5-7-9-1-8"
      transform="scale(1.0002283,0.99977176)"><tspan
        id="tspan4157-3-0-7-6-8-2"
-       x="323.72491"
-       y="28.779608"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;letter-spacing:0px;text-anchor:start">Base64</tspan></text>
+       x="348.76529"
+       y="28.779612"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;text-anchor:middle">Base64</tspan></text>
   <path
      inkscape:connector-curvature="0"
      style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.99999976;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker8949)"
@@ -276,15 +272,14 @@
      d="m 285.02647,23.25677 20.37632,0.0845"
      id="path8941-7" />
   <text
-     sodipodi:linespacing="125%"
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="86.500496"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="88.027573"
      y="28.1807"
      id="text4155-88-3-0"
      transform="scale(1.0002283,0.99977176)"><tspan
        id="tspan4157-9-7-0"
-       x="86.500496"
+       x="88.027573"
        y="28.1807"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;text-anchor:middle">lrpyui0m-ypX4u0J[...]</tspan></text>
   <path
@@ -298,9 +293,8 @@
      d="m 185.97339,23.294985 0,29.13961 226.24516,0"
      id="path6459" />
   <text
-     sodipodi:linespacing="125%"
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="301.09375"
      y="68.734352"
      id="text4155-88-3-0-6"
@@ -314,16 +308,15 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;text-anchor:middle"
        id="tspan7269">in .name file</tspan></text>
   <text
-     sodipodi:linespacing="125%"
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:start;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="356.08917"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="388.06607"
      y="18.48731"
      id="text4155-88-3-0-6-5"
      transform="scale(1.0002283,0.99977176)"><tspan
-       x="468.31085"
+       x="477.68372"
        y="18.48731"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;letter-spacing:0px;text-anchor:start"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;text-anchor:middle"
        id="tspan7269-5">[hash]</tspan></text>
   <rect
      style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -333,9 +326,8 @@
      x="416.83432"
      y="73.659081" />
   <text
-     sodipodi:linespacing="125%"
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:67.66544342px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial Bold';letter-spacing:67.66544342px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="420.54388"
      y="88.796974"
      id="text4155-88-3-07"
@@ -345,16 +337,15 @@
        y="88.796974"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:0px">gocryptfs.longname.[hash]</tspan></text>
   <text
-     sodipodi:linespacing="125%"
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:center;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="303.16571"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:90.02054596px;line-height:0%;font-family:Arial;-inkscape-font-specification:'Arial Bold';text-align:end;letter-spacing:67.66544342px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="382.8653"
      y="129.60388"
      id="text4155-88-3-0-6-7"
      transform="scale(1.0002283,0.99977176)"><tspan
-       x="303.16571"
+       x="340.65717"
        y="129.60388"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;text-anchor:middle"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15.00342369px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:end;letter-spacing:0px;text-anchor:end"
        id="tspan7269-6">file content</tspan></text>
   <path
      inkscape:connector-curvature="0"

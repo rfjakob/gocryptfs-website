@@ -1,9 +1,14 @@
-gocryptfs Security
-==================
+gocryptfs Cryptography
+======================
 
 gocryptfs builts upon well-known cryptographic primitives: scrypt for
 key derivation, AES-GCM for file content encryption and, as a world's
-first for encrypted filesystems, EME for file name encryption.
+first for encrypted filesystems,
+EME wide-block encryption for file name encryption.
+
+This page describes **forward mode**, the default mode of operation, where
+the files are stored encrypted on disk and the mounted filesystem provides
+a plaintext view.
 
 Master Key Storage
 ------------------
@@ -17,6 +22,16 @@ When mounting a filesystem, the user is prompted for the password and
 the master key is decrypted:
 
 ![](img/master-key.svg)
+
+Derived Keys
+------------
+
+Since gocryptfs v1.3, separate keys are derived from the master key for
+file content and file name encryption. HKDF-SHA256 is used for the
+derivation (source code: [ref1](https://github.com/rfjakob/gocryptfs/blob/f0e29d9b90b63d5fbe4164161ecb0e1035bb4af4/internal/cryptocore/hkdf.go)
+[ref2](https://github.com/rfjakob/gocryptfs/blob/f0e29d9b90b63d5fbe4164161ecb0e1035bb4af4/internal/cryptocore/cryptocore.go#L66)).
+
+![](img/derived-keys.svg)
 
 File Contents
 -------------
@@ -66,6 +81,15 @@ Instead, the encrypted name is hashed, and the file content is stored in
 file, `gocryptfs.longname.[hash].name`.
 
 ![](img/longnames.svg)
+
+Example directory listing containing an 1 MiB encrypted file with a long name:
+
+```
+    Size Name
+      16 gocryptfs.diriv
+ 1056786 gocryptfs.longname.nONaEDDZOrwtQdXPH1SxSFkPtOc8srIyB82ZuduqG10
+     299 gocryptfs.longname.nONaEDDZOrwtQdXPH1SxSFkPtOc8srIyB82ZuduqG10.name
+```
 
 This method for storing long file names has zero performance impact
 for filenames that are <= 176 characters, incurs no extra disk accesses

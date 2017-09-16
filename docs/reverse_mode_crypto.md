@@ -10,6 +10,14 @@ AES-SIV instead of AES-GCM.
 The differences with respect to the "normal" (forward) mode as detailed
 on the [Security](security) page are listed below.
 
+Derived Keys
+------------
+
+The derived file content key is 64 bytes wide instead of 32 bytes
+as in forward mode
+(source code [ref](https://github.com/rfjakob/gocryptfs/blob/f0e29d9b90b63d5fbe4164161ecb0e1035bb4af4/internal/cryptocore/cryptocore.go#L111))
+.
+
 File Contents
 -------------
 
@@ -30,7 +38,8 @@ The encryption process is shown in the diagram below.
 Notes:
 
 1. The IV is passed to AES-SIV as described in section 3 of RFC5297
-2. The block number N is contained in the IV as well as in the AAD.
+2. The block number N is contained in the IV as well as in the AAD
+   (but AAD and IV are not identical)
    Either one or the other would suffice, but this construction simplifies
    the decryption process by keeping it identical to forward mode.
    The "duplication" is considered to not have
@@ -49,11 +58,12 @@ Because the encrypted path to the root directory is "" (the empty string),
 this means that the directory IV in the root directory is always
 `0xa8f7bac432ddc1cb3dc74e684d6ae48b = SHA256("\0DIRIV")`.
 
-derivePathIV: Derive IVs from Encrypted Paths
+DerivePathIV: Derive IVs from Encrypted Paths
 ----------------------------------------------
 
-derivePathIV concatenates the encrypted path with a null byte and a
+DerivePathIV concatenates the encrypted path with a null byte and a
 salt string (one of "DIRIV", "FILEID", "BLOCK0IV"). This is
-is hashed with SHA256 and truncated to 128 bits.
+is hashed with SHA256 and truncated to 128 bits (source code
+[ref](https://github.com/rfjakob/gocryptfs/blob/f0e29d9b90b63d5fbe4164161ecb0e1035bb4af4/internal/pathiv/pathiv.go#L26)).
 
 ![](img/reverse-derivePathIV.svg)
