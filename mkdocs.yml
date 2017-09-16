@@ -5,8 +5,8 @@ pages:
 - Home: index.md
 - Quickstart: quickstart.md
 - Compile from Source: compile.md
-- Security: security.md
-- Reverse Mode: reverse_mode.md
+- Cryptography: forward_mode_crypto.md
+- Reverse Mode Cryptography: reverse_mode_crypto.md
 - Comparison with Other Projects: comparison.md
 - Signed Releases: releases.md
 - Source Code Mirrors: mirrors.md

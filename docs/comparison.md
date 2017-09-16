@@ -134,7 +134,7 @@ General Security
 
 
 References:
-[[1]](security.md)
+[[1]](forward_mode_crypto.md)
 [[2]](https://github.com/vgough/encfs/blob/439c90e040cc04c036ee0791d830779a6d6bf10e/DESIGN.md)
 [[3]](https://cryptomator.org/architecture/)
 [[5]](https://github.com/netheril96/securefs/blob/2596467d63631aab264cf7a63de38fd69b2fda78/docs/design.md#lite-format-format-version-4)
