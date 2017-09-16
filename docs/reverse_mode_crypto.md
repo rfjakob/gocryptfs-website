@@ -27,7 +27,7 @@ SHA512.
 
 All values that are random in forward mode (File ID, Block IV)
 are instead deterministically derived from the encrypted path, 
-essentially using a salted hash (detailed in the section "derivePathIV").
+essentially using a salted hash (detailed in the section *DerivePathIV*).
 As all derived values are explicitely stored in the ciphertext file,
 decryption does not depend on knowledge of the derivation.
 
@@ -51,7 +51,7 @@ File Names
 
 File name encryption is identical to forward mode, with the exception
 that the directory IV (stored in `gocryptfs.diriv`) is not random.
-It is deterministically derived, using derivePathIV, from the encrypted
+It is deterministically derived, using *DerivePathIV*, from the encrypted
 path to the directory.
 
 Because the encrypted path to the root directory is "" (the empty string),
@@ -61,9 +61,9 @@ this means that the directory IV in the root directory is always
 DerivePathIV: Derive IVs from Encrypted Paths
 ----------------------------------------------
 
-DerivePathIV concatenates the encrypted path with a null byte and a
+The *DerivePathIV* function concatenates the encrypted path with a null byte and a
 salt string (one of "DIRIV", "FILEID", "BLOCK0IV"). This is
-is hashed with SHA256 and truncated to 128 bits (source code
+hashed with SHA256 and truncated to 128 bits (source code
 [ref](https://github.com/rfjakob/gocryptfs/blob/f0e29d9b90b63d5fbe4164161ecb0e1035bb4af4/internal/pathiv/pathiv.go#L26)).
 
 ![](img/reverse-derivePathIV.svg)
