@@ -38,12 +38,14 @@ File Contents
 
 All file contents are encrypted using AES-256-GCM (Galois/Counter Mode).
 
-Files are segmented into 4KB blocks. Each block gets a fresh random
+Files are segmented into 4KiB blocks. Each block gets a fresh random
 128 bit IV each time it is modified. A 128-bit authentication tag (GHASH)
 protects each block from modifications.
 
 Each file has a header containing a random 128-bit file ID. The
-file ID and the block number are mixed into the GHASH as
+file ID and the block number are concatenated
+(source code [ref](https://github.com/rfjakob/gocryptfs/blob/master/internal/contentenc/content.go#L124))
+and mixed into the GHASH as
 *additional authenticated data*. The prevents blocks from being copied
 between or within files.
 
@@ -66,8 +68,8 @@ encryption.
 ![](img/file-name-encryption.svg)
 
 The Base64 encoding limits the usable filename length to 176 characters.
-Filenames that are longer than that (longer than 255 characters in Base64-
-encoded form) use long file name handling (since gocryptfs v0.9).
+Filenames that are longer than that (longer than 255 characters in
+Base64-encoded form) use long file name handling, introduced in gocryptfs v0.9.
 
 Long File Name Handling
 -----------------------
@@ -96,5 +98,5 @@ for filenames that are <= 176 characters, incurs no extra disk accesses
 for opening a file with a long name, and just one extra file read for each
 long-name file on readdir(1).
 
-Because the hash is only taken from the encrypted file name, there is no
-security penalty for using long names.
+Because the hash is only taken from the encrypted file name that is public
+anyway, there is no security penalty for using long names.
