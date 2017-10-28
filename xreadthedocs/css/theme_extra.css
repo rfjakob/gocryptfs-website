@@ -230,3 +230,8 @@ html, body {
   /* make sure long tables are not cut off */
   overflow-x: auto !important;
 }
+
+body {
+  /* default is a dark gray. Let's have better contrast. */
+  color: black;
+}
