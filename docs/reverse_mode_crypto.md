@@ -8,7 +8,7 @@ To make reverse mode useful, it uses deterministic encryption using
 AES-SIV instead of AES-GCM.
 
 The differences with respect to the "normal" (forward) mode as detailed
-on the [Cryptograhy](forward_mode_crypto.md) page are listed below.
+on the [Cryptography](forward_mode_crypto.md) page are listed below.
 
 Derived Keys
 ------------
