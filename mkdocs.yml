@@ -7,6 +7,7 @@ pages:
 - Compile from Source: compile.md
 - Cryptography: forward_mode_crypto.md
 - Reverse Mode Cryptography: reverse_mode_crypto.md
+- Threat Model: threat_model.md
 - Comparison with Other Projects: comparison.md
 - Signed Releases: releases.md
 - Source Code Mirrors: mirrors.md
