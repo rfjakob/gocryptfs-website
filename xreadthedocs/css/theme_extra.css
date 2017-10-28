@@ -8,11 +8,6 @@ body {
 }
 */
 
-h3, h4, h5, h6 {
-    color: #2980b9;
-    font-weight: 300
-}
-
 /*
  * Sphinx doesn't have support for section dividers like we do in
  * MkDocs, this styles the section titles in the nav
