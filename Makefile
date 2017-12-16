@@ -1,6 +1,6 @@
 all:
 	git pull
-	mkdocs build --clean 2>&1 | grep -v "Warning: Click detected the use of the unicode_literals"
+	LC_ALL=C.UTF-8 LANG=C.UTF-8 mkdocs build --clean
 	cp -af htaccess site/.htaccess
 
 .PHONY: clean
