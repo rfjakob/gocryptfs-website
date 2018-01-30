@@ -64,10 +64,10 @@
 
     {# SIDE NAV, TOGGLES ON MOBILE #}
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-    {%- block site_name %}
-        <a href="{{ nav.homepage.url }}" class="icon icon-home"> {{ config.site_name }}</a>
-	  {%- endblock %}
+      <div class="logo">
+        <a class="site-title" href="{{ homepage_url }}">
+	        <img src="{{ base_url }}/img/gocryptfs-logo.paths-white.svg" alt="gocryptfs">
+        </a>
 	  {%- block search_button %}
         {% if 'search' in config['plugins'] %}{% include "searchbox.html" %}{% endif %}
 	  {%- endblock %}
@@ -98,7 +98,9 @@
       {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="{{ nav.homepage.url }}">{{ config.site_name }}</a>
+        <a href="{{ nav.homepage.url }}">
+            <img src="{{ base_url }}/img/gocryptfs-logo.paths-white.svg" alt="gocryptfs">
+        </a>
       </nav>
 
       {# PAGE CONTENT #}
