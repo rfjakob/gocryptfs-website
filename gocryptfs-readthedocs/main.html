@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
+  {%- block styles %}
+  <link rel="stylesheet" href="{{ base_url }}/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="{{ base_url }}/css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="{{ base_url }}/css/highlight.css">
+  {%- for path in extra_css %}
+  <link href="{{ path }}" rel="stylesheet">
+  {%- endfor %}
+  {%- endblock %}
+
+
 {#
 The entry point for the ReadTheDocs Theme.
  
