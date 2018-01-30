@@ -192,3 +192,114 @@ td, th {
    border-collapse: collapse;
 }
 
+.wy-side-nav-search {
+    background-color: #343131 !important;
+}
+
+.wy-nav-top {
+	background-color: #343131 !important;
+}
+
+.wy-side-nav-search a {
+	margin-bottom: 0;
+}
+
+a.site-title {
+	font-size: 200%;
+}
+/* Base16 Eighties Colorscheme by Chris Kempson (http://chriskempson.com) */
+/* CSS from https://github.com/htdvisser/hugo-base16-theme */
+.base00 { color: #2d2d2d; }
+.base01 { color: #393939; }
+.base02 { color: #515151; }
+.base03 { color: #747369; }
+.base04 { color: #a09f93; }
+.base05 { color: #d3d0c8; }
+.base06 { color: #e8e6df; }
+.base07 { color: #f2f0ec; }
+.base08 { color: #f2777a; }
+.base09 { color: #f99157; }
+.base0a { color: #ffcc66; }
+.base0b { color: #99cc99; }
+.base0c { color: #66cccc; }
+.base0d { color: #6699cc; }
+.base0e { color: #cc99cc; }
+.base0f { color: #d27b53; }
+
+
+div.builtwith a {
+	color: #aaa;
+}
+
+.rst-versions .rst-current-version {
+	text-align: center;
+	padding-top: 0;
+}
+
+.rst-versions .rst-current-version a {
+	margin-right: 10px;
+}
+.fa-github:before, .icon-github:before {
+	font-size: 30px;
+	position: relative;
+	bottom: -6px;
+	margin-right: 8px;
+}
+
+div.logo {
+	text-align: center;
+	padding: 10px;
+}
+
+div.logo img {
+	width: 236px;
+}
+
+nav.wy-nav-top img {
+	height: auto;
+	width: auto;
+	background-color: transparent;
+	border-radius: 0;
+}
+
+nav.wy-nav-top i {
+	font-size: 60px;
+}
+
+/* Inline code */
+code {
+	color: #333;
+}
+
+/* Code block */
+pre code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  -webkit-text-size-adjust: none;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+thead {
+  white-space: normal !important;
+  vertical-align: top !important;
+}
+
+div.wy-nav-content {
+	/* The tables on the comparison page have gotten too big for the
+	   default of 800px */
+	max-width: 1000px;
+}
+
+html, body {
+  /* make sure long tables are not cut off */
+  overflow-x: auto !important;
+}
+
+body {
+  /* default is a dark gray. Let's have better contrast. */
+  color: black;
+}
