@@ -2,6 +2,7 @@ site_name: gocryptfs
 theme:
     name: readthedocs
     custom_dir: gocryptfs-readthedocs
+plugins: []
 pages:
 - Home: index.md
 - Quickstart: quickstart.md
