@@ -1,5 +1,4 @@
 all:
-	git pull
 	LC_ALL=C.UTF-8 LANG=C.UTF-8 mkdocs build --clean
 	cp -af htaccess site/.htaccess
 
