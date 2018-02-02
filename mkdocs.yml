@@ -3,6 +3,8 @@ theme:
     name: readthedocs
     custom_dir: gocryptfs-readthedocs
 plugins: []
+markdown_extensions:
+  - admonition
 pages:
 - Home: index.md
 - Quickstart: quickstart.md

@@ -30,6 +30,12 @@ Create and Mount Filesystem
 	$ ~/bin/gocryptfs cipher plain
 	  [...]
 
+!!! Note
+
+    If you are intending to syncronize this filesystem across multiple devices by using file syncronization
+    software like Dropbox or Seafile, make sure you use the `-plaintextnames` switch when you initialize it. 
+    This disables file name encryption that would interfere with the conflict handling that these systems use.
+
 You should now have a working gocryptfs that is stored in `cipher` and mounted to `plain`.
 You can verify it by creating a test file in the `plain` directory. This file will show
 up encrypted in the `cipher` directory.
