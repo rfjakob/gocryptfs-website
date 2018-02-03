@@ -4,30 +4,38 @@ Quickstart
 Download or Compile gocryptfs
 -----------------------------
 
-If you are running Fedora or a Debian-based Linux distribution like Ubuntu,
-chances are that the precompiled binaries will work on your system.
-Download the corresponding binary for your system from the
-[github releases page](https://github.com/rfjakob/gocryptfs/releases) and
-extract the archive into `~/bin`.
+Precompiled binaries that work on **all** x86_64 Linux systems are
+available for download from the
+[github releases page](https://github.com/rfjakob/gocryptfs/releases).
 
-If you want or need to compile from source, see the [Compile](compile.md) page for
+On Debian, gocryptfs is available as
+[a deb package](https://packages.debian.org/search?keywords=gocryptfs&searchon=names&suite=all&section=all):
+
+    $ apt install gocryptfs
+
+On Mac OS X, gocryptfs is available as a
+[Homebrew formula](https://github.com/Homebrew/homebrew-core/blob/master/Formula/gocryptfs.rb):
+
+    $ brew install gocryptfs
+
+If you want to compile from source, see the [Compile](compile.md) page for
 instructions.
 
-Once you have gocrypts in `~/bin`, running
+Once you have gocrypts installed, running
 
-	$ ~/bin/gocryptfs -version
+	$ gocryptfs -version
 
 should print a version string like this:
 
-	gocryptfs v0.x; on-disk format 2
+    gocryptfs v1.4.3; go-fuse v20170619-28-g19acbd2; 2018-02-01 go1.9.2
 
 Create and Mount Filesystem
 ---------------------------
 
 	$ mkdir cipher plain
-	$ ~/bin/gocryptfs -init cipher
+	$ gocryptfs -init cipher
 	  [...]
-	$ ~/bin/gocryptfs cipher plain
+	$ gocryptfs cipher plain
 	  [...]
 
 You should now have a working gocryptfs that is stored in `cipher` and mounted to `plain`.
