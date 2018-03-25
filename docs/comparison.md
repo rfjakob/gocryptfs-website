@@ -246,6 +246,7 @@ The backing filesystem is assumed to be ext4.
 |                      | ext4 | gocryptfs | encfs default | encfs paranoia | ecryptfs | CryFS |
 | -------------------- | ---- | --------- | ------------- | -------------- | -------- | ----- |
 | hard links           | yes  | yes       | yes           | no             | yes      | no    |
+| extended attributes  | yes  | yes       | no            | no             | ?        | ?     |
 | fallocate            | yes  | yes       | no            | no             | no       | no    |
 | fallocate KEEP_SIZE  | yes  | yes       | no            | no             | no       | no    |
 | fallocate PUNCH_HOLE | yes  | no        | no            | no             | no       | no    |
