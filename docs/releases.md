@@ -25,6 +25,7 @@ Just call `git tag` with the `-v` flag, for example:
 
 ```
 $ git tag -v v1.4.4
+
 object 9c86daf499dca8a69b058ec56803d06fbba4fdab
 type commit
 tag v1.4.4
@@ -46,6 +47,7 @@ Download both the `.tar.gz` and the `.asc` file, then run `gpg --verify gocryptf
 for example:
 ```
 $ gpg --verify gocryptfs_v1.4.4_linux-static_amd64.tar.gz.asc
+
 gpg: assuming signed data in 'gocryptfs_v1.4.4_linux-static_amd64.tar.gz'
 gpg: Signature made Sun Mar 18 23:32:47 2018 CET
 gpg:                using RSA key 895F5BC123A02740
