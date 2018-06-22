@@ -46,7 +46,7 @@ which is why I converted it to html.
 <!-- gocryptfs --><td>2015 (<a href="https://github.com/rfjakob/gocryptfs/releases/tag/v0.1">ref</a>) </td>
 <!-- encfs     --><td>2003 (<a href="https://github.com/vgough/encfs/blob/439c90e040cc04c036ee0791d830779a6d6bf10e/ChangeLog#L1501">ref</a>) </td>
 <!-- ecryptfs  --><td>2006 (<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/commit/?id=237fead619984cc48818fe12ee0ceada3f55b012">ref</a>) </td>
-<!-- cryptomtr --><td>2014 (<a href="https://github.com/cryptomator/cryptomator/releases/tag/v0.1.0">ref</a>) </td>
+<!-- cryptomtr --><td>2014 (<a href="https://github.com/cryptomator/cryptomator/commit/e823bc9f0c11f4a3eaaf29f52f2627dfa8eefea1">ref</a>) </td>
 <!-- securefs  --><td>2015 (<a href="https://github.com/netheril96/securefs/releases/tag/v0.10">ref</a>) </td>
 <!-- cryfs     --><td>2015 (<a href="https://github.com/cryfs/cryfs/releases/tag/0.8.0_cryfs">ref</a>) </td>
   </tr>
