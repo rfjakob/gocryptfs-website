@@ -46,6 +46,12 @@ gocryptfs is, and always will be, free software.
 News
 ----
 
+2018-06-12  
+Release [v1.5](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2018-03-18  
+Release [v1.4.4](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
 2018-01-22  
 Release [v1.4.3](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
