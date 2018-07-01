@@ -15,7 +15,7 @@ be synchronised efficiently using standard tools like Dropbox or rsync.
 Also, the size of the encrypted filesystem is dynamic and only limited
 by the available disk space.
 
-![](img/folders-side-by-side.jpg)
+![](img/folders-side-by-side.gif)
 
 This project was inspired by EncFS and strives to fix its security
 issues while providing good performance,
