@@ -46,7 +46,7 @@ Each file has a header containing a random 128-bit file ID. The
 file ID and the block number are concatenated
 (source code [ref](https://github.com/rfjakob/gocryptfs/blob/64e5906ffa1f225a51048b3d0ac6b1a09e2ca170/internal/contentenc/content.go#L124))
 and mixed into the GHASH as
-*additional authenticated data*. The prevents blocks from being copied
+*additional authenticated data*. This prevents blocks from being copied
 between or within files.
 
 ![](img/file-content-encryption.svg)
