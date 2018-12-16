@@ -1,48 +1,33 @@
 Compile gocryptfs from Source
 =============================
 
-You need to have the Go runtime and the OpenSSL headers installed to
-compile gocryptfs.
+Three-line summary:
 
-On Fedora,
+	go get -d github.com/rfjakob/gocryptfs
+	cd $(go env GOPATH)/src/github.com/rfjakob/gocryptfs
+	./build.bash
 
-	$ sudo dnf install golang openssl-devel
-
-On Debian and Ubuntu,
-
-	$ sudo apt-get install golang libssl-dev
-
-Also, `GOPATH` must be set. Usually it is set to the `go` folder in
-your home directory:
-
-	$ export GOPATH=$HOME/go
-
-Download Source Code
---------------------
-
-Download the gocryptfs source code and dependencies using `go get`:
-
-	$ go get -d github.com/rfjakob/gocryptfs
-
-And `cd` into the gocryptfs source directory:
-
-	$ cd $GOPATH/src/github.com/rfjakob/gocryptfs
-
-Compile
--------
-
-In the gocryptfs source directory, run:
-
-	$ ./build.bash
+build.bash needs Go 1.7+ and the OpenSSL headers installed
+(Debian: `apt install golang libssl-dev`, Fedora: `dnf install golang openssl-devel`).
 
 If successful, `build.bash` copies the `gocryptfs` binary to `~/bin`.
+
+Alternatively, you can compile a static binary without OpenSSL using:
+
+	./build-without-openssl.bash
+
+This is the recommended way to compile on MacOS, and also how the official
+[binary releases](https://github.com/rfjakob/gocryptfs/releases) are compiled.
+
+Note that having OpenSSL speeds up encryption on CPUs *without* AES-NI
+by a factor of 4. Run `gocryptfs -speed` to check your CPU.
 
 Test
 ----
 
 In the gocryptfs source directory, run:
 
-	$ ./test.bash
+	./test.bash
 
 The tests run about 1 minute and should produce the following output:
 
