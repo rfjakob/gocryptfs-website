@@ -1,8 +1,6 @@
 Compile gocryptfs from Source
 =============================
 
-Three-line summary:
-
 	go get -d github.com/rfjakob/gocryptfs
 	cd $(go env GOPATH)/src/github.com/rfjakob/gocryptfs
 	./build.bash
