@@ -50,12 +50,21 @@ News
 Release [v1.6.1](https://github.com/rfjakob/gocryptfs/releases)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
+2018-12-01  
+gocryptfs is added to the offical Arch Linux repo
+([commit](https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/gocryptfs&id=1714dd305acbe2ada823f34fbaa390af11633086),
+[package info](https://www.archlinux.org/packages/community/x86_64/gocryptfs/))
+
 2018-08-18  
 Release [v1.6](https://github.com/rfjakob/gocryptfs/releases)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
 2018-06-12  
-Release [v1.5](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+Release [v1.5](https://github.com/rfjakob/gocryptfs/releases)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2018-04-27  
+Ubuntu 18.04 LTS is released, including gocryptfs v1.4.3: https://packages.ubuntu.com/bionic/gocryptfs
 
 2018-03-18  
 Release [v1.4.4](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
