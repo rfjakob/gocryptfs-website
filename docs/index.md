@@ -64,7 +64,8 @@ Release [v1.5](https://github.com/rfjakob/gocryptfs/releases)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
 2018-04-27  
-Ubuntu 18.04 LTS is released, including gocryptfs v1.4.3: https://packages.ubuntu.com/bionic/gocryptfs
+Ubuntu 18.04 LTS is released, including gocryptfs v1.4.3:
+[https://packages.ubuntu.com/bionic/gocryptfs](https://packages.ubuntu.com/bionic/gocryptfs)
 
 2018-03-18  
 Release [v1.4.4](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
