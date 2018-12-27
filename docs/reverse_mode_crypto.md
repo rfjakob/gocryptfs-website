@@ -30,7 +30,7 @@ is hashed with SHA256 and truncated to 128 bits (source code
 
 ![](img/reverse-derivePathIV.svg)
 
-All derived values are explicitely stored in the ciphertext,
+All derived values are explicitly stored in the ciphertext,
 so that decryption requires no knowledge of the derivation
 algorithm.
 

@@ -109,7 +109,7 @@ As the file content is not tied to the file name in any way,
 Dragon can rename an encrypted file name to another valid
 encrypted file name. This effectively means that he can swap files.
 
-gocryptfs has explicitely chosen not to tie the file content to
+gocryptfs has explicitly chosen not to tie the file content to
 the file name to provide fast and reliable renames (renames are 
 atomic in gocryptfs).
 

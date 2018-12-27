@@ -80,7 +80,7 @@ which is why I converted it to html.
   <tr>
     <td>Lifecycle</td>
 <!-- gocryptfs --><td>Active</td>
-<!-- encfs     --><td>Maintainance</td>
+<!-- encfs     --><td>Maintenance</td>
 <!-- ecryptfs  --><td>Active (<a href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/log/fs/ecryptfs">ref</a>) </td>
 <!-- cryptomtr --><td>Active</td>
 <!-- securefs  --><td>Active</td>
@@ -206,7 +206,7 @@ The exact command lines for running the tests are defined in
 | Delete linux-3.0         | 3.0 s     | 4.2 s         | 4.4 s          | 0.7 s     | 145 s {2}     | 2.2 s              | 21 s                |
 
 Notes:  
-{1} All file acesses to cryptomator go through the WebDAV protocol, which is less performance-oriented than FUSE.  
+{1} All file accesses to cryptomator go through the WebDAV protocol, which is less performance-oriented than FUSE.<br>
 However, an optimized WebDAV client may be able to significantly speed up small-file workloads.<br>
 {2} Tested using using wdfs, where I got the fastest results: <http://noedler.de/projekte/wdfs/>.
 davfs2 is very slow, fusedav does not compile on current Fedora.<br>

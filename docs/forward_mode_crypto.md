@@ -62,7 +62,7 @@ directory as `gocryptfs.diriv`.
 
 File names are encrypted using AES-256-EME (ECB-Mix-ECB wide-block encryption,
 see [github.com/rfjakob/eme](https://github.com/rfjakob/eme) for details) with the directory IV
-as initialization vector. EME fixes the prefix leak that occours with CBC
+as initialization vector. EME fixes the prefix leak that occurs with CBC
 encryption.
 
 ![](img/file-name-encryption.svg)
