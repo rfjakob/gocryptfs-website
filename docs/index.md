@@ -51,7 +51,7 @@ Release [v1.6.1](https://github.com/rfjakob/gocryptfs/releases)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
 2018-12-01  
-gocryptfs is added to the offical Arch Linux repo
+gocryptfs is added to the official Arch Linux repo
 ([commit](https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/gocryptfs&id=1714dd305acbe2ada823f34fbaa390af11633086),
 [package info](https://www.archlinux.org/packages/community/x86_64/gocryptfs/))
 
