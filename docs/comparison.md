@@ -224,8 +224,8 @@ Disk Space Efficiency
 | 1 byte file {1}           | 1         | 51        | 9             | 17             | 12,288    | 137         | 45                | 32,768             |
 | 1,000,000 bytes file {1}  | 1,000,000 | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,576   | 1,006,876         | 1,048,576 {4}      |
 | linux-3.0 source tree {5} |           |           |               |                |           |             |                   |                    |
-| ...disk usage {2}         | 494 MiB   | 512 MiB   | 495 MiB       | 498 MiB        | 784 MiB   | 498 MiB     | 498               | 1485 MiB           |
-| ...sum of file sizes {3}  | 411 MiB   | 416 MiB   | 412 MiB       | 415 MiB        | 784 MiB   | TBD         | 416               | 1485 MiB           |
+| ...disk usage {2}         | 494 MiB   | 512 MiB   | 495 MiB       | 498 MiB        | 784 MiB   | 498 MiB     | 498 MiB           | 1485 MiB           |
+| ...sum of file sizes {3}  | 411 MiB   | 416 MiB   | 412 MiB       | 415 MiB        | 784 MiB   | TBD         | 416 MiB           | 1485 MiB           |
 
 Notes:  
 {1} `ls -l` on the encrypted file<br>
