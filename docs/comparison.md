@@ -186,8 +186,8 @@ Notes:
 {2} 255 since gocryptfs v0.9, 175 in v0.8 and earlier  
 {3} cryptomator dropped the use of a random padding in v1.2.0 due to performance concerns.  
 
-Performance
------------
+Performance on Linux
+--------------------
 
 All tests are run on tmpfs rule out any influence of the hard disk.
 The CPU is an Intel Pentium G630 with 2 x 2.7GHz that does NOT have AES instructions.
@@ -212,6 +212,41 @@ However, an optimized WebDAV client may be able to significantly speed up small-
 davfs2 is very slow, fusedav does not compile on current Fedora.<br>
 {3} Testing using the built-in WebDAV support in Gnome Files v3.24.2.1, as the write-back
 caching of wdfs makes exact measurements impractical.
+
+Performance on Windows
+----------------------
+
+All tests were run on a Toshiba-RD400 M.2/NVMe SSD rated 2.6 GB/s read and 1.6 GB/s write random-access speed.
+The operating system used was Windows 7 Professional SP1 running on an Intel Core i7-6700 CPU with 4 x 3.40GHz hyperthreaded and AES-NI.
+Tests were run using MSYS-CoreUtils 5.97-3-msys-1.0.13 installed using the MinGW installer. The exact command lines for running the tests are defined in
+[canonical-benchmarks.bash](https://github.com/rfjakob/gocryptfs/blob/f0e29d9b90b63d5fbe4164161ecb0e1035bb4af4/tests/canonical-benchmarks.bash) with minor
+adjustments required to make the test run in this environment.
+
+
+|                          |     (NTFS)      |    cppcryptfs            | EncFSMP default   | EncFS4Win default |    cryptomator    |    securefs   |       CryFS       |
+| ------------------------ | --------------- | ------------------------ | ----------------- | ----------------- | ----------------- | ------------- | ----------------- |
+| Tested version           | v6.1.7601.24382 | v1.4.0.25                | v0.99.1           | v1.10.1-rc14      | v1.4.6            | v0.8.3        | v0.10.0.1201 {1}  |
+| Based on                 | -               | gocryptfs 1.4 compatible | EncFS 1.9.5       | EncFS 1.9.1       | -                 | -             | -                 |
+| Driver                   | (Built-in)      | Dokany 1.2.2.1000        | PFM 1.0.0.192 {2} | Dokany 1.2.2.1000 | Dokany 1.2.2.1000 | WinFSP 2019.1 | Dokany 1.2.2.1000 |
+| User Interface           | -               | GUI                      | GUI<br/>(fails to properly display state) | Tray<br />(very basic) | GUI | No {3} | No {3}    |
+|                          |                 |                          |                   |                   |                   |               |                   |
+| Streaming write          | 2100 MiB/s {4}  | 621 MiB/s                |  58 MiB/s         |  68 MiB/s         |  67 MiB/s         | 289 MiB/s     |  51 MiB/s         |
+| Streaming read           | 3400 MiB/s {4}  | 797 MiB/s                | 251 MiB/s         | 107 MiB/s         | 115 MiB/s         | 542 MiB/s     | 130 MiB/s         |
+| Extract linux-3.0.tar.gz | 26 s            | 456 s                    | 793 s             | 2121 s            | ??? s             | 332 s         | 1124 s            |
+| md5sum linux-3.0         | 51 s            | 364 s                    | 235 s             | 1877 s            | ??? s             | 235 s         | 1254 s            |
+| ls -lR linux-3.0         | 18 s            | 328 s                    | 166 s             | 1269 s            | ??? s             | 183 s         | 1057 s            |
+| Delete linux-3.0         | 18 s            | 432 s                    | (427 s) {5}       | 1666 s            | ??? s             | 260 s         | 1007 s            |
+
+To the extent this was observed at all during the tests, every one of these
+filesystem providers was fully CPU-bound during the small-file tests with
+observed disk access speeds never going beyond 15 MiB/s.
+
+Notes:  
+ {1} CryFS considered Windows support “highly experimental” in this version<br />
+ {2} Closed source component by Pismo Technic Inc<br />
+ {3} SiriKali (third-part GUI) can be used for management however<br />
+ {4} Yes, these numbers are actually above what the drive is theoretically capable of, so all of these results are likely somewhat skewed<br />
+ {5} 320 files were not deleted due to *Invalid argument* errors; it is not clear what caused this error, but the logged “Invalid data size, not multiple of block size” messages may indicate corruption
 
 Disk Space Efficiency
 ---------------------
