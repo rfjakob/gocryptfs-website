@@ -34,12 +34,12 @@ which is why I converted it to html.
 <table>
   <tr>
     <th></th>
-    <th>gocryptfs <br> v1.4.1</th>
-    <th>encfs <br> v1.9.2</th>
-    <th>ecryptfs <br> v4.13</th>
-    <th>cryptomator <br> v1.3.1</th>
-    <th>securefs <br> v0.7.3</th>
-    <th>CryFS <br> v0.9.7</th>
+    <th>gocryptfs <br> v1.7</th>
+    <th>encfs <br> v1.9.5</th>
+    <th>ecryptfs <br> v4.19.0</th>
+    <th>cryptomator <br> v1.4.6</th>
+    <th>securefs <br> v0.8.3</th>
+    <th>CryFS <br> v0.10.0</th>
   </tr>
   <tr>
 	<td>First release</td>
@@ -90,8 +90,8 @@ which is why I converted it to html.
     <td>File interface</td>
 <!-- gocryptfs --><td>FUSE</td>
 <!-- encfs     --><td>FUSE</td>
-<!-- ecryptfs  --><td>in-kernel filesystem</td>
-<!-- cryptomtr --><td>WebDAV</td>
+<!-- ecryptfs  --><td>In-kernel filesystem</td>
+<!-- cryptomtr --><td>FUSE/WebDAV</td>
 <!-- securefs  --><td>FUSE</td>
 <!-- cryfs     --><td>FUSE</td>
   </tr>
@@ -102,21 +102,21 @@ which is why I converted it to html.
 <!-- ecryptfs  --><td>Linux</td>
 <!-- cryptomtr --><td>Linux, MacOS, Windows</td>
 <!-- securefs  --><td>Linux, MacOS, Windows</td>
-<!-- cryfs     --><td>Linux</td>
+<!-- cryfs     --><td>Linux, MacOS, Windows (experimental)</td>
   </tr>
   <tr>
     <td>User interface</td>
-<!-- gocryptfs --><td>CLI, 3rd-party GUI <a href="https://mhogomchungu.github.io/sirikali/">SiriKali</a></td>
+<!-- gocryptfs --><td>CLI, 3rd-party GUI (<a href="https://mhogomchungu.github.io/sirikali/">SiriKali</a>)</td>
 <!-- encfs     --><td>CLI, 3rd-party GUI</td>
 <!-- ecryptfs  --><td>Integrated in login process</td>
 <!-- cryptomtr --><td>GUI, 3rd-party CLI (<a href="https://github.com/cryptomator/cli">ref</a>) </td>
 <!-- securefs  --><td>CLI, 3rd-party GUI</td>
-<!-- cryfs     --><td>CLI, 3rd-party GUI</td>
+<!-- cryfs     --><td>CLI, 3rd-party GUI (<a href="https://mhogomchungu.github.io/sirikali/">SiriKali</a>)</td>
   </tr>
   <tr>
     <td>Reverse Mode</td>
-<!-- gocryptfs --><td>yes (since v1.1)</td>
-<!-- encfs     --><td>yes</td>
+<!-- gocryptfs --><td>yes (since v1.1, read-only)</td>
+<!-- encfs     --><td>yes (limited write support)</td>
 <!-- ecryptfs  --><td>no</td>
 <!-- cryptomtr --><td>no</td>
 <!-- securefs  --><td>no</td>
