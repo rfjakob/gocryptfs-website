@@ -145,18 +145,20 @@ it seems to describe the used crypto.
 File Contents
 -------------
 
-|                       | gocryptfs |      encfs default      |      encfs paranoia     |        ecryptfs       |      cryptomator       |      securefs      |         CryFS         |
-| --------------------- | --------- | ----------------------- | ----------------------- | --------------------- | ---------------------- | ------------------ | --------------------- |
-| Tested version        | v1.4.1    | v1.9.2                  | v1.9.2                  | v4.12.5               | v1.3.1 RPM             | v0.7.3-30-g2596467 | 0.9.7-15-g3d52f6a8    |
-|                       |           |                         |                         |                       |                        |                    |                       |
-| Encryption            | GCM       | CBC; last block CFB [1] | CBC; last block CFB [1] | CBC                   | CTR with random IV [2] | GCM                | GCM                   |
-| Integrity             | GCM       | none                    | HMAC                    | none                  | HMAC                   | GCM                | GCM                   |
-| File size obfuscation | no        | no                      | no                      | yes (4 KB increments) | no [3]                 | no                 | yes (chunked storage) |
+|                       | gocryptfs |      encfs default      |      encfs paranoia     |        ecryptfs       |      cryptomator       | securefs |         CryFS         |
+| --------------------- | --------- | ----------------------- | ----------------------- | --------------------- | ---------------------- | ---------| --------------------- |
+| Tested version        | v1.7      | v1.9.5                  | v1.9.5                  | v4.19.0               | v1.4.6                 | v0.8.3   | 0.10.0                |
+|                       |           |                         |                         |                       |                        |          |                       |
+| Encryption            | GCM [1]   | CBC; last block CFB [2] | CBC; last block CFB [2] | CBC                   | CTR with random IV [3] | GCM      | GCM                   |
+| Integrity             | GCM       | none                    | HMAC                    | none                  | HMAC                   | GCM      | GCM                   |
+| File size obfuscation | no        | no                      | no                      | yes (4 KB increments) | no [4]                 | no [5]   | yes (chunked storage) |
 
 References:
-[[1]](https://github.com/vgough/encfs/issues/9)
-[[2]](https://github.com/cryptomator/cryptomator/issues/128#issuecomment-168942517)
-[[3]](https://github.com/cryptomator/cryptomator/releases/tag/1.2.0)
+[[1]](https://github.com/rfjakob/gocryptfs/blob/master/Documentation/file-format.md#file-format)
+[[2]](https://github.com/vgough/encfs/issues/9)
+[[3]](https://github.com/cryptomator/cryptomator/issues/128#issuecomment-168942517)
+[[4]](https://github.com/cryptomator/cryptomator/releases/tag/1.2.0)
+[[5]](https://github.com/netheril96/securefs/issues/39)
 
 File Names
 ----------
