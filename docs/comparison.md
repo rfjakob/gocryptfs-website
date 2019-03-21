@@ -232,10 +232,10 @@ adjustments required to make the test run in this environment.
 |                          |                 |                          |                   |                   |                   |               |                   |
 | Streaming write          | 2100 MiB/s {4}  | 621 MiB/s                |  58 MiB/s         |  68 MiB/s         |  67 MiB/s         | 289 MiB/s     |  51 MiB/s         |
 | Streaming read           | 3400 MiB/s {4}  | 797 MiB/s                | 251 MiB/s         | 107 MiB/s         | 115 MiB/s         | 542 MiB/s     | 130 MiB/s         |
-| Extract linux-3.0.tar.gz | 26 s            | 456 s                    | 793 s             | 2121 s            | ??? s             | 332 s         | 1124 s            |
-| md5sum linux-3.0         | 51 s            | 364 s                    | 235 s             | 1877 s            | ??? s             | 235 s         | 1254 s            |
-| ls -lR linux-3.0         | 18 s            | 328 s                    | 166 s             | 1269 s            | ??? s             | 183 s         | 1057 s            |
-| Delete linux-3.0         | 18 s            | 432 s                    | (427 s) {5}       | 1666 s            | ??? s             | 260 s         | 1007 s            |
+| Extract linux-3.0.tar.gz | 26 s            | 456 s                    | 793 s             | 2121 s            | 2497 s            | 332 s         | 1124 s            |
+| md5sum linux-3.0         | 51 s            | 364 s                    | 235 s             | 1877 s            | 1808 s            | 235 s         | 1254 s            |
+| ls -lR linux-3.0         | 18 s            | 328 s                    | 166 s             | 1269 s            | 1722 s            | 183 s         | 1057 s            |
+| Delete linux-3.0         | 18 s            | 432 s                    | (427 s) {5}       | 1666 s            | 2765 s            | 260 s         | 1007 s            |
 
 To the extent this was observed at all during the tests, every one of these
 filesystem providers was fully CPU-bound during the small-file tests with
@@ -244,7 +244,7 @@ observed disk access speeds never going beyond 15 MiB/s.
 Notes:  
  {1} CryFS considered Windows support “highly experimental” in this version<br />
  {2} Closed source component by Pismo Technic Inc<br />
- {3} SiriKali (third-part GUI) can be used for management however<br />
+ {3} The SiriKali third-part GUI supports CryFS, EncFS4Win and securefs<br />
  {4} Yes, these numbers are actually above what the drive is theoretically capable of, so all of these results are likely somewhat skewed<br />
  {5} 320 files were not deleted due to *Invalid argument* errors; it is not clear what caused this error, but the logged “Invalid data size, not multiple of block size” messages may indicate corruption
 
