@@ -18,6 +18,11 @@ On Mac OS X, gocryptfs is available as a
 
     $ brew install gocryptfs
 
+On Fedora, gocryptfs is available as
+[an rpm package](https://src.fedoraproject.org/rpms/golang-github-rfjakob-gocryptfs):
+
+    $ sudo dnf install gocryptfs
+
 If you want to compile from source, see the [Compile](compile.md) page for
 instructions.
 
