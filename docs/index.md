@@ -46,6 +46,10 @@ gocryptfs is, and always will be, free software.
 News
 ----
 
+2019-07-29
+gocryptfs is added to Fedora 30 and rawhide:
+[package info](https://src.fedoraproject.org/rpms/golang-github-rfjakob-gocryptfs)
+
 2018-12-12  
 Release [v1.6.1](https://github.com/rfjakob/gocryptfs/releases)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
