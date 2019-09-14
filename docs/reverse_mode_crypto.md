@@ -14,7 +14,7 @@ Derived Keys
 ------------
 
 As in forward mode, the file content key is derived from the master key
-using HKDF-SHA256. Is is 64 bytes wide instead of 32 bytes
+using HKDF-SHA256. It is 64 bytes wide instead of 32 bytes
 (source code [ref](https://github.com/rfjakob/gocryptfs/blob/f0e29d9b90b63d5fbe4164161ecb0e1035bb4af4/internal/cryptocore/cryptocore.go#L111)).
 for use with AES-SIV-512.
 
