@@ -46,63 +46,61 @@ gocryptfs is, and always will be, free software.
 News
 ----
 
-2019-07-29
-gocryptfs is added to Fedora 30 and rawhide:
-[package info](https://src.fedoraproject.org/rpms/golang-github-rfjakob-gocryptfs)
+Latest release: [![Latest release](https://img.shields.io/github/release/rfjakob/gocryptfs.svg)](https://github.com/rfjakob/gocryptfs/releases)
 
-2018-12-12  
-Release [v1.6.1](https://github.com/rfjakob/gocryptfs/releases)
+2019-05-17<br>
+Release [gocryptfs v1.7](https://github.com/rfjakob/gocryptfs/releases/tag/v1.7)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
-2018-12-01  
-gocryptfs is added to the official Arch Linux repo
+2018-12-01<br>
+gocryptfs is added to the offical Arch Linux repo
 ([commit](https://git.archlinux.org/svntogit/community.git/commit/trunk?h=packages/gocryptfs&id=1714dd305acbe2ada823f34fbaa390af11633086),
 [package info](https://www.archlinux.org/packages/community/x86_64/gocryptfs/))
 
-2018-08-18  
-Release [v1.6](https://github.com/rfjakob/gocryptfs/releases)
+2018-08-18<br>
+Release [gocryptfs v1.6](https://github.com/rfjakob/gocryptfs/releases/tag/v1.6)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
-2018-06-12  
-Release [v1.5](https://github.com/rfjakob/gocryptfs/releases)
+2019-07-29<br>
+gocryptfs is added to Fedora 30 and rawhide:
+[package info](https://src.fedoraproject.org/rpms/golang-github-rfjakob-gocryptfs)
+
+2018-06-12<br>
+Release [gocryptfs v1.5](https://github.com/rfjakob/gocryptfs/releases/tag/v1.5)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
-2018-04-27  
+2018-04-27<br>
 Ubuntu 18.04 LTS is released, including gocryptfs v1.4.3:
 [https://packages.ubuntu.com/bionic/gocryptfs](https://packages.ubuntu.com/bionic/gocryptfs)
 
-2018-03-18  
-Release [v1.4.4](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+2017-06-20<br>
+Release [gocryptfs v1.4](https://github.com/rfjakob/gocryptfs/releases/tag/v1.4)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
-2018-01-22  
-Release [v1.4.3](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
-
-2017-11-02  
-Release [v1.4.2](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
-
-2017-08-21  
-Release [v1.4.1](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
-
-2017-06-20  
-Release [v1.4](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
-
-2017-06-17  
+2017-06-17<br>
 Debian 9 "Stretch" is released, including gocryptfs v1.2:
 [https://packages.debian.org/stretch/gocryptfs](https://packages.debian.org/stretch/gocryptfs)
 
-2017-04-29  
-Release [v1.3](https://github.com/rfjakob/gocryptfs/releases) ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+2017-04-29<br>
+Release [gocryptfs v1.3](https://github.com/rfjakob/gocryptfs/releases/tag/v1.3)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
-2017-03-10  
+2017-03-10<br>
 Taylor Hornby of defuse.ca releases a cryptography design audit of gocryptfs:
 [announcement](https://twitter.com/DefuseSec/status/840239275740405761),
 [audit](https://defuse.ca/audits/gocryptfs.htm)
 
-2016-12-04  
-Release v1.2 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+2016-12-04<br>
+Release [gocryptfs v1.2](https://github.com/rfjakob/gocryptfs/releases/tag/v1.2)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
-2016-10-30  
+2016-10-30<br>
 Added description of [Reverse Mode](reverse_mode) to the website
 
-2016-10-30  
-Bugfix release v1.1.1, [changelog](https://github.com/rfjakob/gocryptfs#changelog)
+2016-10-19<br>
+Release [gocryptfs v1.1](https://github.com/rfjakob/gocryptfs/releases/tag/v1.1)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2016-07-17<br>
+Release [gocryptfs v1.0](https://github.com/rfjakob/gocryptfs/releases/tag/v1.0)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
