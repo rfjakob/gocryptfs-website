@@ -48,6 +48,10 @@ News
 
 Latest release: [![Latest release](https://img.shields.io/github/release/rfjakob/gocryptfs.svg)](https://github.com/rfjakob/gocryptfs/releases)
 
+2020-05-09<br>
+Release [gocryptfs v1.8.0](https://github.com/rfjakob/gocryptfs/releases/tag/v1.8.0)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
 2019-05-17<br>
 Release [gocryptfs v1.7](https://github.com/rfjakob/gocryptfs/releases/tag/v1.7)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
