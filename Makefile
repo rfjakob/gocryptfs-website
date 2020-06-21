@@ -1,5 +1,5 @@
 all:
-	LC_ALL=C.UTF-8 LANG=C.UTF-8 mkdocs build --clean
+	LC_ALL=C.UTF-8 LANG=C.UTF-8 mkdocs build --clean --quiet
 	cp -af htaccess site/.htaccess
 
 .PHONY: clean
