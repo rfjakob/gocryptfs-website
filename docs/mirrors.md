@@ -17,7 +17,7 @@ The webinterface is at
 I run a mirror of the repo above, should Github be down at any time.
 It is updated every hour. Clone with:
 
-    git clone git://nuetzlich.net/gocryptfs
+    git clone https://nuetzlich.net/cgit/gocryptfs/
 
-A cgit webinterface is available at
+The cgit webinterface is available at
 [https://nuetzlich.net/cgit/gocryptfs/](https://nuetzlich.net/cgit/gocryptfs/) .
