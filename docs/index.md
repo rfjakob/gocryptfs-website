@@ -43,8 +43,8 @@ file a ticket if you do!).
 
 Third-party implementations exist for for
 
-* Windows: cppcryptfs, https://github.com/bailey27/cppcryptfs
-* Android: DroidFS, https://github.com/hardcore-sushi/DroidFS
+* Windows: [cppcryptfs](https://github.com/bailey27/cppcryptfs)
+* Android: [DroidFS](https://github.com/hardcore-sushi/DroidFS)
 
 gocryptfs is, and always will be, free software.
 
