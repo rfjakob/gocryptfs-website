@@ -97,7 +97,8 @@ which is why I converted it to html.
   </tr>
   <tr>
     <td>Platforms</td>
-<!-- gocryptfs --><td>Linux, MacOS, 3rd-party Windows port <a href="https://github.com/bailey27/cppcryptfs">cppcryptfs</a></td>
+<!-- gocryptfs --><td>Linux, MacOS, 3rd-party Windows port <a href="https://github.com/bailey27/cppcryptfs">cppcryptfs</a>,
+                      3rd-party Android port <a href="https://github.com/hardcore-sushi/DroidFS">DroidFD</a></td>
 <!-- encfs     --><td>Linux, MacOS, 3rd-party Windows port</td>
 <!-- ecryptfs  --><td>Linux</td>
 <!-- cryptomtr --><td>Linux, MacOS, Windows</td>

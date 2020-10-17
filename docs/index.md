@@ -41,6 +41,11 @@ Linux is fully supported. Beta-quality MacOS support is available, which
 means things usually work fine, but you may hit the odd issue (please
 file a ticket if you do!).
 
+Third-party implementations exist for for
+
+* Windows: cppcryptfs, https://github.com/bailey27/cppcryptfs
+* Android: DroidFS, https://github.com/hardcore-sushi/DroidFS
+
 gocryptfs is, and always will be, free software.
 
 News
