@@ -45,6 +45,7 @@ Third-party implementations exist for for
 
 * Windows: [cppcryptfs](https://github.com/bailey27/cppcryptfs)
 * Android: [DroidFS](https://github.com/hardcore-sushi/DroidFS)
+* Python: [gocryptfs-inspect](https://github.com/slackner/gocryptfs-inspect)
 
 gocryptfs is, and always will be, free software.
 
