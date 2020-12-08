@@ -23,6 +23,14 @@ On Fedora, gocryptfs is available as
 
     $ sudo dnf install gocryptfs
 
+gocryptfs is available in many other distributions in the following
+versions:
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/gocryptfs.svg?columns=4)](https://repology.org/project/gocryptfs/versions)
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/go:github-rfjakob-gocryptfs.svg?columns=5&header=Packaging Status II)](https://repology.org/project/go:github-rfjakob-gocryptfs/versions)
+
+
 If you want to compile from source, see the [Compile](compile.md) page for
 instructions.
 
