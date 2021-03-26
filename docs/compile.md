@@ -1,8 +1,8 @@
 Compile gocryptfs from Source
 =============================
 
-	go get -d github.com/rfjakob/gocryptfs
-	cd $(go env GOPATH)/src/github.com/rfjakob/gocryptfs
+	git clone https://github.com/rfjakob/gocryptfs.git
+	cd gocryptfs
 	./build.bash
 
 build.bash needs Go 1.7+ and the OpenSSL headers installed
