@@ -1,24 +1,30 @@
 Compile gocryptfs from Source
 =============================
 
-	git clone https://github.com/rfjakob/gocryptfs.git
-	cd gocryptfs
-	./build.bash
+Install Go 1.11 or higher:
 
-build.bash needs Go 1.7+ and the OpenSSL headers installed
-(Debian: `apt install golang libssl-dev`, Fedora: `dnf install golang openssl-devel`).
+* Debian/Ubuntu: `apt install golang`
+* Fedora: `dnf install golang`
 
-If successful, `build.bash` copies the `gocryptfs` binary to `~/bin`.
+Then, download the source code and compile:
 
-Alternatively, you can compile a static binary without OpenSSL using:
+	$ git clone https://github.com/rfjakob/gocryptfs.git
+	$ cd gocryptfs
+	$ ./build-without-openssl.bash
 
-	./build-without-openssl.bash
+This will compile a static binary that uses the Go stdlib crypto backend.
 
-This is the recommended way to compile on MacOS, and also how the official
-[binary releases](https://github.com/rfjakob/gocryptfs/releases) are compiled.
+If you want to use the OpenSSL crypto backend (faster on
+old CPUs lacking AES-NI), you have to install a few dependencies:
 
-Note that having OpenSSL speeds up encryption on CPUs *without* AES-NI
-by a factor of 4. Run `gocryptfs -speed` to check your CPU.
+* Debian/Ubuntu: `apt install libssl-dev gcc pkg-config`
+* Fedora: `dnf install openssl-devel gcc pkg-config`
+
+Then, run:
+
+	$ ./build.bash
+
+See also: [README.md#compile](https://github.com/rfjakob/gocryptfs/blob/master/README.md#compile)
 
 Test
 ----
