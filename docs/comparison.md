@@ -195,21 +195,26 @@ Performance on Linux
 --------------------
 
 All tests are run on tmpfs rule out any influence of the hard disk.
-The CPU is an Intel Pentium G630 with 2 x 2.7GHz that does NOT have AES instructions.
 The exact command lines for running the tests are defined in
 [canonical-benchmarks.bash](https://github.com/rfjakob/gocryptfs/blob/f0e29d9b90b63d5fbe4164161ecb0e1035bb4af4/tests/canonical-benchmarks.bash).
+The box that was used to running the tests has been
+upgraded with a new CPU {2}, and unfortunately not all tests have been re-run.
+Which CPU was used is noted in the table header.
 
-|                          | gocryptfs | encfs default | encfs paranoia |  ecryptfs |  cryptomator  |      securefs      |        CryFS        |
+|                          | gocryptfs {2} | encfs default {2} | encfs paranoia {1} |  ecryptfs {1} | cryptomator {2} |  securefs {1}   |       CryFS {1}    |
 | ------------------------ | --------- | ------------- | -------------- | --------- | ------------- | ------------------ | ------------------- |
-| Tested version           | v1.4.1    | v1.9.2        | v1.9.2         | v4.12.5   | v1.5.15 AppImage FUSE | v0.7.3-30-g2596467 | v0.9.7-12-gd9634246 |
+| Tested version           | v2.0      | v1.9.5        | v1.9.2         | v4.12.5   | v1.5.15 AppImage FUSE | v0.7.3-30-g2596467 | v0.9.7-12-gd9634246 |
 |                          |           |               |                |           |               |                    |                     |
-| Streaming write          | 258 MiB/s | 100 MiB/s     | 51 MiB/s       | 133 MiB/s | 57 MiB/s      | 132 MiB/s          | 69 MiB/s            |
-| Streaming read           | 289 MiB/s | 185 MiB/s     | 105 MiB/s      | 165 MiB/s | 113 MiB/s     | 155 MiB/s          | 99 MiB/s            |
-| Extract linux-3.0.tar.gz | 16 s      | 19 s          | 23 s           | 7.2 s     | 28 s          | 14 s               | 41 s                |
-| md5sum linux-3.0         | 7.5 s     | 8.2 s         | 10 s           | 4.8 s     | 15 s          | 7.7 s              | 42 s                |
-| ls -lR linux-3.0         | 1.3 s     | 2.9 s         | 2.9 s          | 0.8 s     | 4.3 s         | 1.2 s              | 17 s                |
-| Delete linux-3.0         | 3.0 s     | 4.2 s         | 4.4 s          | 0.7 s     | 10 s          | 2.2 s              | 21 s                |
+| Streaming write          | 420 MiB/s | 122 MiB/s     | 51 MiB/s       | 133 MiB/s | 57 MiB/s      | 132 MiB/s          | 69 MiB/s            |
+| Streaming read           | 1000 MiB/s | 451 MiB/s    | 105 MiB/s      | 165 MiB/s | 113 MiB/s     | 155 MiB/s          | 99 MiB/s            |
+| Extract linux-3.0.tar.gz | 8.5 s     | 13 s          | 23 s           | 7.2 s     | 28 s          | 14 s               | 41 s                |
+| md5sum linux-3.0         | 4.5 s     | 5.7 s         | 10 s           | 4.8 s     | 15 s          | 7.7 s              | 42 s                |
+| ls -lR linux-3.0         | 1.7 s     | 2.5 s         | 2.9 s          | 0.8 s     | 4.3 s         | 1.2 s              | 17 s                |
+| Delete linux-3.0         | 2.3 s     | 3.4 s         | 4.4 s          | 0.7 s     | 10 s          | 2.2 s              | 21 s                |
 
+Notes:
+{1} Tested on an Intel Pentium G630 with 2 x 2.7GHz that does NOT have AES instructions<br>
+{2} Tested in Intel Core i5-3470 CPU with 4 x 3.20GHz and AES-NI<br>
 
 Performance on Windows
 ----------------------
