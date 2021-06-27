@@ -10,7 +10,7 @@ This page compares:
 * [gocryptfs](https://nuetzlich.net/gocryptfs/) (this project), aspiring successor of EncFS
 * [EncFS](https://github.com/vgough/encfs), mature with known security issues
 * [eCryptFS](http://ecryptfs.org/), integrated into the Linux kernel
-* [Cryptomator](https://cryptomator.org/), strong cross-platform support through Java and WebDAV
+* [Cryptomator](https://cryptomator.org/), strong cross-platform support through Java, WebDAV and [FUSE](https://github.com/SerCeMan/jnr-fuse).
 * [securefs](https://github.com/netheril96/securefs), a cross-platform project implemented in C++. 
   Older versions stored directories in user-space B-trees
   ([filesystem format 1,2,3](https://github.com/netheril96/securefs/blob/2596467d63631aab264cf7a63de38fd69b2fda78/docs/design.md#full-format-format-version-123)).
@@ -166,12 +166,13 @@ File Names
 
 |                          |       gocryptfs       |    encfs default     |    encfs paranoia    | ecryptfs | cryptomator  |      securefs      |       CryFS        |
 | ------------------------ | --------------------- | -------------------- | -------------------- | -------- | ------------ | ------------------ | ------------------ |
-| Tested version           | v1.4.1                | v1.9.2               | v1.9.2               | v4.12.5  | v1.3.1 RPM   | v0.7.3-30-g2596467 | 0.9.7-15-g3d52f6a8 |
+| Tested version           | v1.4.1                | v1.9.2               | v1.9.2               | v4.12.5  | v1.5.15 AppImage FUSE | v0.7.3-30-g2596467 | 0.9.7-15-g3d52f6a8 |
 |                          |                       |                      |                      |          |              |                    |                    |
 | Encryption               | EME [4]               | CBC                  | CBC                  | CBC      | AES-SIV      | AES-SIV            | GCM (dir DB)       |
 | Prefix leak              | no (EME)              | no (HMAC used as IV) | no (HMAC used as IV) | yes [2]  | no (AES-SIV) | no (AES-SIV)       | no (GCM)           |
 | Identical names leak     | no (per-directory IV) | no (path chaining)   | no (path chaining)   | yes [1]  | no [3] {3}   | yes [6]            | no (GCM)           |
-| Maximum name length [5]  | 255 (since v0.9) {2}  | 175                  | 175                  | 143      | 1025         | 143                | 1024               |
+| Maximum name length [5]  | 255 (since v0.9) {2}  | 175                  | 175                  | 143      | 1024         | 143                | 1024               |
+| Maximum path length [5]  | 4095                  |                      |                      |          | 4095         |                    |                    |
 | Directory flattening {1} | no                    | no                   | no                   | no       | yes          | yes                | yes                |
 
 References:
@@ -179,8 +180,9 @@ References:
 [[2]](https://gist.github.com/rfjakob/61a17bf3c7eb9932d791)
 [[3]](https://github.com/cryptomator/cryptomator/commit/3b178030c7a6001c1d070ee181aaae71f760d33f)
 [[4]](https://github.com/rfjakob/eme)
-[[5]](https://github.com/rfjakob/gocryptfs/blob/master/tests/maxlen.bash)
+[[5]](https://github.com/rfjakob/gocryptfs/blob/master/contrib/maxlen.bash)
 [[6]](https://gist.github.com/rfjakob/5ff1591db263d85684ac03fc47009b35)
+
 
 Notes:  
 {1} Is the directory tree flattened in the encrypted storage? This
@@ -199,22 +201,15 @@ The exact command lines for running the tests are defined in
 
 |                          | gocryptfs | encfs default | encfs paranoia |  ecryptfs |  cryptomator  |      securefs      |        CryFS        |
 | ------------------------ | --------- | ------------- | -------------- | --------- | ------------- | ------------------ | ------------------- |
-| Tested version           | v1.4.1    | v1.9.2        | v1.9.2         | v4.12.5   | v1.3.1 RPM    | v0.7.3-30-g2596467 | v0.9.7-12-gd9634246 |
+| Tested version           | v1.4.1    | v1.9.2        | v1.9.2         | v4.12.5   | v1.5.15 AppImage FUSE | v0.7.3-30-g2596467 | v0.9.7-12-gd9634246 |
 |                          |           |               |                |           |               |                    |                     |
-| Streaming write          | 258 MiB/s | 100 MiB/s     | 51 MiB/s       | 133 MiB/s | 15 MiB/s {3}  | 132 MiB/s          | 69 MiB/s            |
-| Streaming read           | 289 MiB/s | 185 MiB/s     | 105 MiB/s      | 165 MiB/s | 29 MiB/s {3}  | 155 MiB/s          | 99 MiB/s            |
-| Extract linux-3.0.tar.gz | 16 s      | 19 s          | 23 s           | 7.2 s     | 564 s {1} {2} | 14 s               | 41 s                |
-| md5sum linux-3.0         | 7.5 s     | 8.2 s         | 10 s           | 4.8 s     | 360 s {2}     | 7.7 s              | 42 s                |
-| ls -lR linux-3.0         | 1.3 s     | 2.9 s         | 2.9 s          | 0.8 s     | 27 s {2}      | 1.2 s              | 17 s                |
-| Delete linux-3.0         | 3.0 s     | 4.2 s         | 4.4 s          | 0.7 s     | 145 s {2}     | 2.2 s              | 21 s                |
+| Streaming write          | 258 MiB/s | 100 MiB/s     | 51 MiB/s       | 133 MiB/s | 57 MiB/s      | 132 MiB/s          | 69 MiB/s            |
+| Streaming read           | 289 MiB/s | 185 MiB/s     | 105 MiB/s      | 165 MiB/s | 113 MiB/s     | 155 MiB/s          | 99 MiB/s            |
+| Extract linux-3.0.tar.gz | 16 s      | 19 s          | 23 s           | 7.2 s     | 28 s          | 14 s               | 41 s                |
+| md5sum linux-3.0         | 7.5 s     | 8.2 s         | 10 s           | 4.8 s     | 15 s          | 7.7 s              | 42 s                |
+| ls -lR linux-3.0         | 1.3 s     | 2.9 s         | 2.9 s          | 0.8 s     | 4.3 s         | 1.2 s              | 17 s                |
+| Delete linux-3.0         | 3.0 s     | 4.2 s         | 4.4 s          | 0.7 s     | 10 s          | 2.2 s              | 21 s                |
 
-Notes:  
-{1} All file accesses to cryptomator go through the WebDAV protocol, which is less performance-oriented than FUSE.<br>
-However, an optimized WebDAV client may be able to significantly speed up small-file workloads.<br>
-{2} Tested using using wdfs, where I got the fastest results: <http://noedler.de/projekte/wdfs/>.
-davfs2 is very slow, fusedav does not compile on current Fedora.<br>
-{3} Testing using the built-in WebDAV support in Gnome Files v3.24.2.1, as the write-back
-caching of wdfs makes exact measurements impractical.
 
 Performance on Windows
 ----------------------
@@ -256,14 +251,14 @@ Disk Space Efficiency
 
 |                           |    ext4   | gocryptfs | encfs default | encfs paranoia |  ecryptfs | cryptomator |      securefs     |       CryFS        |
 | ------------------------- | --------- | --------- | ------------- | -------------- | --------- | ----------- | ----------------- | ------------------ |
-| Tested version            | v4.12.5   | v1.4.1    | v1.9.2        | v1.9.2         | v4.12.5   | TBD         | 0.7.3-30-g2596467 | 0.9.7-15-g3d52f6a8 |
+| Tested version            | v4.12.5   | v1.4.1    | v1.9.2        | v1.9.2         | v4.12.5   | v1.5.15 AppImage FUSE | 0.7.3-30-g2596467 | 0.9.7-15-g3d52f6a8 |
 |                           |           |           |               |                |           |             |                   |                    |
 | Empty file {1}            | 0         | 0         | 0             | 0              | 8,192     | 88          | 16                | 32,768             |
 | 1 byte file {1}           | 1         | 51        | 9             | 17             | 12,288    | 137         | 45                | 32,768             |
 | 1,000,000 bytes file {1}  | 1,000,000 | 1,007,858 | 1,000,008     | 1,007,888      | 1,011,712 | 1,001,576   | 1,006,876         | 1,048,576 {4}      |
 | linux-3.0 source tree {5} |           |           |               |                |           |             |                   |                    |
-| ...disk usage {2}         | 494 MiB   | 512 MiB   | 495 MiB       | 498 MiB        | 784 MiB   | 498 MiB     | 498 MiB           | 1485 MiB           |
-| ...sum of file sizes {3}  | 411 MiB   | 416 MiB   | 412 MiB       | 415 MiB        | 784 MiB   | TBD         | 416 MiB           | 1485 MiB           |
+| ...disk usage {2}         | 494 MiB   | 512 MiB   | 495 MiB       | 498 MiB        | 784 MiB   | 520 MiB     | 498 MiB           | 1485 MiB           |
+| ...sum of file sizes {3}  | 411 MiB   | 416 MiB   | 412 MiB       | 415 MiB        | 784 MiB   | 430 MiB     | 416 MiB           | 1485 MiB           |
 
 Notes:  
 {1} `ls -l` on the encrypted file<br>
