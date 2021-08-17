@@ -58,3 +58,17 @@ up encrypted in the `cipher` directory.
 	$ touch plain/test.txt
 	$ ls cipher
 	  gocryptfs.conf  gocryptfs.diriv  ZSuIZVzYDy5-TbhWKY-ciA==
+
+Cloud Storage
+-------------
+
+When you want to store your encrypted data on cloud storage (Dropbox in this example),
+the `cipher` folder should be inside the `Dropbox` folder but the `plain` folder
+should be **outside**! Example:
+
+    $ mkdir ~/Dropbox/cipher
+    $ mkdir ~/plain
+    $ gocryptfs -init ~/Dropbox/cipher
+    $ gocryptfs ~/Dropbox/cipher ~/plain
+
+This makes sure that Dropbox only syncs the encrypted version of your data.
