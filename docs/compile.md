@@ -1,7 +1,7 @@
 Compile gocryptfs from Source
 =============================
 
-Install Go 1.11 or higher:
+Install Go 1.13 or higher:
 
 * Debian/Ubuntu: `apt install golang`
 * Fedora: `dnf install golang`
