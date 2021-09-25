@@ -20,4 +20,4 @@ It is updated every hour. Clone with:
     git clone https://nuetzlich.net/cgit/gocryptfs/
 
 The cgit webinterface is available at
-[https://nuetzlich.net/cgit/gocryptfs/](https://nuetzlich.net/cgit/gocryptfs/) .
+[https://nuetzlich.net/cgit/](https://nuetzlich.net/cgit/) .
