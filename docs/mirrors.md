@@ -11,7 +11,7 @@ The primary git repository is hosted on Github. Clone using:
 The webinterface is at
 [https://github.com/rfjakob/gocryptfs](https://github.com/rfjakob/gocryptfs) .
 
-Wiki: https://github.com/rfjakob/gocryptfs/wiki
+Wiki: [https://github.com/rfjakob/gocryptfs/wiki](https://github.com/rfjakob/gocryptfs/wiki)
 
 2) Mirrors on nuetzlich.net
 -------------------------
@@ -24,4 +24,4 @@ It is updated every hour. Clone with:
 The cgit webinterface is available at
 [https://nuetzlich.net/cgit/](https://nuetzlich.net/cgit/) .
 
-Wiki: https://nuetzlich.net/cgit/gocryptfs.wiki/tree/
+Wiki: [https://nuetzlich.net/cgit/gocryptfs.wiki/tree/](https://nuetzlich.net/cgit/gocryptfs.wiki/tree/)
