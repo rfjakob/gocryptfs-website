@@ -302,11 +302,3 @@ body {
   /* default is a dark gray. Let's have better contrast. */
   color: black;
 }
-
-/* this enables having multiple links in one line. JU 2021-09-27 */
-.wy-menu-vertical a {
-  display: inline;
-}
-.wy-menu-vertical id {
-  padding: 0.4045em 1.618em;
-}
