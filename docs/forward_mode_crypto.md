@@ -15,7 +15,7 @@ Master Key Storage
 
 The master key is used to perform content and file name encryption.
 It is stored in `gocryptfs.conf`, encrypted with AES-256-GCM using the
-Key Encryption Key (KEK). The KEK is generated from the user password
+*Key Encryption Key* (KEK). The KEK is generated from the user password
 using `scrypt`.
 
 When mounting a filesystem, the user is prompted for the password and
@@ -27,7 +27,8 @@ Derived Keys
 ------------
 
 Since gocryptfs v1.3, separate keys are derived from the master key for
-file content and file name encryption. HKDF-SHA256 is used for the
+file content and file name encryption.
+[HKDF](https://pkg.go.dev/golang.org/x/crypto/hkdf)-SHA256 is used for the
 derivation (source code: [ref1](https://github.com/rfjakob/gocryptfs/blob/f0e29d9b90b63d5fbe4164161ecb0e1035bb4af4/internal/cryptocore/hkdf.go)
 [ref2](https://github.com/rfjakob/gocryptfs/blob/f0e29d9b90b63d5fbe4164161ecb0e1035bb4af4/internal/cryptocore/cryptocore.go#L66)).
 
@@ -39,7 +40,7 @@ File Contents
 All file contents are encrypted using AES-256-GCM (Galois/Counter Mode).
 
 Files are segmented into 4KiB blocks. Each block gets a fresh random
-128 bit IV each time it is modified. A 128-bit authentication tag (GHASH)
+128 bit *Initialisation Vector* (IV) each time it is modified. A 128-bit authentication tag (GHASH)
 protects each block from modifications.
 
 Each file has a header containing a random 128-bit file ID. The
@@ -57,7 +58,7 @@ unchanged.
 File Names
 ----------
 
-Every directory gets a 128-bit directory IV that is stored in each
+Every directory gets a 128-bit directory *Initialisation Vector* (IV) that is stored in each
 directory as `gocryptfs.diriv`.
 
 File names are encrypted using AES-256-EME (ECB-Mix-ECB wide-block encryption,
