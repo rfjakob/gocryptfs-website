@@ -201,16 +201,16 @@ The box that was used to running the tests has been
 upgraded with a new CPU {2}, and unfortunately not all tests have been re-run.
 Which CPU was used is noted in the table header.
 
-|                          | gocryptfs {2} | encfs default {2} | encfs paranoia {1} |  ecryptfs {1} | cryptomator {2} |  securefs {1}   |       CryFS {1}    |
-| ------------------------ | --------- | ------------- | -------------- | --------- | ------------- | ------------------ | ------------------- |
-| Tested version           | v2.0      | v1.9.5        | v1.9.2         | v4.12.5   | v1.5.15 AppImage FUSE | v0.7.3-30-g2596467 | v0.9.7-12-gd9634246 |
-|                          |           |               |                |           |               |                    |                     |
-| Streaming write          | 420 MiB/s | 122 MiB/s     | 51 MiB/s       | 133 MiB/s | 57 MiB/s      | 132 MiB/s          | 69 MiB/s            |
-| Streaming read           | 1000 MiB/s | 451 MiB/s    | 105 MiB/s      | 165 MiB/s | 113 MiB/s     | 155 MiB/s          | 99 MiB/s            |
-| Extract linux-3.0.tar.gz | 8.5 s     | 13 s          | 23 s           | 7.2 s     | 28 s          | 14 s               | 41 s                |
-| md5sum linux-3.0         | 4.5 s     | 5.7 s         | 10 s           | 4.8 s     | 15 s          | 7.7 s              | 42 s                |
-| ls -lR linux-3.0         | 1.7 s     | 2.5 s         | 2.9 s          | 0.8 s     | 4.3 s         | 1.2 s              | 17 s                |
-| Delete linux-3.0         | 2.3 s     | 3.4 s         | 4.4 s          | 0.7 s     | 10 s          | 2.2 s              | 21 s                |
+|                          | gocryptfs {2} | encfs default {2} | encfs paranoia {1} |  ecryptfs {2} | cryptomator {2} |  securefs {1}   |     CryFS {1}    |
+| ------------------------ | ----------------- | ------------- | ------------------ | --------- | ------------- | ------------------ | ------------------- |
+| Tested version           | v2.3.2-3-g1a866b7 | v1.9.5        | v1.9.2             | v6.2.13   | v1.5.15 AppImage FUSE | v0.7.3-30-g2596467 | v0.9.7-12-gd9634246 |
+|                          |                   |               |                    |           |               |                    |                     |
+| Streaming write          | 482 MiB/s         | 122 MiB/s     | 51 MiB/s           | 323 MiB/s | 57 MiB/s      | 132 MiB/s          | 69 MiB/s            |
+| Streaming read           | 944 MiB/s         | 451 MiB/s     | 105 MiB/s          | 961 MiB/s | 113 MiB/s     | 155 MiB/s          | 99 MiB/s            |
+| Extract linux-3.0.tar.gz | 10.9 s            | 13 s          | 23 s               | 3.9 s     | 28 s          | 14 s               | 41 s                |
+| md5sum linux-3.0         | 5.1 s             | 5.7 s         | 10 s               | 1.2 s     | 15 s          | 7.7 s              | 42 s                |
+| ls -lR linux-3.0         | 2.0 s             | 2.5 s         | 2.9 s              | 0.5 s     | 4.3 s         | 1.2 s              | 17 s                |
+| Delete linux-3.0         | 2.4 s             | 3.4 s         | 4.4 s              | 0.7 s     | 10 s          | 2.2 s              | 21 s                |
 
 Notes:
 {1} Tested on an Intel Pentium G630 with 2 x 2.7GHz that does NOT have AES instructions<br>
