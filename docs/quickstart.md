@@ -13,10 +13,9 @@ On Debian, gocryptfs is available as
 
     $ apt install gocryptfs
 
-On Mac OS X, gocryptfs is available as a
-[Homebrew formula](https://github.com/Homebrew/homebrew-core/blob/master/Formula/gocryptfs.rb):
+On MacOS, [gocryptfs is available on MacPorts](https://ports.macports.org/port/gocryptfs/details/):
 
-    $ brew install gocryptfs
+    $ port install gocryptfs
 
 On Fedora, gocryptfs is available as
 [an rpm package](https://src.fedoraproject.org/rpms/golang-github-rfjakob-gocryptfs):
