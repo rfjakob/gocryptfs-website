@@ -9,13 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: polinux/mkdocs:0.17.2
 
     steps:
     - uses: actions/checkout@v4
 
     - name: install mkdocs
-      run: pip3 install mkdocs==0.17.5
+      run: pip3 install mkdocs==1.6.1
 
     - name: build
       run: make
