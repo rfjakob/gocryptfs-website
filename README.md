@@ -5,7 +5,5 @@ https://nuetzlich.net/gocryptfs .
 
 It is generated using mkdocs. Install using
 
-    pip3 install mkdocs==0.17.5
+    pip3 install mkdocs==1.6.1
 
-Note: mkdocs 1.0 [crashes](https://travis-ci.org/rfjakob/gocryptfs-website/builds/456463957)
-with `Object of type 'Undefined' is not JSON serializable`.

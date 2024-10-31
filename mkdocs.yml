@@ -1,9 +1,15 @@
 site_name: gocryptfs
 theme:
     name: readthedocs
-    custom_dir: gocryptfs-readthedocs
+    # https://www.mkdocs.org/user-guide/customizing-your-theme/#using-the-theme-custom_dir
+    custom_dir: custom_theme
+    highlightjs: False
+    logo: img/gocryptfs-logo.paths-white.svg
+    navigation_depth: 1
+extra_css:
+  - style.css
 plugins: []
-pages:
+nav:
 - Home: index.md
 - Quickstart: quickstart.md
 - Compile from Source: compile.md
@@ -14,3 +20,7 @@ pages:
 - Signed Releases: releases.md
 - Source Code Mirrors: mirrors.md
 - Contribute: contribute.md
+- 'Download Binaries ➚': 'https://github.com/rfjakob/gocryptfs/releases'
+- 'Changelog ➚': 'https://github.com/rfjakob/gocryptfs#changelog'
+- 'Man Page ➚': 'https://github.com/rfjakob/gocryptfs/blob/master/Documentation/MANPAGE.md'
+- 'Wiki ➚': 'https://github.com/rfjakob/gocryptfs/wiki'

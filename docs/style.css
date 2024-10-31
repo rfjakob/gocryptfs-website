@@ -1,0 +1,11 @@
+/*
+Get rid of the blue background
+begind the logo and kill some blank
+space around it
+*/ 
+
+div.wy-side-nav-search {
+	background-color: unset;
+	padding: unset;
+	margin: unset;
+}
