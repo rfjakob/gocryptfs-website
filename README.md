@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/rfjakob/gocryptfs-website.svg?branch=master)](https://travis-ci.org/rfjakob/gocryptfs-website)
+[![CI](https://github.com/rfjakob/gocryptfs-website/actions/workflows/ci.yml/badge.svg)](https://github.com/rfjakob/gocryptfs-website/actions/workflows/ci.yml)
 
 This repostitory contains the gocryptfs website that is available at
 https://nuetzlich.net/gocryptfs .
