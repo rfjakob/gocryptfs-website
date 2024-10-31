@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: polinux/mkdocs:0.17.2
 
     steps:
     - uses: actions/checkout@v4
