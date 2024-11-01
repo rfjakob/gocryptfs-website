@@ -1,18 +1,15 @@
 name: CI
-
 on:
   push:
   pull_request:
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
-
-    - name: install mkdocs
-      run: pip3 install mkdocs==1.6.1
-
-    - name: build
-      run: make
+    - run: pip3 install mkdocs==1.6.1
+    - run: make
+    - uses: actions/upload-artifact@v4
+      with:
+        name: site
+        path: site
