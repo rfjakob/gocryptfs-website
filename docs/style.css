@@ -9,3 +9,19 @@ div.wy-side-nav-search {
 	padding: unset;
 	margin: unset;
 }
+
+/*
+Wide tables are wide.
+Default is 800px, which is a waste of screen space.
+*/
+div.wy-nav-content {
+	max-width: unset;
+}
+
+.wy-table-responsive table td,.wy-table-responsive table th {
+	/*
+	The theme sets it to "nowrap", which means tables become
+	ultra-wide with horizontal scrollbars. Ugh.
+	*/
+    white-space:unset;
+}
