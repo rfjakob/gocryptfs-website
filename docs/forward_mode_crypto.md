@@ -42,6 +42,7 @@ All file contents are encrypted using AES-256-GCM (Galois/Counter Mode).
 Files are segmented into 4KiB blocks. Each block gets a fresh random
 128 bit *Initialisation Vector* (IV) each time it is modified. A 128-bit authentication tag (GHASH)
 protects each block from modifications.
+Due to the random IV, AES-256-GCM is *non-deterministic*.
 
 Each file has a header containing a random 128-bit file ID. The
 file ID and the block number are concatenated
@@ -63,8 +64,14 @@ directory as `gocryptfs.diriv`.
 
 File names are encrypted using AES-256-EME (ECB-Mix-ECB wide-block encryption,
 see [github.com/rfjakob/eme](https://github.com/rfjakob/eme) for details) with the directory IV
-as initialization vector. EME fixes the prefix leak that occurs with CBC
-encryption.
+as initialization vector.
+
+Due to the fixed per-directory IV, file name encryption is *deterministic* in each
+directory for the lifetime of that directory. File name encryption must be
+deterministic to avoid collisions (i.e. multiple encrypted names decrypting to the
+same plaintext name).
+
+Compared to CBC, EME does not have a prefix leak.
 
 ![](img/file-name-encryption.svg)
 
