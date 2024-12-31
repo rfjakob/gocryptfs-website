@@ -67,4 +67,4 @@ path to the directory.
 
 Because the encrypted path to the root directory is "" (the empty string),
 this means that the directory IV in the root directory is always
-`0xa8f7bac432ddc1cb3dc74e684d6ae48b = SHA256("\0DIRIV")`.
+`0xa8f7bac432ddc1cb3dc74e684d6ae48b = TRUNCATE(SHA256("\0DIRIV"))`.
