@@ -54,6 +54,50 @@ News
 
 Latest release: [![Latest release](https://img.shields.io/github/release/rfjakob/gocryptfs.svg)](https://github.com/rfjakob/gocryptfs/releases)
 
+2025-01-18<br>
+Release [gocryptfs v2.5.0](https://github.com/rfjakob/gocryptfs/releases/tag/v2.5.0)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2023-06-10<br>
+Release [gocryptfs v2.4.0](https://github.com/rfjakob/gocryptfs/releases/tag/v2.4.0)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2023-04-29<br>
+Release [gocryptfs v2.3.2](https://github.com/rfjakob/gocryptfs/releases/tag/v2.3.2)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2023-03-04<br>
+Release [gocryptfs v2.3.1](https://github.com/rfjakob/gocryptfs/releases/tag/v2.3.1)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2022-08-28<br>
+Release [gocryptfs v2.3](https://github.com/rfjakob/gocryptfs/releases/tag/v2.3)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2021-10-20<br>
+Release [gocryptfs v2.2.1](https://github.com/rfjakob/gocryptfs/releases/tag/v2.2.1)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2021-09-25<br>
+Release [gocryptfs v2.2.0](https://github.com/rfjakob/gocryptfs/releases/tag/v2.2.0)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2021-08-18<br>
+Release [gocryptfs v2.1](https://github.com/rfjakob/gocryptfs/releases/tag/v2.1)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2021-06-07<br>
+Release [gocryptfs v2.0.1](https://github.com/rfjakob/gocryptfs/releases/tag/v2.0.1)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2021-06-05<br>
+Release [gocryptfs v2.0](https://github.com/rfjakob/gocryptfs/releases/tag/v2.0)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
+2020-05-09<br>
+Release [gocryptfs v1.8.0](https://github.com/rfjakob/gocryptfs/releases/tag/v1.8.0)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
 2020-05-09<br>
 Release [gocryptfs v1.8.0](https://github.com/rfjakob/gocryptfs/releases/tag/v1.8.0)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
