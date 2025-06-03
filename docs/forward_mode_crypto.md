@@ -54,7 +54,7 @@ between or within files.
 ![](img/file-content-encryption.svg)
 
 To support sparse files, all-zero blocks are accepted and passed through
-unchanged.
+unchanged. Empty files do not contain a header.
 
 File Names
 ----------
