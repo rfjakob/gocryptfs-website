@@ -21,7 +21,12 @@ This page compares:
   chunked storage to obfuscate file sizes.
 
 If you spot an error or want to see a project added, please
-[file a ticket](https://github.com/rfjakob/gocryptfs-website)! See also: [comparison table in the Arch Linux wiki](https://wiki.archlinux.org/title/Data-at-rest_encryption#Comparison_table)
+[file a ticket](https://github.com/rfjakob/gocryptfs-website)!
+
+See also:
+
+* [comparison table in the Arch Linux wiki](https://wiki.archlinux.org/title/Data-at-rest_encryption#Comparison_table)
+* [comparison table on cryfs.org](https://www.cryfs.org/comparison#summary)
 
 Overview
 --------
