@@ -24,16 +24,15 @@ Verify Git Tags
 Just call `git tag` with the `-v` flag, for example:
 
 ```
-$ git tag -v v1.4.4
-
-object 9c86daf499dca8a69b058ec56803d06fbba4fdab
+$ git tag -v v2.6.1
+object 25e85a4454e93643ad92397d01ed532a360d7ee2
 type commit
-tag v1.4.4
-tagger Jakob Unterwurzacher <jakobunt@gmail.com> 1521412204 +0100
+tag v2.6.1
+tagger Jakob Unterwurzacher <jakobunt@gmail.com> 1754852675 +0200
 
-gocryptfs v1.4.4
-gpg: Signature made Sun Mar 18 23:30:10 2018 CET
-gpg:                using RSA key 895F5BC123A02740
+gocryptfs v2.6.1
+gpg: Signature made Sun Aug 10 21:04:41 2025 CEST
+gpg:                using RSA key FFF3E01444FED7C316A3545A895F5BC123A02740
 gpg: Good signature from "Jakob Unterwurzacher (gocryptfs signing key) <jakobunt@gmail.com>" [unknown]
 gpg: WARNING: This key is not certified with a trusted signature!
 gpg:          There is no indication that the signature belongs to the owner.
