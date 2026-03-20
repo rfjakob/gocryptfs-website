@@ -8,7 +8,7 @@ all: .venv
 
 .PHONY: clean
 clean:
-	rm -Rf site
+	rm -Rf site .venv
 
 .PHONY: test
 test:
