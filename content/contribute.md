@@ -1,3 +1,6 @@
+---
+title: "Contribute"
+---
 Contributing to gocryptfs
 =========================
 
@@ -42,7 +45,7 @@ I try to keep the website updated as well as I can, but especially
 the [Comparison](comparison) page has a lot of data that can go out of
 date. If you can imagine adopting it you are very welcome. So you know
 what are getting into, here is the
-[source code](https://raw.githubusercontent.com/rfjakob/gocryptfs-website/master/docs/comparison.md)
+[source code](https://raw.githubusercontent.com/rfjakob/gocryptfs-website/master/content/comparison.md)
 ;)
 
 

@@ -1,3 +1,6 @@
+---
+title: "Threat Model"
+---
 Threat Model
 ============
 

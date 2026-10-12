@@ -1,3 +1,6 @@
+---
+title: "Home"
+---
 gocryptfs - simple. secure. fast.
 =================================
 

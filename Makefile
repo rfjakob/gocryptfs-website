@@ -1,14 +1,14 @@
-all: .venv
-	. .venv/bin/activate && LC_ALL=C.UTF-8 LANG=C.UTF-8 mkdocs build --clean --quiet
+all:
+	hugo --cleanDestinationDir
 	cp -af htaccess site/.htaccess
 
-.venv:
-	python3 -m venv .venv
-	. .venv/bin/activate && pip3 install mkdocs==1.6.1
+.PHONY: serve
+serve:
+	hugo server
 
 .PHONY: clean
 clean:
-	rm -Rf site .venv
+	rm -Rf site
 
 .PHONY: test
 test:

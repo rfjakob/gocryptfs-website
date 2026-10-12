@@ -1,3 +1,6 @@
+---
+title: "Signed Releases"
+---
 gocryptfs Releases
 ==================
 

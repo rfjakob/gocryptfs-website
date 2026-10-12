@@ -1,0 +1,9 @@
+{{- $u := urls.Parse .Destination -}}
+{{- $src := .Destination -}}
+{{- if not $u.IsAbs -}}
+  {{- $path := $u.Path -}}
+  {{- $path = strings.TrimPrefix "/" $path -}}
+  {{- $path = strings.TrimPrefix "./" $path -}}
+  {{- $src = $path | relURL -}}
+{{- end -}}
+<img src="{{ $src }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{- "" -}}

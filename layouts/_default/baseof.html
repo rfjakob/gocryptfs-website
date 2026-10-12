@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} - {{ site.Title }}{{ end }}</title>
+  <link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}">
+  <link rel="stylesheet" href="{{ "style.css" | relURL }}">
+</head>
+<body>
+  <div class="site-wrapper">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <a href="{{ site.Home.RelPermalink }}">
+          <img src="{{ "img/gocryptfs-logo.paths-white.svg" | relURL }}" alt="gocryptfs logo" class="logo">
+        </a>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          {{ $currentPage := . }}
+          {{ range site.Menus.main }}
+            {{ $active := false }}
+            {{ if .Page }}
+              {{ $active = eq $currentPage .Page }}
+            {{ end }}
+            <li class="{{ if $active }}active{{ end }}">
+              <a href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <div><a href="https://github.com/rfjakob/gocryptfs">GitHub: gocryptfs</a></div>
+        <div><a href="https://github.com/rfjakob/gocryptfs-website">GitHub: gocryptfs-website</a></div>
+      </div>
+    </aside>
+    <main class="content-area">
+      {{ block "main" . }}{{ end }}
+    </main>
+  </div>
+</body>
+</html>

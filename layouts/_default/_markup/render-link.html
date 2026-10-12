@@ -1,0 +1,20 @@
+{{- $u := urls.Parse .Destination -}}
+{{- $href := .Destination -}}
+{{- if not $u.IsAbs -}}
+  {{- if not (strings.HasPrefix $href "#") -}}
+    {{- $path := $u.Path -}}
+    {{- if strings.HasSuffix $path ".md" -}}
+      {{- $path = strings.TrimSuffix ".md" $path -}}
+    {{- end -}}
+    {{- $path = strings.TrimPrefix "/" $path -}}
+    {{- $path = strings.TrimPrefix "./" $path -}}
+    {{- if and $path (not (strings.HasSuffix $path "/")) -}}
+      {{- $path = printf "%s/" $path -}}
+    {{- end -}}
+    {{- $href = $path | relURL -}}
+    {{- with $u.Fragment -}}
+      {{- $href = printf "%s#%s" $href . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<a href="{{ $href }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>{{- "" -}}

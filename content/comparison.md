@@ -1,3 +1,6 @@
+---
+title: "Comparison with Other Projects"
+---
 Other Projects
 ==============
 

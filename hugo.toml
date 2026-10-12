@@ -1,0 +1,81 @@
+baseURL = "https://nuetzlich.net/gocryptfs/"
+title = "gocryptfs"
+publishDir = "site"
+
+disableKinds = ["taxonomy", "term", "RSS"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+
+  [[menu.main]]
+    name = "Quickstart"
+    pageRef = "/quickstart"
+    weight = 20
+
+  [[menu.main]]
+    name = "Compile from Source"
+    pageRef = "/compile"
+    weight = 30
+
+  [[menu.main]]
+    name = "Cryptography"
+    pageRef = "/forward_mode_crypto"
+    weight = 40
+
+  [[menu.main]]
+    name = "Reverse Mode Cryptography"
+    pageRef = "/reverse_mode_crypto"
+    weight = 50
+
+  [[menu.main]]
+    name = "Threat Model"
+    pageRef = "/threat_model"
+    weight = 60
+
+  [[menu.main]]
+    name = "Comparison with Other Projects"
+    pageRef = "/comparison"
+    weight = 70
+
+  [[menu.main]]
+    name = "Signed Releases"
+    pageRef = "/releases"
+    weight = 80
+
+  [[menu.main]]
+    name = "Source Code Mirrors"
+    pageRef = "/mirrors"
+    weight = 90
+
+  [[menu.main]]
+    name = "Contribute"
+    pageRef = "/contribute"
+    weight = 100
+
+  [[menu.main]]
+    name = "Download Binaries ➚"
+    url = "https://github.com/rfjakob/gocryptfs/releases"
+    weight = 110
+
+  [[menu.main]]
+    name = "Changelog ➚"
+    url = "https://github.com/rfjakob/gocryptfs#changelog"
+    weight = 120
+
+  [[menu.main]]
+    name = "Man Page ➚"
+    url = "https://github.com/rfjakob/gocryptfs/blob/master/Documentation/MANPAGE.md"
+    weight = 130
+
+  [[menu.main]]
+    name = "Wiki ➚"
+    url = "https://github.com/rfjakob/gocryptfs/wiki"
+    weight = 140

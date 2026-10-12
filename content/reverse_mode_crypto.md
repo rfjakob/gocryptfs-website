@@ -1,3 +1,8 @@
+---
+title: "Reverse Mode Cryptography"
+aliases:
+  - "/reverse_mode"
+---
 Reverse Mode
 ============
 

@@ -1,3 +1,6 @@
+---
+title: "Compile from Source"
+---
 Compile gocryptfs from Source
 =============================
 
