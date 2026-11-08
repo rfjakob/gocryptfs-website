@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78
       with:
-        hugo-version: 'v0.169.0'
+        hugo-version: '0.169.0'
     - run: make
     - uses: actions/upload-artifact@v4
       with:
