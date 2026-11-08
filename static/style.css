@@ -70,23 +70,6 @@ body {
   font-weight: 600;
 }
 
-.sidebar-footer {
-  margin-top: auto;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 0.85em;
-  opacity: 0.9;
-}
-
-.sidebar-footer a {
-  display: inline-block;
-  margin: 4px 0;
-}
-
-.sidebar-footer a:hover {
-  text-decoration: underline;
-}
-
 /* Content Area */
 .content-area {
   flex: 1;
