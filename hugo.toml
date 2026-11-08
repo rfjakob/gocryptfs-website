@@ -11,42 +11,52 @@ disableKinds = ["taxonomy", "term", "RSS"]
 
 [menu]
   [[menu.main]]
+    name = "Home"
     pageRef = "/"
     weight = 10
 
   [[menu.main]]
+    name = "Quickstart"
     pageRef = "/quickstart"
     weight = 20
 
   [[menu.main]]
+    name = "Compile from Source"
     pageRef = "/compile"
     weight = 30
 
   [[menu.main]]
+    name = "Cryptography"
     pageRef = "/forward_mode_crypto"
     weight = 40
 
   [[menu.main]]
+    name = "Reverse Mode Cryptography"
     pageRef = "/reverse_mode_crypto"
     weight = 50
 
   [[menu.main]]
+    name = "Threat Model"
     pageRef = "/threat_model"
     weight = 60
 
   [[menu.main]]
+    name = "Comparison with Other Projects"
     pageRef = "/comparison"
     weight = 70
 
   [[menu.main]]
+    name = "Signed Releases"
     pageRef = "/releases"
     weight = 80
 
   [[menu.main]]
+    name = "Source Code Mirrors"
     pageRef = "/mirrors"
     weight = 90
 
   [[menu.main]]
+    name = "Contribute"
     pageRef = "/contribute"
     weight = 100
 
