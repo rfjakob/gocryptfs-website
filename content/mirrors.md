@@ -4,8 +4,7 @@ title: "Source Code Mirrors"
 Source Code Mirrors
 ===================
 
-1) Github
----------
+## 1) Github
 
 The primary git repository is hosted on Github. Clone using:
 
@@ -16,8 +15,7 @@ The webinterface is at
 
 Wiki: [https://github.com/rfjakob/gocryptfs/wiki](https://github.com/rfjakob/gocryptfs/wiki)
 
-2) Mirrors on nuetzlich.net
--------------------------
+## 2) Mirrors on nuetzlich.net
 
 I run git mirrors should Github be down at any time.
 It is updated every hour. Clone with:

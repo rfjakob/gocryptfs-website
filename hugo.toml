@@ -61,21 +61,31 @@ disableKinds = ["taxonomy", "term", "RSS"]
     weight = 100
 
   [[menu.main]]
-    name = "Download Binaries ➚"
+    name = "➚ Download Binaries"
     url = "https://github.com/rfjakob/gocryptfs/releases"
     weight = 110
 
   [[menu.main]]
-    name = "Changelog ➚"
+    name = "➚ Changelog"
     url = "https://github.com/rfjakob/gocryptfs#changelog"
     weight = 120
 
   [[menu.main]]
-    name = "Man Page ➚"
+    name = "➚ Man Page"
     url = "https://github.com/rfjakob/gocryptfs/blob/master/Documentation/MANPAGE.md"
     weight = 130
 
   [[menu.main]]
-    name = "Wiki ➚"
+    name = "➚ Wiki"
     url = "https://github.com/rfjakob/gocryptfs/wiki"
     weight = 140
+
+  [[menu.main]]
+    name = "➚ GitHub: gocryptfs"
+    url = "https://github.com/rfjakob/gocryptfs"
+    weight = 150
+
+  [[menu.main]]
+    name = "➚ GitHub: gocryptfs-website"
+    url = "https://github.com/rfjakob/gocryptfs-website"
+    weight = 160
