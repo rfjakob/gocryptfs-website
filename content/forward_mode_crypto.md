@@ -1,7 +1,5 @@
 ---
 title: "Cryptography"
-aliases:
-  - "/security"
 ---
 gocryptfs Cryptography
 ======================

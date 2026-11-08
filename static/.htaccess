@@ -3,3 +3,6 @@ Redirect "/gocryptfs/security" "/gocryptfs/forward_mode_crypto"
 
 # "reverse_mode" was renamed to "reverse_mode_crypto" on 2017-09-17. Keep old links working.
 Redirect "/gocryptfs/reverse_mode" "/gocryptfs/reverse_mode_crypto"
+
+# Serve the Hugo-generated 404 page
+ErrorDocument 404 /gocryptfs/404.html

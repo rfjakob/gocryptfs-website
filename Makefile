@@ -1,6 +1,5 @@
 all:
 	hugo --cleanDestinationDir
-	cp -af htaccess site/.htaccess
 
 .PHONY: serve
 serve:

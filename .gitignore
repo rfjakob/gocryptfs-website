@@ -1,4 +1,3 @@
 /site
 /resources
-/.venv
 .hugo_build.lock

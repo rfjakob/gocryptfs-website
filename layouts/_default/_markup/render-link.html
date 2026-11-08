@@ -3,15 +3,22 @@
 {{- if not $u.IsAbs -}}
   {{- if not (strings.HasPrefix $href "#") -}}
     {{- $path := $u.Path -}}
+    {{- $isPage := false -}}
     {{- if strings.HasSuffix $path ".md" -}}
       {{- $path = strings.TrimSuffix ".md" $path -}}
+      {{- $isPage = true -}}
+    {{- else if not (path.Ext $path) -}}
+      {{- $isPage = true -}}
     {{- end -}}
     {{- $path = strings.TrimPrefix "/" $path -}}
     {{- $path = strings.TrimPrefix "./" $path -}}
-    {{- if and $path (not (strings.HasSuffix $path "/")) -}}
+    {{- if and $isPage $path (not (strings.HasSuffix $path "/")) -}}
       {{- $path = printf "%s/" $path -}}
     {{- end -}}
     {{- $href = $path | relURL -}}
+    {{- with $u.RawQuery -}}
+      {{- $href = printf "%s?%s" $href . -}}
+    {{- end -}}
     {{- with $u.Fragment -}}
       {{- $href = printf "%s#%s" $href . -}}
     {{- end -}}

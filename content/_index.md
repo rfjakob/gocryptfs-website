@@ -1,5 +1,6 @@
 ---
 title: "Home"
+layout: "single"
 ---
 gocryptfs - simple. secure. fast.
 =================================
@@ -56,6 +57,10 @@ News
 ----
 
 Latest release: [![Latest release](https://img.shields.io/github/release/rfjakob/gocryptfs.svg)](https://github.com/rfjakob/gocryptfs/releases)
+
+2025-08-10<br>
+Release [gocryptfs v2.6.1](https://github.com/rfjakob/gocryptfs/releases/tag/v2.6.1)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
 2025-07-14<br>
 Release [gocryptfs v2.6.0](https://github.com/rfjakob/gocryptfs/releases/tag/v2.6.0)
