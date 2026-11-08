@@ -57,6 +57,10 @@ News
 
 Latest release: [![Latest release](https://img.shields.io/github/release/rfjakob/gocryptfs.svg)](https://github.com/rfjakob/gocryptfs/releases)
 
+2025-07-14<br>
+Release [gocryptfs v2.6.0](https://github.com/rfjakob/gocryptfs/releases/tag/v2.6.0)
+([changelog](https://github.com/rfjakob/gocryptfs#changelog))
+
 2025-01-18<br>
 Release [gocryptfs v2.5.0](https://github.com/rfjakob/gocryptfs/releases/tag/v2.5.0)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
@@ -95,10 +99,6 @@ Release [gocryptfs v2.0.1](https://github.com/rfjakob/gocryptfs/releases/tag/v2.
 
 2021-06-05<br>
 Release [gocryptfs v2.0](https://github.com/rfjakob/gocryptfs/releases/tag/v2.0)
-([changelog](https://github.com/rfjakob/gocryptfs#changelog))
-
-2020-05-09<br>
-Release [gocryptfs v1.8.0](https://github.com/rfjakob/gocryptfs/releases/tag/v1.8.0)
 ([changelog](https://github.com/rfjakob/gocryptfs#changelog))
 
 2020-05-09<br>
